@@ -1,11 +1,11 @@
-import Home from "./pages/Home";
-
 import "./App.css";
+import CardShowcase from "./components/cardShowcase";
 
 function App() {
+
   return (
     <div className="App">
-      <Home />
+      <CardShowcase />
     </div>
   );
 }
