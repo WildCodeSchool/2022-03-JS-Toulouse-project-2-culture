@@ -1,10 +1,10 @@
 import React from "react";
 import "./cardTheme.css";
 
-function CardTheme(props) {
+function CardTheme({ title, stylecard }) {
   return (
     <div>
-      <div className={`CardTheme ${props.stylecard}`}>
+      <div className={`CardTheme ${stylecard}`}>
         <div className="CardThemeHeader">
           <div className="CardThemeHeaderDate">
             <h4>01/04</h4>
@@ -15,7 +15,7 @@ function CardTheme(props) {
             alt="logo coeur"
           />
         </div>
-        <h3>{props.title}</h3>
+        <h3>{title}</h3>
       </div>
     </div>
   );
