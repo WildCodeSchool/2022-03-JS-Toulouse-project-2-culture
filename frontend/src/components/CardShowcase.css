@@ -1,0 +1,56 @@
+.CardTheme {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+  font-size: 2rem;
+  background-color: blue;
+  background-size: cover;
+  padding: 1rem;
+  margin: 1rem;
+  border-radius: 1rem;
+  min-height: 200px;
+  text-align: center;
+}
+
+.themeCulture {
+  background-image: url("../assets/img/parapluies.jpg");
+}
+
+.themeEnvironnement {
+  background-image: url("../assets/img/vallee.jpg");
+}
+
+.themeSport {
+  background-image: url("../assets/img/foot.jpg");
+}
+
+.themeVideGrenier {
+  background-image: url("../assets/img/brocante.jpg");
+}
+
+.showcase {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.heartLogo {
+  height: 50px;
+}
+
+.CardThemeHeader {
+  display: flex;
+  justify-content: space-between;
+}
+
+h3,
+h4 {
+  margin: 0;
+  text-align: center;
+}
+
+.CardThemeHeaderDate {
+  background-color: orange;
+  padding: 1rem;
+}

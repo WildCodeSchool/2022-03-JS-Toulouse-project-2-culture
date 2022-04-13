@@ -1,24 +1,25 @@
-body {
-  margin: 0;
-  font-family: Prisma;
-
-  /* -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif; */
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-/* Todo : afficher la police */
-
 @font-face {
   font-family: Prisma;
   src: url("./assets/font/Prisma.otf");
 }
 
-.App {
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-  font-family: Prisma;
+:root {
+  /*Font*/
+  --primary-font: Prisma;
+  --secondary-font: arial;
+
+  /*Color*/
+  --primary-color: red;
+  --secondary-color: orange;
+  --third-color: blue;
+
+  --culture-color: grey;
+  --sport-color: blue;
+  --env-color: green;
+  --brocante-color: brown;
+}
+
+body {
+  margin: 0;
+  font-family: var(--primary-font);
 }

@@ -19,6 +19,7 @@
     "husky": "^7.0.0"
   },
   "dependencies": {
+    "axios": "^0.26.1",
     "vite": "^2.9.1"
   }
 }
