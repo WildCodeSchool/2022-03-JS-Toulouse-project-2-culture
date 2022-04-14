@@ -3,7 +3,7 @@ import CardShowcase from "./components/CardShowcase";
 import CardShowcase2 from "./components/CardShowcase2";
 
 function App() {
-  const listeEvent = {
+  const listEvent = {
     nhits: 396,
     parameters: {
       dataset: "agendas-participatif-des-sorties-en-occitanie",
@@ -302,17 +302,10 @@ function App() {
     ],
   };
 
-  const ListeCulture = listeEvent.records.filter(
-    (record) => record.fields.thematique === "Culture"
-  );
-
-  console.log(ListeCulture);
   return (
     <div className="App">
-      <h2>Premier composant : liste en dur</h2>
-      <CardShowcase />
-      <h2>Deuxième composant : liste mappée à partir d'un tableau</h2>
-      <CardShowcase2 {...listeEvent} />
+      <h2> Composant CardShowcase2 : liste mappée à partir de tableau</h2>
+      <CardShowcase2 events={listEvent.records} />
     </div>
   );
 }

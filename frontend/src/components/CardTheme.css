@@ -12,20 +12,24 @@
   min-height: 200px;
 }
 
-.themeCulture {
+.Culture {
   background-image: url("../assets/img/parapluies.jpg");
 }
 
-.themeEnvironnement {
+.Environnement {
   background-image: url("../assets/img/vallee.jpg");
 }
 
-.themeSport {
-  background-image: url("../assets/img/foot.jpg");
+.Sport {
+  background-image: url("../assets/img/sport.jpg");
 }
 
-.themeVideGrenier {
+.Brocantes {
   background-image: url("../assets/img/brocante.jpg");
+}
+
+.Autres {
+  background-image: url("../assets/img/autres.jpg");
 }
 
 .showcase {

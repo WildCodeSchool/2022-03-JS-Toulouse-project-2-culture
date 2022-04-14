@@ -1,17 +1,25 @@
 import CardTheme from "./CardTheme";
 import "./CardTheme.css";
+import dateConverter from "./functions";
 
-function CardShowcase2(arrayEvent) {
+function CardShowcase2(props) {
+  const { events } = props;
   return (
     <div className="showcase">
-      {arrayEvent.records.map((event) => (
+      {events.map((event) => (
         <CardTheme
           title={event.fields.titre}
-          date={event.fields.date}
+          date={dateConverter(event.fields.date_debut)}
           isFavorite={false}
-          stylecard="themeCulture"
+          stylecard={
+            event.fields.thematique ===
+            "Vides Grenier / Brocantes / Foires et salons"
+              ? "Brocantes"
+              : event.fields.thematique
+          }
         />
       ))}
+      ;
     </div>
   );
 }
