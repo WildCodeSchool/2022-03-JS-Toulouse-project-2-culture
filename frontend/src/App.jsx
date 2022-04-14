@@ -1,5 +1,4 @@
 import "./App.css";
-import CardShowcase from "./components/CardShowcase";
 import CardShowcase2 from "./components/CardShowcase2";
 
 function App() {
