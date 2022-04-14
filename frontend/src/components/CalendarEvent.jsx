@@ -13,7 +13,7 @@ function CalendarEvent() {
         <Calendar onChange={setDate} value={date} />
       </div>
       <p>
-        <span className="bold">Date:</span> {date}
+        <span className="bold">Date:</span> {date.toDateString()}{" "}
       </p>
     </div>
   );

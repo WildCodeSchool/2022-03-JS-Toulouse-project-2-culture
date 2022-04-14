@@ -1,35 +1,43 @@
 import CardTheme from "./CardTheme";
 import "./CardTheme.css";
 
-function CardShowcase() {
+function CardShowResults() {
   return (
     <div className="showcase">
+      <h1>Vos pretextes</h1>
+      <h2>Intello...</h2>
       <CardTheme
         title="Culture"
         date="01/04"
         isFavorite={false}
-        stylecard="themeCulture"
+        stylecard="Culture"
       />
+      <h2>Ecolo...</h2>
+
       <CardTheme
         title="Environnement"
-        date="01/04"
+        date="08/04"
         isFavorite={false}
-        stylecard="themeEnvironnement"
+        stylecard="Environnement"
       />
+      <h2>Sportif...</h2>
+
       <CardTheme
         title="Sport"
-        date="01/04"
+        date="02/04"
         isFavorite={false}
-        stylecard="themeSport"
+        stylecard="Sport"
       />
+      <h2>Flanneur...</h2>
+
       <CardTheme
-        title="Vide-Grenier"
-        date="01/04"
+        title="Brocantes"
+        date="02/04"
         isFavorite={false}
-        stylecard="themeVideGrenier"
+        stylecard="Brocantes"
       />
     </div>
   );
 }
 
-export default CardShowcase;
+export default CardShowResults;

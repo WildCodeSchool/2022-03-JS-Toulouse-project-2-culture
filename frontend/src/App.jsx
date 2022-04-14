@@ -3,18 +3,19 @@ import CardShowList from "./components/CardShowList";
 import "./App.css";
 import listEvent from "./components/event";
 import CalendarEvent from "./components/CalendarEvent";
+import CardShowResults from "./components/CardShowResults";
 
 function App() {
   return (
-    <>
+    <div className="App">
+      <CalendarEvent />
+      <h3>Ou ?</h3>
       <div className="Map-cont">
         <Map />
       </div>
-      <div className="App">
-        <CalendarEvent />
-        <CardShowList events={listEvent.records} />
-      </div>
-    </>
+      <CardShowResults />
+      <CardShowList events={listEvent.records} />
+    </div>
   );
 }
 

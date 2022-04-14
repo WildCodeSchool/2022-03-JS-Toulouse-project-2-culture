@@ -6,6 +6,8 @@ function CardShowList(props) {
   const { events } = props;
   return (
     <div className="showcase">
+      <h3>Tous les résultats</h3>
+
       {events.map((event) => (
         <CardTheme
           title={event.fields.titre}

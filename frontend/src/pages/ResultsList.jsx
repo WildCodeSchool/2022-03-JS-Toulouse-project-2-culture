@@ -5,7 +5,7 @@ import listEvent from "../components/event";
 function ResultList() {
   return (
     <div className="App">
-      <h2> Composant CardShowcase2 : liste mappée à partir de tableau</h2>
+      <h2> Composant: liste mappée à partir de tableau</h2>
       <CardShowList events={listEvent.records} />
     </div>
   );
