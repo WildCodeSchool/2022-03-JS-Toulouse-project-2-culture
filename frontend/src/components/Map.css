@@ -1,11 +1,10 @@
-@import "/../node_modules/leaflet/dist/leaflet.css";
+@import "../../node_modules/leaflet/dist/leaflet.css";
 
-.leaflet-container{
-
+.leaflet-container {
   height: 50vh;
   width: 80vw;
   border-radius: 2rem;
 }
-.leaflet-default-icon-path{
+.leaflet-default-icon-path {
   background-color: aqua;
 }

@@ -1,9 +1,10 @@
 import React from "react";
+import CalendarEvent from "../components/Calendar";
 
 function PageDate() {
   return (
     <div>
-      <h1>Quand ?</h1>
+      <CalendarEvent />
     </div>
   );
 }
