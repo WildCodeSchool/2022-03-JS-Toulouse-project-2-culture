@@ -1,0 +1,58 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.boxcontainer {
+  display: flex;
+  flex-direction: column;
+  background-color: #587291;
+}
+
+.box {
+  width: auto;
+  height: max-content;
+  margin: 2rem;
+}
+
+#boxtext {
+  background-color: #2F97C1;
+  border: black solid 1px;
+  border-radius: 1rem;
+}
+
+.entetephoto {
+  width: 100%;
+  height: 100%;
+  object-fit: contain; 
+  border-radius: 1rem 1rem 0 0;
+}
+
+h1 {
+  text-align: center;
+}
+
+#textdate {
+  font-style: italic;  
+}
+
+p {
+  margin: 1rem;
+}
+
+.textalign {
+  text-align: justify;
+}
+
+.photomap {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 1rem;
+  border: black solid 1px;
+  box-shadow: 5px 10px 5px;
+}
+  
+
+
+ 
