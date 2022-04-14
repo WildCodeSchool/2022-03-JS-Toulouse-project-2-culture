@@ -2,7 +2,7 @@ import CardTheme from "./CardTheme";
 import "./CardTheme.css";
 import dateConverter from "./functions";
 
-function CardShowcase2(props) {
+function CardShowList(props) {
   const { events } = props;
   return (
     <div className="showcase">
@@ -24,4 +24,4 @@ function CardShowcase2(props) {
   );
 }
 
-export default CardShowcase2;
+export default CardShowList;
