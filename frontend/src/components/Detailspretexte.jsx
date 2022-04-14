@@ -1,15 +1,20 @@
 import React from "react";
 import "./Detailspretexte.css";
+import {
+  FaFacebook,
+  FaInstagramSquare,
+  FaTwitter,
+  FaLinkedin,
+} from "react-icons/fa";
+import { GrTableAdd, GrFavorite } from "react-icons/gr";
 
 function Detailspretexte({ name, date, description, url, adresse }) {
   return (
     <div className="boxcontainer">
       <div className="box" id="boxtext">
-        <img
-          className="entetephoto"
-          src="./src/assets/parapluies.jpg"
-          alt="photoparapluies"
-        />
+        <div className="alignimgfav">
+          <GrFavorite id="favoriteicon" />
+        </div>
         <h1>{name}</h1>
         <p id="textdate">{date}</p>
         <p className="textalign">{description}</p>
@@ -25,10 +30,20 @@ function Detailspretexte({ name, date, description, url, adresse }) {
         </div>
       </div>
       <div className="box">
-        <button type="submit">Ajouter à mon agenda</button>
+        <div>
+          <GrTableAdd id="agenda" />
+        </div>
+        <button type="submit" id="btn-agenda">
+          Ajouter à mon agenda
+        </button>
       </div>
-      <div className="box">
-        <button type="submit">Partager</button>
+
+      <p id="partager">Partager</p>
+      <div className="box" id="sociallink">
+        <FaFacebook className="facebookicon" />
+        <FaInstagramSquare className="instagramicon" />
+        <FaTwitter className="twittericon" />
+        <FaLinkedin className="linkedinicon" />
       </div>
     </div>
   );
