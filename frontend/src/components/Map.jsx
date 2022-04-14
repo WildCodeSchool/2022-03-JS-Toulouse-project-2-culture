@@ -10,7 +10,6 @@ function Map() {
     )
       .then((res) => res.json())
       .then((result) => {
-        // console.log(result);
         setArrayOfCoords(result.records.map((el) => el.geometry.coordinates));
       });
   }, []);
@@ -19,7 +18,7 @@ function Map() {
       <MapContainer
         class="map-cont"
         center={[43.59709218840526, 1.4307425383881127]}
-        zoom={11}
+        zoom={1}
       >
         <TileLayer
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
