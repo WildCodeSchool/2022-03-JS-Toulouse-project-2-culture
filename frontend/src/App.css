@@ -25,3 +25,7 @@ body {
   margin: 0;
   font-family: var(--primary-font);
 }
+.Map-cont{
+  display: flex;
+  justify-content: center;
+}
