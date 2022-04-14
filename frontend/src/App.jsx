@@ -2,6 +2,7 @@ import Map from "./components/Map";
 import CardShowList from "./components/CardShowList";
 import "./App.css";
 import listEvent from "./components/event";
+import CalendarEvent from "./components/CalendarEvent";
 
 function App() {
   return (
@@ -10,7 +11,7 @@ function App() {
         <Map />
       </div>
       <div className="App">
-        <h2> Composant CardShowcase2 : liste mappée à partir de tableau</h2>
+        <CalendarEvent />
         <CardShowList events={listEvent.records} />
       </div>
     </>

@@ -19,7 +19,6 @@ function CardShowList(props) {
           }
         />
       ))}
-      ;
     </div>
   );
 }

@@ -1,5 +1,5 @@
 import React from "react";
-import CalendarEvent from "../components/Calendar";
+import CalendarEvent from "../components/CalendarEvent";
 
 function PageDate() {
   return (
