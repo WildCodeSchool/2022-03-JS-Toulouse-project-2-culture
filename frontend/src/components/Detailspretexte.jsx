@@ -8,7 +8,7 @@ import {
 } from "react-icons/fa";
 import { GrTableAdd, GrFavorite } from "react-icons/gr";
 
-function Detailspretexte({ name, date, description, url, adresse }) {
+function Detailspretext({ name, date, description, url, adresse }) {
   return (
     <div className="boxcontainer">
       <div className="box" id="boxtext">
@@ -17,7 +17,7 @@ function Detailspretexte({ name, date, description, url, adresse }) {
         </div>
         <h1>{name}</h1>
         <p id="textdate">{date}</p>
-        <p className="textalign">{description}</p>
+        <p className="textaligndescription">{description}</p>
         <p>Adresse : {adresse}</p>
         <p>Site internet :</p>
         <a href={url}>{url}</a>
@@ -38,7 +38,7 @@ function Detailspretexte({ name, date, description, url, adresse }) {
         </button>
       </div>
 
-      <p id="partager">Partager</p>
+      <p id="sharesociallink">Partager</p>
       <div className="box" id="sociallink">
         <FaFacebook className="facebookicon" />
         <FaInstagramSquare className="instagramicon" />
@@ -49,4 +49,4 @@ function Detailspretexte({ name, date, description, url, adresse }) {
   );
 }
 
-export default Detailspretexte;
+export default Detailspretext;

@@ -1,5 +1,5 @@
 import React from "react";
-import Detailspretexte from "./Detailspretexte";
+import Detailspretext from "./Detailspretexte";
 
 const events = [
   {
@@ -37,7 +37,7 @@ function Events() {
   return (
     <div className="App">
       {events.map((event) => (
-        <Detailspretexte
+        <Detailspretext
           key={event.recordid}
           thematique={event.fields.thematique}
           name={event.fields.titre}

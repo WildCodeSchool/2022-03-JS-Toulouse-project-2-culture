@@ -50,7 +50,7 @@ p {
   margin: 1rem;
 }
 
-.textalign {
+.textaligndescription {
   text-align: justify;
 }
 
@@ -73,7 +73,7 @@ p {
   padding: 0.5rem;
 }
 
-#partager {
+#sharesociallink {
   color: black;
   font-size: large;
   font-style: italic;
@@ -88,18 +88,6 @@ p {
   margin-top: 0;
 }
 
-.facebookicon {
-  font-size: x-large;
-}
-
-.instagramicon {
-  font-size: x-large;
-}
-
-.twittericon {
-  font-size: x-large;
-}
-
-.linkedin {
+.facebookicon ,.instagramicon, .twittericon, .linkedin {
   font-size: x-large;
 }
