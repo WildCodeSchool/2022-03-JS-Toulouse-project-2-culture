@@ -1,0 +1,93 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.boxcontainer {
+  display: flex;
+  flex-direction: column;
+  background-color: #e3ddcf;
+  box-shadow: 5px 10px 5px;
+}
+
+.box {
+  width: auto;
+  height: max-content;
+  margin: 2rem;
+}
+
+#boxtext {
+  background-color: #6e6a85;
+  border: black solid 1px;
+  border-radius: 1rem;
+}
+
+.alignimgfav {
+  display: flex;
+  justify-content: flex-end;
+  padding: 1rem;
+  background-image: url("./src/assets/parapluies.jpg");
+  height: 200px;
+  background-size: cover;
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+}
+
+#favoriteicon {
+  font-size: x-large;
+  color: blanchedalmond;
+}
+
+h1 {
+  text-align: center;
+}
+
+#textdate {
+  font-style: italic;
+}
+
+p {
+  margin: 1rem;
+}
+
+.textaligndescription {
+  text-align: justify;
+}
+
+.photomap {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 1rem;
+  border: black solid 1px;
+  box-shadow: 1px 1px 1px;
+}
+
+#agenda {
+  font-size: xxx-large;
+}
+
+#btn-agenda {
+  background-color: #88a9dc;
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+}
+
+#sharesociallink {
+  color: black;
+  font-size: large;
+  font-style: italic;
+}
+
+#sociallink {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  background-color: #e3ddcf;
+  border-radius: 1rem;
+  margin-top: 0;
+}
+
+.facebookicon ,.instagramicon, .twittericon, .linkedin {
+  font-size: x-large;
+}

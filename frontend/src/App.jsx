@@ -5,6 +5,7 @@ import listEvent from "./components/event";
 import CalendarEvent from "./components/CalendarEvent";
 import CardShowResults from "./components/CardShowResults";
 import Navbar from "./components/Navbar";
+import Events from "./components/Events";
 
 function App() {
   return (
@@ -13,11 +14,12 @@ function App() {
       <div className="App">
         <CalendarEvent />
         <h3>Ou ?</h3>
-        <div className="Map-cont">
-          <Map />
-        </div>
         <CardShowResults />
         <CardShowList events={listEvent.records} />
+        <Events event={listEvent.records[0]} />
+      </div>
+      <div className="Map-cont">
+        <Map />
       </div>
     </>
   );
