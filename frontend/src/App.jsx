@@ -1,13 +1,14 @@
-// eslint-disable-next-line import/no-named-as-default
+import "./App.css";
 import Map from "./components/Map";
 
-import "./App.css";
 import CardShowList from "./components/CardShowList";
 import listEvent from "./components/event";
+import Events from "./components/Events";
 
 function App() {
   return (
     <>
+      <Events />
       <div className="Map-cont">
         <Map />
       </div>
