@@ -1,24 +1,25 @@
 @import "../node_modules/leaflet/dist/leaflet.css";
 
 @font-face {
-  font-family: Prisma;
-  src: url("./assets/font/Prisma.otf");
+  font-family: falsepos;
+  src: url("./assets/font/falsepos.ttf");
 }
 
 :root {
   /*Font*/
-  --primary-font: Prisma;
+  --primary-font: falsepos;
   --secondary-font: arial;
 
   /*Color*/
-  --primary-color: red;
-  --secondary-color: orange;
-  --third-color: blue;
+  --primary-color: #3d3d3d;
+  --secondary-color: #fccd00;
+  --third-color: #eeeeee;
 
-  --culture-color: grey;
+  --culture-color: orange;
   --sport-color: blue;
   --env-color: green;
   --brocante-color: brown;
+  --autre-color: grey;
 }
 
 body {
