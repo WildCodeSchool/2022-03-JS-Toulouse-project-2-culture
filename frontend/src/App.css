@@ -1,3 +1,31 @@
+@import "../node_modules/leaflet/dist/leaflet.css";
+
+@font-face {
+  font-family: Prisma;
+  src: url("./assets/font/Prisma.otf");
+}
+
+:root {
+  /*Font*/
+  --primary-font: Prisma;
+  --secondary-font: arial;
+
+  /*Color*/
+  --primary-color: red;
+  --secondary-color: orange;
+  --third-color: blue;
+
+  --culture-color: grey;
+  --sport-color: blue;
+  --env-color: green;
+  --brocante-color: brown;
+}
+
 body {
   margin: 0;
+  font-family: var(--primary-font);
+}
+.Map-cont {
+  display: flex;
+  justify-content: center;
 }
