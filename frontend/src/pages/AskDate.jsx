@@ -8,7 +8,7 @@ function AskDate() {
   return (
     <div className="AskDateContainer">
       <CalendarEvent />
-      <a href="" className="BtnNext">
+      <a href="/" className="BtnNext">
         Suivant &gt;
       </a>
     </div>
