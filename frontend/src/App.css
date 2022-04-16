@@ -28,6 +28,7 @@
 body {
   margin: 0;
   font-family: var(--secondary-font);
+  background-color: var(--third-color);
 }
 .Map-cont {
   display: flex;

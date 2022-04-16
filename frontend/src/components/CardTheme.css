@@ -7,7 +7,7 @@
   background-color: var(--secondary-color);
   background-size: cover;
   padding: 1rem;
-  margin: 1rem;
+  margin: 0 1rem;
   border-radius: 1rem;
   min-height: 200px;
   text-align: center;
@@ -98,4 +98,17 @@ h4 {
 .heartBtn {
   border: none;
   background: none;
+}
+
+.BtnShowMore a {
+  color: var(--secondary-color);
+  background-color: var(--primary-color);
+  border-radius: 1rem;
+  padding: 0 0.5rem;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1rem;
+}
+.BtnShowMore {
+  margin: 0 0 2rem 0;
 }
