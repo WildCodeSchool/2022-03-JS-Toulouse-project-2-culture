@@ -12,6 +12,7 @@ function CalendarEvent() {
       </div>
       <p>
         <span className="bold">Date: {date.toDateString()}</span>
+        {/* TODO <span className="bold">Pretextes disponible:  </span> */}
       </p>
     </div>
   );
