@@ -10,17 +10,16 @@ import Events from "./components/Events";
 function App() {
   return (
     <>
-      <Navbar />
+      {/* <Navbar />
       <div className="App">
-        <CalendarEvent />
-        <h3>Ou ?</h3>
-        <CardShowResults />
-        <CardShowList events={listEvent.records} />
+        <CalendarEvent /> */}
+      <CardShowResults events={listEvent.records} />
+      {/* <CardShowList events={listEvent.records} />
         <Events event={listEvent.records[0]} />
-      </div>
+       </div>
       <div className="Map-cont">
         <Map />
-      </div>
+      </div> */}
     </>
   );
 }
