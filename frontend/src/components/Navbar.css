@@ -39,14 +39,31 @@
   position: fixed;
   right: -100vw;
   bottom: 0;
+  width: 0;
   height: 100vh;
   padding: 2rem;
   background-color: black;
   visibility: hidden;
+  transition: all 0.8s ease-out;
+}
+
+.navbar_item::after {
+  content: "";
+  display: block;
+  margin: 0 auto;
+  width: 3vw;
+  height: 1px;
+  background: white;
+}
+
+.navbar_item:last-child::after {
+  display: none;
 }
 
 .show-nav .navbar_links {
-  width: 100vw;
+  justify-content: flex-start;
+  padding-top: 6rem;
+  width: 30vw;
   right: 0;
   visibility: visible;
 }
@@ -54,6 +71,19 @@
 .show-nav {
   display: flex;
   align-items: center;
+}
+
+.show-nav .burger-bar {
+  background: transparent;
+  width: 0;
+}
+
+.show-nav .burger-bar::before {
+  transform: rotate(45deg);
+}
+
+.show-nav .burger-bar::after {
+  transform: rotate(-45deg);
 }
 
 .navbar_link {
@@ -89,6 +119,7 @@
   position: relative;
   border-radius: 3px;
   background: white;
+  transition: all 0.5s ease-in-out;
 }
 
 .burger-bar::before,
@@ -104,4 +135,27 @@
 
 .burger-bar::after {
   transform: translateY(12px);
+}
+
+.navbar_item {
+  transform: rotateY(100vh);
+}
+
+.show-nav .navbar_item {
+  transform: rotateY(0);
+}
+
+.show-nav .slideInDown-1 {
+  flex-direction: column;
+  transition: all 1s ease-out;
+}
+
+.show-nav .slideInDown-2 {
+  flex-direction: column;
+  transition: all 1.1s ease-out;
+}
+
+.show-nav .slideInDown-3 {
+  flex-direction: column;
+  transition: all 1.2s ease-out;
 }
