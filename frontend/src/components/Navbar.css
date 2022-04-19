@@ -1,4 +1,5 @@
 /* global css */
+
 .navbar * {
   display: flex;
   align-items: center;
@@ -47,45 +48,6 @@
   transition: all 0.8s ease-out;
 }
 
-.navbar_item::after {
-  content: "";
-  display: block;
-  margin: 0 auto;
-  width: 3vw;
-  height: 1px;
-  background: white;
-}
-
-.navbar_item:last-child::after {
-  display: none;
-}
-
-.show-nav .navbar_links {
-  justify-content: flex-start;
-  padding-top: 6rem;
-  width: 30vw;
-  right: 0;
-  visibility: visible;
-}
-
-.show-nav {
-  display: flex;
-  align-items: center;
-}
-
-.show-nav .burger-bar {
-  background: transparent;
-  width: 0;
-}
-
-.show-nav .burger-bar::before {
-  transform: rotate(45deg);
-}
-
-.show-nav .burger-bar::after {
-  transform: rotate(-45deg);
-}
-
 .navbar_link {
   display: block;
   padding: 1.5rem;
@@ -108,6 +70,19 @@
 
 .navbar_burger:hover {
   cursor: pointer;
+}
+
+.navbar_item::after {
+  content: "";
+  display: block;
+  margin: 0 auto;
+  width: 3vw;
+  height: 1px;
+  background: white;
+}
+
+.navbar_item:last-child::after {
+  display: none;
 }
 
 .burger-bar,
@@ -139,6 +114,34 @@
 
 .navbar_item {
   transform: rotateY(100vh);
+}
+
+/* show-nav animations */
+
+.show-nav .navbar_links {
+  justify-content: flex-start;
+  padding-top: 6rem;
+  width: 30vw;
+  right: 0;
+  visibility: visible;
+}
+
+.show-nav {
+  display: flex;
+  align-items: center;
+}
+
+.show-nav .burger-bar {
+  background: transparent;
+  width: 0;
+}
+
+.show-nav .burger-bar::before {
+  transform: rotate(45deg);
+}
+
+.show-nav .burger-bar::after {
+  transform: rotate(-45deg);
 }
 
 .show-nav .navbar_item {
