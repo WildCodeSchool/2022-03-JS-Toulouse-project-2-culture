@@ -37,14 +37,42 @@
   background-image: url("./src/assets/img/brocante.jpg");
 }
 
+.themeimgAutres {
+  background-image: url("./src/assets/img/autres.jpg");
+}
+
 .alignimgfav {
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
   padding: 1rem;
   height: 200px;
   background-size: cover;
   border-top-left-radius: 1rem;
   border-top-right-radius: 1rem;
+}
+
+.datedebutevent h4{
+  padding: 1rem;
+  color: aliceblue;
+}
+
+.datedebuteventthemecolorCulture {
+  background-color: var(--culture-color);
+}
+
+.datedebuteventthemecolorSport {
+  background-color: var(--sport-color);
+}
+
+.datedebuteventthemecolorEnvironnement {
+  background-color: var(--env-color);
+}
+.datedebuteventthemecolorBrocantes {
+  background-color: var(--brocante-color);
+}
+
+.datedebuteventthemecolorAutres {
+  background-color: var(--autre-color);
 }
 
 #favoriteicon {

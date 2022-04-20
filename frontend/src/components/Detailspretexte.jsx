@@ -32,7 +32,17 @@ function Detailspretext(props) {
               : thematique
           }`}
         >
-          <div>{datedebut}</div>
+          <div className="datedebutevent">
+            <h4
+              className={`datedebuteventthemecolor${
+                thematique === "Vides Grenier / Brocantes / Foires et salons"
+                  ? "Brocantes"
+                  : thematique
+              }`}
+            >
+              {datedebut}
+            </h4>
+          </div>
           <GrFavorite id="favoriteicon" />
         </div>
         <h1>{name}</h1>
