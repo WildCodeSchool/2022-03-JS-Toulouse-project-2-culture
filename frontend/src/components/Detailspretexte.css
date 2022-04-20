@@ -33,6 +33,9 @@
  background-image: url("./src/assets/img/vallee.jpg");
 }
 
+.themeimgBrocantes {
+  background-image: url("./src/assets/img/brocante.jpg");
+}
 
 .alignimgfav {
   display: flex;
