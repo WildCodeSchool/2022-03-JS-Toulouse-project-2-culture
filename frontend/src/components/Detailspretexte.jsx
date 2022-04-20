@@ -7,8 +7,9 @@ import {
   FaLinkedin,
 } from "react-icons/fa";
 import { GrTableAdd, GrFavorite } from "react-icons/gr";
+import MapDetailEvent from "./MapDetailEvent";
 
-function Detailspretext({ name, date, description, url, adresse }) {
+function Detailspretext({ thematique, name, date, description, url, adresse }) {
   return (
     <div className="boxcontainer">
       <div className="box" id="boxtext">
@@ -16,17 +17,19 @@ function Detailspretext({ name, date, description, url, adresse }) {
           <GrFavorite id="favoriteicon" />
         </div>
         <h1>{name}</h1>
+        <p>{thematique}</p>
         <p id="textdate">{date}</p>
         <p className="textaligndescription">{description}</p>
         <p>Adresse : {adresse}</p>
         <p>Site internet :</p>
         <a href={url}>{url}</a>
         <div className="box" id="img">
-          <img
+          <MapDetailEvent />
+          {/* <img
             className="photomap"
             src="./src/assets/map.png"
             alt="streetmap"
-          />
+          /> */}
         </div>
       </div>
       <div className="box">
