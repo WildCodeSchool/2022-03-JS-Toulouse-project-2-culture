@@ -13,8 +13,6 @@ import MapDetailEvent from "./MapDetailEvent";
 
 function Detailspretext(props) {
   const { thematique, name, date, description, url, adresse, coordmap } = props;
-  console.log(props);
-
   return (
     <div className="boxcontainer">
       <div className="box" id="boxtext">
@@ -29,13 +27,10 @@ function Detailspretext(props) {
         <p>Site internet :</p>
         <a href={url}>{url}</a>
         <div className="box" id="img">
-          // eslint-disable-next-line camelcase
-          <MapDetailEvent coordinates={coordmap.coordinates} />
-          {/* <img
-            className="photomap"
-            src="./src/assets/map.png"
-            alt="streetmap"
-          /> */}
+          <MapDetailEvent
+            coordinates={coordmap.coordinates}
+            titrepopup={name}
+          />
         </div>
       </div>
       <div className="box">

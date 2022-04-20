@@ -3,8 +3,8 @@ import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import "./MapDetailEvent.css";
 
 function MapDetailEvent(props) {
-  const { coordinates } = props;
-  console.log(coordinates);
+  const { coordinates, titrepopup } = props;
+  
   return (
     <div id="mapDetailEventContainer">
       <MapContainer
@@ -18,7 +18,7 @@ function MapDetailEvent(props) {
         />
         <Marker position={[coordinates[1], coordinates[0]]}>
           <Popup>
-            A pretty CSS3 popup. <br /> Easily customizable.
+            {titrepopup} <br />
           </Popup>
         </Marker>
       </MapContainer>
