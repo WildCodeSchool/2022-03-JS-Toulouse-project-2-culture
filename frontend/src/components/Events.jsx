@@ -12,6 +12,7 @@ function Events(props) {
         description={event.fields.description}
         url={event.fields.url}
         adresse={event.fields.adresse}
+        coordmap={event.fields.geo_shape}
       />
       )
     </div>

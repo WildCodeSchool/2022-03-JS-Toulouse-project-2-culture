@@ -1,3 +1,5 @@
+/* eslint-disable camelcase */
+/* eslint-disable react/jsx-no-comment-textnodes */
 import React from "react";
 import "./Detailspretexte.css";
 import {
@@ -9,7 +11,10 @@ import {
 import { GrTableAdd, GrFavorite } from "react-icons/gr";
 import MapDetailEvent from "./MapDetailEvent";
 
-function Detailspretext({ thematique, name, date, description, url, adresse }) {
+function Detailspretext(props) {
+  const { thematique, name, date, description, url, adresse, coordmap } = props;
+  console.log(props);
+
   return (
     <div className="boxcontainer">
       <div className="box" id="boxtext">
@@ -24,7 +29,8 @@ function Detailspretext({ thematique, name, date, description, url, adresse }) {
         <p>Site internet :</p>
         <a href={url}>{url}</a>
         <div className="box" id="img">
-          <MapDetailEvent />
+          // eslint-disable-next-line camelcase
+          <MapDetailEvent coordinates={coordmap.coordinates} />
           {/* <img
             className="photomap"
             src="./src/assets/map.png"
