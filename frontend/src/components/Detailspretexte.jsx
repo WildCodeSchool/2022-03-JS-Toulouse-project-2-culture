@@ -12,7 +12,16 @@ import { GrTableAdd, GrFavorite } from "react-icons/gr";
 import MapDetailEvent from "./MapDetailEvent";
 
 function Detailspretext(props) {
-  const { thematique, name, date, description, url, adresse, coordmap } = props;
+  const {
+    thematique,
+    name,
+    date,
+    description,
+    url,
+    adresse,
+    coordmap,
+    datedebut,
+  } = props;
   return (
     <div className="boxcontainer">
       <div className="box" id="boxtext">
@@ -23,6 +32,7 @@ function Detailspretext(props) {
               : thematique
           }`}
         >
+          <div>{datedebut}</div>
           <GrFavorite id="favoriteicon" />
         </div>
         <h1>{name}</h1>
