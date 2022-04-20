@@ -16,7 +16,7 @@ function App() {
         <h3>Ou ?</h3>
         <CardShowResults />
         <CardShowList events={listEvent.records} />
-        <Events event={listEvent.records[0]} />
+        <Events event={listEvent.records[6]} />
       </div>
       <div className="Map-cont">
         <Map />

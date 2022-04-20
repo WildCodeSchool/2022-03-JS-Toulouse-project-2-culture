@@ -16,7 +16,7 @@ function Detailspretext(props) {
   return (
     <div className="boxcontainer">
       <div className="box" id="boxtext">
-        <div className="alignimgfav">
+        <div className={`alignimgfav themeimg${thematique}`}>
           <GrFavorite id="favoriteicon" />
         </div>
         <h1>{name}</h1>

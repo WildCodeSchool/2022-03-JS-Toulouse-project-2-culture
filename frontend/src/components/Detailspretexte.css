@@ -21,12 +21,23 @@
   border: black solid 1px;
   border-radius: 1rem;
 }
+.themeimgCulture {
+  background-image: url("./src/assets/parapluies.jpg");
+}
+
+.themeimgSport {
+  background-image: url("/src/assets/img/sport.jpg");
+}
+
+.themeimgEnvironnement {
+ background-image: url("./src/assets/img/vallee.jpg");
+}
+
 
 .alignimgfav {
   display: flex;
   justify-content: flex-end;
   padding: 1rem;
-  background-image: url("./src/assets/parapluies.jpg");
   height: 200px;
   background-size: cover;
   border-top-left-radius: 1rem;
@@ -88,6 +99,9 @@ p {
   margin-top: 0;
 }
 
-.facebookicon ,.instagramicon, .twittericon, .linkedin {
+.facebookicon,
+.instagramicon,
+.twittericon,
+.linkedin {
   font-size: x-large;
 }
