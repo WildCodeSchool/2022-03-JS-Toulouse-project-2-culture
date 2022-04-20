@@ -1,10 +1,10 @@
 import React from "react";
 import "react-calendar/dist/Calendar.css";
-import "./AskDate.css";
+import "./Quand.css";
 
 import CalendarEvent from "../components/CalendarEvent";
 
-function AskDate() {
+function Quand() {
   return (
     <div className="AskDateContainer">
       <CalendarEvent />
@@ -15,4 +15,4 @@ function AskDate() {
   );
 }
 
-export default AskDate;
+export default Quand;
