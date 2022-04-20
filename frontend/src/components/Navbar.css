@@ -28,8 +28,8 @@
   width: 100vw;
   min-height: 75px;
   position: fixed;
-  background-color: black;
-  color: white;
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
 }
 
 .navbar_links {
@@ -43,7 +43,7 @@
   width: 0;
   height: 100vh;
   padding: 2rem;
-  background-color: black;
+  background-color: var(--primary-color);
   visibility: hidden;
   transition: all 0.8s ease-out;
 }
@@ -78,7 +78,7 @@
   margin: 0 auto;
   width: 3vw;
   height: 1px;
-  background: white;
+  background: var(--secondary-color);
 }
 
 .navbar_item:last-child::after {
@@ -93,7 +93,7 @@
   height: 3px;
   position: relative;
   border-radius: 3px;
-  background: white;
+  background: var(--secondary-color);
   transition: all 0.5s ease-in-out;
 }
 
@@ -121,7 +121,7 @@
 .show-nav .navbar_links {
   justify-content: flex-start;
   padding-top: 6rem;
-  width: 30vw;
+  width: 60vw;
   right: 0;
   visibility: visible;
 }

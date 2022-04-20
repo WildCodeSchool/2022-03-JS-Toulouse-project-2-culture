@@ -17,7 +17,7 @@ function Navbar() {
       <ul className="navbar_links">
         <li className="navbar_item slideInDown-1">
           <a href="/" className="navbar_link">
-            Accueil
+            Recherche
           </a>
         </li>
         <li className="navbar_item slideInDown-2">
