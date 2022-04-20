@@ -6,6 +6,7 @@ import CalendarEvent from "./components/CalendarEvent";
 import CardShowResults from "./components/CardShowResults";
 import Navbar from "./components/Navbar";
 import Events from "./components/Events";
+import Searchbar from "./components/Searchbar";
 
 function App() {
   return (
@@ -13,7 +14,8 @@ function App() {
       <Navbar />
       <div className="App">
         <CalendarEvent />
-        <h3>Ou ?</h3>
+        <h3>Où ?</h3>
+        <Searchbar />
         <CardShowResults />
         <CardShowList events={listEvent.records} />
         <Events event={listEvent.records[0]} />
