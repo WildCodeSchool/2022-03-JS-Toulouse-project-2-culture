@@ -4,7 +4,7 @@ import "./MapDetailEvent.css";
 
 function MapDetailEvent(props) {
   const { coordinates, titrepopup } = props;
-  
+
   return (
     <div id="mapDetailEventContainer">
       <MapContainer
