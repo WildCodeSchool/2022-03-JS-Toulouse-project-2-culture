@@ -1,19 +1,57 @@
 import { useState } from "react";
 import Calendar from "react-calendar";
 
-function CalendarEvent() {
-  const [date, setDate] = useState(new Date());
+function CalendarEvent(props) {
+  const { events } = props;
+  const [selectedDate, setselectedDate] = useState(new Date());
 
   return (
     <div className="calendar-page">
       <h3>Quand ?</h3>
       <div className="calendar-container">
-        <Calendar onChange={setDate} value={date} />
+        <Calendar onChange={setselectedDate} value={selectedDate} />
       </div>
-      <p>
-        <span className="bold">Date: {date.toDateString()}</span>
-        {/* TODO <span className="bold">Pretextes disponible:  </span> */}
-      </p>
+      <div>
+        <p className="bold">
+          Date :
+          {selectedDate.toLocaleDateString("en-gb", {
+            year: "numeric",
+            month: "numeric",
+            day: "numeric",
+          })}
+        </p>
+        <p className="bold">
+          nombre de pretextes disponibles :
+          {
+            events.filter(
+              (event) =>
+                selectedDate.toLocaleDateString("en-gb", {
+                  year: "numeric",
+                  month: "numeric",
+                  day: "numeric",
+                }) >=
+                  new Date(event.fields.date_debut).toLocaleDateString(
+                    "en-gb",
+                    {
+                      year: "numeric",
+                      month: "numeric",
+                      day: "numeric",
+                    }
+                  ) &&
+                selectedDate.toLocaleDateString("en-gb", {
+                  year: "numeric",
+                  month: "numeric",
+                  day: "numeric",
+                }) <=
+                  new Date(event.fields.date_fin).toLocaleDateString("en-gb", {
+                    year: "numeric",
+                    month: "numeric",
+                    day: "numeric",
+                  })
+            ).length
+          }
+        </p>
+      </div>
     </div>
   );
 }
