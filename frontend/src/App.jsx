@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import "./App.css";
+import axios from "axios";
 import Quand from "./pages/Quand";
 import Favoris from "./pages/Favoris";
 import Apropos from "./pages/Apropos";
@@ -11,7 +12,14 @@ import listEvent from "./components/event";
 import CardShowList from "./components/CardShowList";
 
 function App() {
+  const [eventArrayFromAPI, setEventArrayfromAPI] = useState({});
   const [selectedDate, setselectedDate] = useState(new Date());
+
+  useEffect(() => {
+    const url =
+      "https://data.laregion.fr/api/records/1.0/search/?dataset=agendas-participatif-des-sorties-en-occitanie&rows=400";
+    axios.get(url).then((res) => setEventArrayfromAPI(res.data.records));
+  }, []);
 
   return (
     <div className="App">
