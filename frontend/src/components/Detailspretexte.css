@@ -6,7 +6,7 @@
 .boxcontainer {
   display: flex;
   flex-direction: column;
-  background-color: #e3ddcf;
+  background-color: var(--primary-color);
   box-shadow: 5px 10px 5px;
 }
 
@@ -16,11 +16,26 @@
   margin: 2rem;
 }
 
+
+@import url(./MapDetailEvent.css);
 #boxtext {
-  background-color: #6e6a85;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--third-color);
   border: black solid 1px;
   border-radius: 1rem;
+  justify-content: center;
 }
+
+#img {
+  height: 180px; 
+}
+
+.leaflet-container {
+  border: black solid 2px;
+ 
+}
+
 .themeimgCulture {
   background-image: url("./src/assets/parapluies.jpg");
 }
@@ -52,8 +67,9 @@
 }
 
 .datedebutevent h4{
-  padding: 1rem;
+  padding: 1.2rem;
   color: aliceblue;
+  font-size: larger;
 }
 
 .datedebuteventthemecolorCulture {
@@ -82,6 +98,7 @@
 
 h1 {
   text-align: center;
+  text-shadow: 0 0 3px var(--primary-color), 0 0 10px var(--secondary-color);
 }
 
 #textdate {
@@ -105,12 +122,20 @@ p {
   box-shadow: 1px 1px 1px;
 }
 
+/* .box-agenda {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: 2rem; */
+
+/* } */
 #agenda {
   font-size: xxx-large;
+  text-align: center;
 }
 
 #btn-agenda {
-  background-color: #88a9dc;
+  background-color: var(--secondary-color);
   border-radius: 0.5rem;
   padding: 0.5rem;
 }
@@ -125,7 +150,7 @@ p {
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
-  background-color: #e3ddcf;
+  background-color: var(--primary-color);
   border-radius: 1rem;
   margin-top: 0;
 }
@@ -134,5 +159,5 @@ p {
 .instagramicon,
 .twittericon,
 .linkedin {
-  font-size: x-large;
+  font-size: xx-large;
 }

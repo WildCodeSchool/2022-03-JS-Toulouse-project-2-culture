@@ -1,7 +1,6 @@
 /* eslint-disable camelcase */
 /* eslint-disable react/jsx-no-comment-textnodes */
 import React from "react";
-import "./Detailspretexte.css";
 import {
   FaFacebook,
   FaInstagramSquare,
@@ -10,6 +9,7 @@ import {
 } from "react-icons/fa";
 import { GrTableAdd, GrFavorite } from "react-icons/gr";
 import MapDetailEvent from "./MapDetailEvent";
+import "./Detailspretexte.css";
 
 function Detailspretext(props) {
   const {
@@ -59,7 +59,7 @@ function Detailspretext(props) {
           />
         </div>
       </div>
-      <div className="box">
+      <div className="box-agenda">
         <div>
           <GrTableAdd id="agenda" />
         </div>

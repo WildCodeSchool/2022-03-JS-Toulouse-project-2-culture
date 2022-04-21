@@ -8,6 +8,7 @@ function MapDetailEvent(props) {
   return (
     <div id="mapDetailEventContainer">
       <MapContainer
+        className="mapcontainer"
         center={[coordinates[1], coordinates[0]]}
         zoom={13}
         scrollWheelZoom
