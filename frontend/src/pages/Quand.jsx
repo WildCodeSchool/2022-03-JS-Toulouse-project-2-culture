@@ -1,11 +1,10 @@
 import React from "react";
 import "react-calendar/dist/Calendar.css";
 import "./Quand.css";
-import listEvent from "../components/event";
 import CalendarEvent from "../components/CalendarEvent";
 
 function Quand(props) {
-  const { selectedDate, setselectedDate } = props;
+  const { selectedDate, setselectedDate, eventArrayFromAPI } = props;
 
   const handleSubmit = () => {
     console.log(`selected date is : ${selectedDate}`);
@@ -13,7 +12,7 @@ function Quand(props) {
   return (
     <div className="AskDateContainer">
       <CalendarEvent
-        events={listEvent.records}
+        events={eventArrayFromAPI}
         selectedDate={selectedDate}
         setselectedDate={setselectedDate}
       />

@@ -18,6 +18,7 @@ function CardShowList(props) {
         )
         .map((event) => (
           <CardTheme
+            key={event.fields.recordid}
             title={event.fields.titre}
             date={dateJJMMConverter(event.fields.date_debut)}
             isFavorite={false}

@@ -8,12 +8,13 @@ import Apropos from "./pages/Apropos";
 import Navbar from "./components/Navbar";
 import Map from "./components/Map";
 import CardShowResults from "./components/CardShowResults";
-import listEvent from "./components/event";
 import CardShowList from "./components/CardShowList";
+import Accueil from "./pages/Accueil";
 
 function App() {
   const [eventArrayFromAPI, setEventArrayfromAPI] = useState({});
   const [selectedDate, setselectedDate] = useState(new Date());
+  // const [selectedTheme, setselecteTheme] = useState("Culture");
 
   useEffect(() => {
     const url =
@@ -46,26 +47,30 @@ function App() {
         </ul>
 
         <Routes>
+          <Route path="/" element={<Accueil />} />
+
           <Route path="/nav" element={<Navbar />} />
+
           <Route
             path="/quand"
             element={
               <Quand
                 selectedDate={selectedDate}
                 setselectedDate={setselectedDate}
+                eventArrayFromAPI={eventArrayFromAPI}
               />
             }
           />
           <Route path="/map" element={<Map />} />
           <Route
             path="/quoi"
-            element={<CardShowResults events={listEvent.records} />}
+            element={<CardShowResults events={eventArrayFromAPI} />}
           />
           <Route
             path="/themelist"
             element={
               <CardShowList
-                events={listEvent.records}
+                events={eventArrayFromAPI}
                 thematique="Environnement"
               />
             }
