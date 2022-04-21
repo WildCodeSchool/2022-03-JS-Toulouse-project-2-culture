@@ -8,7 +8,6 @@ function Searchbar(props) {
   const display = (e) => {
     e.preventDefault();
     setUserChoice("");
-    console.log(userChoice);
   };
 
   return (
