@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import "./App.css";
 import Quand from "./pages/Quand";
 import Favoris from "./pages/Favoris";
@@ -14,20 +14,41 @@ function App() {
   return (
     <div className="App">
       <Router>
+        <ul>
+          <li>
+            <Link to="/">Accueil</Link>
+          </li>
+          <li>
+            <Link to="/nav">Navbar</Link>
+          </li>
+          <li>
+            <Link to="/quand">Quand</Link>
+          </li>
+          <li>
+            <Link to="/map">Map</Link>
+          </li>
+          <li>
+            <Link to="/quoi">Quoi</Link>
+          </li>
+          <li>
+            <Link to="/themelist">Liste Theme</Link>
+          </li>
+        </ul>
+
         <Routes>
-          <Route path="nav" element={<Navbar />} />
-          <Route path="quand" element={<Quand />} />
-          <Route path="map" element={<Map />} />
+          <Route path="/nav" element={<Navbar />} />
+          <Route path="/quand" element={<Quand />} />
+          <Route path="/map" element={<Map />} />
           <Route
-            path="quoi"
+            path="/quoi"
             element={<CardShowResults events={listEvent.records} />}
           />
           <Route
-            path="themelist"
+            path="/themelist"
             element={<CardShowList events={listEvent.records} />}
           />
-          <Route path="favoris" element={<Favoris />} />
-          <Route path="apropos" element={<Apropos />} />
+          <Route path="/favoris" element={<Favoris />} />
+          <Route path="/apropos" element={<Apropos />} />
         </Routes>
       </Router>
     </div>

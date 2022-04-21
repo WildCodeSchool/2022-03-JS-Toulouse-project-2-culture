@@ -12,7 +12,7 @@ function CalendarEvent(props) {
         <Calendar onChange={setselectedDate} value={selectedDate} />
       </div>
       <div>
-        <p className="bold">
+        <p>
           Date :
           {selectedDate.toLocaleDateString("en-gb", {
             year: "numeric",
@@ -20,7 +20,7 @@ function CalendarEvent(props) {
             day: "numeric",
           })}
         </p>
-        <p className="bold">
+        <p>
           nombre de pretextes disponibles :
           {
             events.filter(
