@@ -19,7 +19,7 @@ function App() {
         <Events event={listEvent.records[0]} />
       </div>
       <div className="Map-cont">
-        <Map />
+        <Map events={listEvent.records} />
       </div>
     </>
   );
