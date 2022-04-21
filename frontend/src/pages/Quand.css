@@ -24,7 +24,7 @@
 }
 /* Style du calendrier */
 .react-calendar {
-  width: 350px;
+  width: 300px;
   max-width: 100%;
   background-color: var(--third-color);
   color: #222;
