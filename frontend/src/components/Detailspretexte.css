@@ -35,23 +35,23 @@
 }
 
 .themeimgCulture {
-  background-image: url("../src/assets/img/parapluies.jpg");
+  background-image: url("../assets/img/parapluies.jpg");
 }
 
 .themeimgSport {
-  background-image: url("./src/assets/img/sport.jpg");
+  background-image: url("../assets/img/sport.jpg");
 }
 
 .themeimgEnvironnement {
-  background-image: url("./src/assets/img/vallee.jpg");
+  background-image: url("../assets/img/vallee.jpg");
 }
 
 .themeimgBrocantes {
-  background-image: url("./src/assets/img/brocante.jpg");
+  background-image: url("../assets/img/brocante.jpg");
 }
 
 .themeimgAutres {
-  background-image: url("./src/assets/img/autres.jpg");
+  background-image: url("../assets/img/autres.jpg");
 }
 
 .alignimgfav {

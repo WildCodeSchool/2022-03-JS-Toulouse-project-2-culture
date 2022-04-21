@@ -55,7 +55,7 @@ function App() {
           <Route path="/apropos" element={<Apropos />} />
           <Route
             path="/Event"
-            element={<Events event={listEvent.records[0]} />}
+            element={<Events event={listEvent.records[3]} />}
           />
         </Routes>
       </Router>

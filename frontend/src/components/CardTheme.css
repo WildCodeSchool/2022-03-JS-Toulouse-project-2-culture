@@ -14,19 +14,19 @@
 }
 
 .Culture {
-  background-image: url("./assets/img/parapluies.jpg");
+  background-image: url("../assets/img/parapluies.jpg");
 }
 
 .Environnement {
-  background-image: url("./assets/img/vallee.jpg");
+  background-image: url("../assets/img/vallee.jpg");
 }
 
 .Sport {
-  background-image: url("./assets/img/sport.jpg");
+  background-image: url("../assets/img/sport.jpg");
 }
 
 .Brocantes {
-  background-image: url("./assets/img/brocante.jpg");
+  background-image: url("../assets/img/brocante.jpg");
 }
 
 .Autres {
