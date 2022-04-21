@@ -16,7 +16,6 @@
   margin: 2rem;
 }
 
-
 @import url(./MapDetailEvent.css);
 #boxtext {
   display: flex;
@@ -28,24 +27,23 @@
 }
 
 #img {
-  height: 180px; 
+  height: 180px;
 }
 
 .leaflet-container {
   border: black solid 2px;
- 
 }
 
 .themeimgCulture {
-  background-image: url("./src/assets/parapluies.jpg");
+  background-image: url("../src/assets/img/parapluies.jpg");
 }
 
 .themeimgSport {
-  background-image: url("/src/assets/img/sport.jpg");
+  background-image: url("./src/assets/img/sport.jpg");
 }
 
 .themeimgEnvironnement {
- background-image: url("./src/assets/img/vallee.jpg");
+  background-image: url("./src/assets/img/vallee.jpg");
 }
 
 .themeimgBrocantes {
@@ -66,7 +64,7 @@
   border-top-right-radius: 1rem;
 }
 
-.datedebutevent h4{
+.datedebutevent h4 {
   padding: 1.2rem;
   color: aliceblue;
   font-size: larger;
