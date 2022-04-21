@@ -1,9 +1,7 @@
-import { useState } from "react";
 import Calendar from "react-calendar";
 
 function CalendarEvent(props) {
-  const { events } = props;
-  const [selectedDate, setselectedDate] = useState(new Date());
+  const { events, selectedDate, setselectedDate } = props;
 
   return (
     <div className="calendar-page">

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import "./App.css";
 import Quand from "./pages/Quand";
@@ -11,6 +11,8 @@ import listEvent from "./components/event";
 import CardShowList from "./components/CardShowList";
 
 function App() {
+  const [selectedDate, setselectedDate] = useState(new Date());
+
   return (
     <div className="App">
       <Router>
@@ -37,7 +39,15 @@ function App() {
 
         <Routes>
           <Route path="/nav" element={<Navbar />} />
-          <Route path="/quand" element={<Quand />} />
+          <Route
+            path="/quand"
+            element={
+              <Quand
+                selectedDate={selectedDate}
+                setselectedDate={setselectedDate}
+              />
+            }
+          />
           <Route path="/map" element={<Map />} />
           <Route
             path="/quoi"
@@ -46,7 +56,10 @@ function App() {
           <Route
             path="/themelist"
             element={
-              <CardShowList events={listEvent.records} thematique="Culture" />
+              <CardShowList
+                events={listEvent.records}
+                thematique="Environnement"
+              />
             }
           />
           <Route path="/favoris" element={<Favoris />} />

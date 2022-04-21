@@ -9,7 +9,13 @@ function CardShowList(props) {
       <h3>Tous les résultats</h3>
 
       {events
-        .filter((event) => event.fields.thematique === thematique)
+        .filter(
+          (event) =>
+            event.fields.thematique ===
+            (thematique === "Brocantes"
+              ? "Vides Grenier / Brocantes / Foires et salons"
+              : thematique)
+        )
         .map((event) => (
           <CardTheme
             title={event.fields.titre}
