@@ -15,17 +15,17 @@ function Navbar() {
         <Logo />
       </div>
       <ul className="navbar_links">
-        <li className="navbar_item">
+        <li className="navbar_item slideInDown-1">
           <a href="/" className="navbar_link">
-            Accueil
+            Recherche
           </a>
         </li>
-        <li className="navbar_item">
+        <li className="navbar_item slideInDown-2">
           <a href="/" className="navbar_link">
             Favoris
           </a>
         </li>
-        <li className="navbar_item">
+        <li className="navbar_item slideInDown-3">
           <a href="/" className="navbar_link">
             A propos
           </a>

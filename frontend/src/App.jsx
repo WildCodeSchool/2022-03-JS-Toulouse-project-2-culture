@@ -1,12 +1,14 @@
-import Map from "./components/Map";
-import CardShowList from "./components/CardShowList";
+import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+
+import Quand from "./pages/Quand";
 import "./App.css";
-import listEvent from "./components/event";
-import CalendarEvent from "./components/CalendarEvent";
-import CardShowResults from "./components/CardShowResults";
+import Favoris from "./pages/Favoris";
+import Apropos from "./pages/Apropos";
 import Navbar from "./components/Navbar";
-import Events from "./components/Events";
 import Searchbar from "./components/Searchbar";
+import CalendarEvent from "./components/CalendarEvent";
+import listEvent from "./components/event";
 
 function App() {
   return (
@@ -15,13 +17,14 @@ function App() {
       <div className="App">
         <CalendarEvent />
         <h3>Où ?</h3>
-        <Searchbar />
-        <CardShowResults />
-        <CardShowList events={listEvent.records} />
-        <Events event={listEvent.records[0]} />
-      </div>
-      <div className="Map-cont">
-        <Map />
+        <Searchbar dateTableau={listEvent.records} />
+        <Router>
+          <Routes>
+            <Route path="quand" element={<Quand />} />
+            <Route path="favoris" element={<Favoris />} />
+            <Route path="Apropos" element={<Apropos />} />
+          </Routes>
+        </Router>
       </div>
     </>
   );

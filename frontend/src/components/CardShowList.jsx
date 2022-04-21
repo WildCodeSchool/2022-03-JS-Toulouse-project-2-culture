@@ -1,6 +1,6 @@
 import CardTheme from "./CardTheme";
 import "./CardTheme.css";
-import dateConverter from "./functions";
+import dateJJMMConverter from "./functions";
 
 function CardShowList(props) {
   const { events } = props;
@@ -11,7 +11,7 @@ function CardShowList(props) {
       {events.map((event) => (
         <CardTheme
           title={event.fields.titre}
-          date={dateConverter(event.fields.date_debut)}
+          date={dateJJMMConverter(event.fields.date_debut)}
           isFavorite={false}
           stylecard={
             event.fields.thematique ===
