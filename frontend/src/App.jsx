@@ -45,7 +45,9 @@ function App() {
           />
           <Route
             path="/themelist"
-            element={<CardShowList events={listEvent.records} />}
+            element={
+              <CardShowList events={listEvent.records} thematique="Culture" />
+            }
           />
           <Route path="/favoris" element={<Favoris />} />
           <Route path="/apropos" element={<Apropos />} />
