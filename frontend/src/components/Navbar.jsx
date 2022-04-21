@@ -16,17 +16,17 @@ function Navbar() {
       </div>
       <ul className="navbar_links">
         <li className="navbar_item slideInDown-1">
-          <a href="/" className="navbar_link">
+          <a href="/quand" className="navbar_link">
             Recherche
           </a>
         </li>
         <li className="navbar_item slideInDown-2">
-          <a href="/" className="navbar_link">
+          <a href="/favoris" className="navbar_link">
             Favoris
           </a>
         </li>
         <li className="navbar_item slideInDown-3">
-          <a href="/" className="navbar_link">
+          <a href="/apropos" className="navbar_link">
             A propos
           </a>
         </li>
