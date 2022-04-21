@@ -12,7 +12,7 @@ function CardTheme({ title, date, stylecard }) {
     <div>
       <div className={`CardTheme ${stylecard}`}>
         <div className="CardThemeHeader">
-          <div className="CardThemeHeaderDate">
+          <div className={`CardThemeHeaderDate${stylecard}`}>
             <h4>{date}</h4>
           </div>
           <CardThemeHeart

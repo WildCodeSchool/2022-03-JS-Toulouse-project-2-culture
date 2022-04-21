@@ -1,7 +1,5 @@
 import { useState } from "react";
 import Calendar from "react-calendar";
-import "./CalendarEvent.css";
-import "react-calendar/dist/Calendar.css";
 
 function CalendarEvent() {
   const [date, setDate] = useState(new Date());
@@ -13,7 +11,8 @@ function CalendarEvent() {
         <Calendar onChange={setDate} value={date} />
       </div>
       <p>
-        <span className="bold">Date:</span> {date.toDateString()}{" "}
+        <span className="bold">Date: {date.toDateString()}</span>
+        {/* TODO <span className="bold">Pretextes disponible:  </span> */}
       </p>
     </div>
   );

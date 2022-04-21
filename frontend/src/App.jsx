@@ -1,25 +1,36 @@
-import Map from "./components/Map";
-import CardShowList from "./components/CardShowList";
+import React from "react";
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+
+import Quand from "./pages/Quand";
 import "./App.css";
-import listEvent from "./components/event";
-import CalendarEvent from "./components/CalendarEvent";
-import CardShowResults from "./components/CardShowResults";
+import Favoris from "./pages/Favoris";
+import Apropos from "./pages/Apropos";
 import Navbar from "./components/Navbar";
 import Events from "./components/Events";
+import listEvent from "./components/event";
 
 function App() {
   return (
     <>
       <Navbar />
       <div className="App">
-        <CalendarEvent />
-        <h3>Ou ?</h3>
-        <CardShowResults />
-        <CardShowList events={listEvent.records} />
-        <Events event={listEvent.records[4]} />
-      </div>
-      <div className="Map-cont">
-        <Map />
+        <Router>
+          <Navbar />
+          <div>
+            <ul>
+              <Link to="/components/Event">Page event</Link>
+            </ul>
+          </div>
+          <Routes>
+            <Route path="quand" element={<Quand />} />
+            <Route path="favoris" element={<Favoris />} />
+            <Route path="Apropos" element={<Apropos />} />
+            <Route
+              path="Event"
+              element={<Events event={listEvent.records[0]} />}
+            />
+          </Routes>
+        </Router>
       </div>
     </>
   );
