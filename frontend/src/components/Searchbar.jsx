@@ -2,35 +2,26 @@ import React from "react";
 import "./Searchbar.css";
 import Logo from "./Logo";
 
-function Searchbar(props) {
-  const { dateTableau } = props;
-  const [userChoice, setUserChoice] = React.useState("");
+function Searchbar() {
+  const [placeChoice, setUserPlace] = React.useState("");
   const display = (e) => {
     e.preventDefault();
-    setUserChoice("");
+    setUserPlace("");
   };
 
   return (
-    <div>
-      <form className="search">
+    <div className="search-page">
+      <form className="search-container">
         <input
           className="searchbar"
           placeholder="OÙ ?"
-          value={userChoice}
-          onChange={(e) => setUserChoice(e.target.value)}
+          value={placeChoice}
+          onChange={(e) => setUserPlace(e.target.value)}
         />
         <button type="button" onClick={display}>
           <Logo />
         </button>
       </form>
-      <div>
-        {" "}
-        {dateTableau
-          .filter((event) => event.fields.commune.includes(`${userChoice}`))
-          .map((event) => (
-            <div>{event.recordid}</div>
-          ))}
-      </div>
     </div>
   );
 }

@@ -1,32 +1,62 @@
 import React from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-
-import Quand from "./pages/Quand";
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import "./App.css";
+import Quand from "./pages/Quand";
+import Ou from "./pages/Ou";
 import Favoris from "./pages/Favoris";
 import Apropos from "./pages/Apropos";
 import Navbar from "./components/Navbar";
-import Searchbar from "./components/Searchbar";
-import CalendarEvent from "./components/CalendarEvent";
+import Map from "./components/Map";
+import CardShowResults from "./components/CardShowResults";
 import listEvent from "./components/event";
+import CardShowList from "./components/CardShowList";
 
 function App() {
   return (
-    <>
-      <Navbar />
-      <div className="App">
-        <CalendarEvent />
-        <h3>Où ?</h3>
-        <Searchbar dateTableau={listEvent.records} />
-        <Router>
-          <Routes>
-            <Route path="quand" element={<Quand />} />
-            <Route path="favoris" element={<Favoris />} />
-            <Route path="Apropos" element={<Apropos />} />
-          </Routes>
-        </Router>
-      </div>
-    </>
+    <div className="App">
+      <Router>
+        <ul>
+          <li>
+            <Link to="/">Accueil</Link>
+          </li>
+          <li>
+            <Link to="/nav">Navbar</Link>
+          </li>
+          <li>
+            <Link to="/quand">Quand</Link>
+          </li>
+          <li>
+            <Link to="/ou">Ou</Link>
+          </li>
+          <li>
+            <Link to="/map">Map</Link>
+          </li>
+          <li>
+            <Link to="/quoi">Quoi</Link>
+          </li>
+          <li>
+            <Link to="/themelist">Liste Theme</Link>
+          </li>
+        </ul>
+
+        <Routes>
+          <Route path="/nav" element={<Navbar />} />
+          <Route path="/quand" element={<Quand />} />
+          <Route path="/ou" element={<Ou />} />
+          <Route path="/map" element={<Map />} />
+          <Route
+            path="/quoi"
+            element={<CardShowResults events={listEvent.records} />}
+          />
+          <Route
+            path="/themelist"
+            element={<CardShowList events={listEvent.records} />}
+          />
+          <Route path="/favoris" element={<Favoris />} />
+          <Route path="/apropos" element={<Apropos />} />
+        </Routes>
+      </Router>
+    </div>
   );
 }
 
