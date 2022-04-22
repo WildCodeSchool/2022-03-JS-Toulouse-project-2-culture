@@ -45,7 +45,7 @@ function Map(props) {
       <MapContainer
         class="map-cont"
         center={[43.59709218840526, 1.4307425383881127]}
-        zoom={8}
+        zoom={12}
       >
         <TileLayer
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'

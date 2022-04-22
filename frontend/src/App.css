@@ -4,11 +4,15 @@
   font-family: falsepos;
   src: url("./assets/font/falsepos.ttf");
 }
+@font-face {
+  font-family: nazara;
+  src: url("./assets/font/c7nazara.ttf");
+}
 
 :root {
   /*Font*/
   --primary-font: falsepos;
-  --secondary-font: arial;
+  --secondary-font: nazara;
 
   /*Color*/
   --primary-color: #3d3d3d;
@@ -18,15 +22,23 @@
   --culture-color: orange;
   --sport-color: blue;
   --env-color: green;
-  --brocante-color: brown;
-  --autre-color: grey;
+  --brocantes-color: brown;
+  --autres-color: grey;
 }
-
 body {
   margin: 0;
-  font-family: var(--primary-font);
+  font-family: var(--secondary-font);
+  background-color: var(--third-color);
+  margin-top: 75px;
 }
-.Map-cont {
+.MapCont {
   display: flex;
   justify-content: center;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--primary-font);
 }

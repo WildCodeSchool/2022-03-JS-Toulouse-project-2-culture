@@ -1,20 +1,57 @@
 import { useState } from "react";
 import Calendar from "react-calendar";
-import "./CalendarEvent.css";
-import "react-calendar/dist/Calendar.css";
 
-function CalendarEvent() {
-  const [date, setDate] = useState(new Date());
+function CalendarEvent(props) {
+  const { events } = props;
+  const [selectedDate, setselectedDate] = useState(new Date());
 
   return (
     <div className="calendar-page">
       <h3>Quand ?</h3>
       <div className="calendar-container">
-        <Calendar onChange={setDate} value={date} />
+        <Calendar onChange={setselectedDate} value={selectedDate} />
       </div>
-      <p>
-        <span className="bold">Date:</span> {date.toDateString()}{" "}
-      </p>
+      <div>
+        <p>
+          Date :
+          {selectedDate.toLocaleDateString("en-gb", {
+            year: "numeric",
+            month: "numeric",
+            day: "numeric",
+          })}
+        </p>
+        <p>
+          nombre de pretextes disponibles :
+          {
+            events.filter(
+              (event) =>
+                selectedDate.toLocaleDateString("en-gb", {
+                  year: "numeric",
+                  month: "numeric",
+                  day: "numeric",
+                }) >=
+                  new Date(event.fields.date_debut).toLocaleDateString(
+                    "en-gb",
+                    {
+                      year: "numeric",
+                      month: "numeric",
+                      day: "numeric",
+                    }
+                  ) &&
+                selectedDate.toLocaleDateString("en-gb", {
+                  year: "numeric",
+                  month: "numeric",
+                  day: "numeric",
+                }) <=
+                  new Date(event.fields.date_fin).toLocaleDateString("en-gb", {
+                    year: "numeric",
+                    month: "numeric",
+                    day: "numeric",
+                  })
+            ).length
+          }
+        </p>
+      </div>
     </div>
   );
 }

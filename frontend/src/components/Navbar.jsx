@@ -15,18 +15,18 @@ function Navbar() {
         <Logo />
       </div>
       <ul className="navbar_links">
-        <li className="navbar_item">
-          <a href="/" className="navbar_link">
-            Accueil
+        <li className="navbar_item slideInDown-1">
+          <a href="/quand" className="navbar_link">
+            Recherche
           </a>
         </li>
-        <li className="navbar_item">
-          <a href="/" className="navbar_link">
+        <li className="navbar_item slideInDown-2">
+          <a href="/favoris" className="navbar_link">
             Favoris
           </a>
         </li>
-        <li className="navbar_item">
-          <a href="/" className="navbar_link">
+        <li className="navbar_item slideInDown-3">
+          <a href="/apropos" className="navbar_link">
             A propos
           </a>
         </li>
