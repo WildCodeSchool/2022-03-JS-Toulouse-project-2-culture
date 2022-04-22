@@ -1,3 +1,5 @@
+@import url(./MapDetailEvent.css);
+
 * {
   margin: 0;
   padding: 0;
@@ -6,7 +8,7 @@
 .boxcontainer {
   display: flex;
   flex-direction: column;
-  background-color: #e3ddcf;
+  background-color: var(--primary-color);
   box-shadow: 5px 10px 5px;
 }
 
@@ -17,20 +19,78 @@
 }
 
 #boxtext {
-  background-color: #6e6a85;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--third-color);
   border: black solid 1px;
   border-radius: 1rem;
+  justify-content: center;
+}
+
+#img {
+  height: 350px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.leaflet-container {
+  border: black solid 2px;
+}
+
+.themeimgCulture {
+  background-image: url("../assets/img/parapluies.jpg");
+}
+
+.themeimgSport {
+  background-image: url("../assets/img/sport.jpg");
+}
+
+.themeimgEnvironnement {
+  background-image: url("../assets/img/vallee.jpg");
+}
+
+.themeimgBrocantes {
+  background-image: url("../assets/img/brocante.jpg");
+}
+
+.themeimgAutres {
+  background-image: url("../assets/img/autres.jpg");
 }
 
 .alignimgfav {
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
   padding: 1rem;
-  background-image: url("./src/assets/parapluies.jpg");
   height: 200px;
   background-size: cover;
   border-top-left-radius: 1rem;
   border-top-right-radius: 1rem;
+}
+
+.datedebutevent h4 {
+  padding: 1.2rem;
+  color: aliceblue;
+  font-size: larger;
+}
+
+.datedebuteventthemecolorCulture {
+  background-color: var(--culture-color);
+}
+
+.datedebuteventthemecolorSport {
+  background-color: var(--sport-color);
+}
+
+.datedebuteventthemecolorEnvironnement {
+  background-color: var(--env-color);
+}
+.datedebuteventthemecolorBrocantes {
+  background-color: var(--brocante-color);
+}
+
+.datedebuteventthemecolorAutres {
+  background-color: var(--autre-color);
 }
 
 #favoriteicon {
@@ -40,6 +100,7 @@
 
 h1 {
   text-align: center;
+  text-shadow: 0 0 3px var(--primary-color), 0 0 10px var(--secondary-color);
 }
 
 #textdate {
@@ -60,15 +121,23 @@ p {
   object-fit: contain;
   border-radius: 1rem;
   border: black solid 1px;
-  box-shadow: 1px 1px 1px;
+}
+
+.box-agenda {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: 2rem;
+  align-items: center;
 }
 
 #agenda {
   font-size: xxx-large;
+  text-align: center;
 }
 
 #btn-agenda {
-  background-color: #88a9dc;
+  background-color: var(--secondary-color);
   border-radius: 0.5rem;
   padding: 0.5rem;
 }
@@ -83,11 +152,14 @@ p {
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
-  background-color: #e3ddcf;
+  background-color: var(--primary-color);
   border-radius: 1rem;
   margin-top: 0;
 }
 
-.facebookicon ,.instagramicon, .twittericon, .linkedin {
-  font-size: x-large;
+.facebookicon,
+.instagramicon,
+.twittericon,
+.linkedin {
+  font-size: xx-large;
 }

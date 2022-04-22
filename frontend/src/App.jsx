@@ -9,6 +9,7 @@ import Navbar from "./components/Navbar";
 import Map from "./components/Map";
 import CardShowResults from "./components/CardShowResults";
 import CardShowList from "./components/CardShowList";
+import Events from "./components/Events";
 import Accueil from "./pages/Accueil";
 import listEvent from "./components/event";
 
@@ -42,6 +43,9 @@ function App() {
           </li>
           <li>
             <Link to="/themelist">Liste Theme</Link>
+          </li>
+          <li>
+            <Link to="/Event">Page event</Link>
           </li>
         </ul>
 
@@ -79,6 +83,10 @@ function App() {
           />
           <Route path="/favoris" element={<Favoris />} />
           <Route path="/apropos" element={<Apropos />} />
+          <Route
+            path="/Event"
+            element={<Events event={listEvent.records[3]} />}
+          />
         </Routes>
       </Router>
     </div>

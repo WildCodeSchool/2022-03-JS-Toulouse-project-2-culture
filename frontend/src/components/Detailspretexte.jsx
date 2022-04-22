@@ -1,5 +1,4 @@
 import React from "react";
-import "./Detailspretexte.css";
 import {
   FaFacebook,
   FaInstagramSquare,
@@ -7,12 +6,41 @@ import {
   FaLinkedin,
 } from "react-icons/fa";
 import { GrTableAdd, GrFavorite } from "react-icons/gr";
+import MapDetailEvent from "./MapDetailEvent";
+import "./Detailspretexte.css";
 
-function Detailspretext({ thematique, name, date, description, url, adresse }) {
+function Detailspretext(props) {
+  const {
+    thematique,
+    name,
+    date,
+    description,
+    url,
+    adresse,
+    coordmap,
+    datedebut,
+  } = props;
   return (
     <div className="boxcontainer">
       <div className="box" id="boxtext">
-        <div className="alignimgfav">
+        <div
+          className={`alignimgfav themeimg${
+            thematique === "Vides Grenier / Brocantes / Foires et salons"
+              ? "Brocantes"
+              : thematique
+          }`}
+        >
+          <div className="datedebutevent">
+            <h4
+              className={`datedebuteventthemecolor${
+                thematique === "Vides Grenier / Brocantes / Foires et salons"
+                  ? "Brocantes"
+                  : thematique
+              }`}
+            >
+              {datedebut}
+            </h4>
+          </div>
           <GrFavorite id="favoriteicon" />
         </div>
         <h1>{name}</h1>
@@ -23,14 +51,13 @@ function Detailspretext({ thematique, name, date, description, url, adresse }) {
         <p>Site internet :</p>
         <a href={url}>{url}</a>
         <div className="box" id="img">
-          <img
-            className="photomap"
-            src="./src/assets/map.png"
-            alt="streetmap"
+          <MapDetailEvent
+            coordinates={coordmap.coordinates}
+            popupTitle={name}
           />
         </div>
       </div>
-      <div className="box">
+      <div className="box-agenda">
         <div>
           <GrTableAdd id="agenda" />
         </div>
