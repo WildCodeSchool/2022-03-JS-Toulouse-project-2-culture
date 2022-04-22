@@ -14,9 +14,6 @@ import Accueil from "./pages/Accueil";
 function App() {
   const [eventArrayFromAPI, setEventArrayfromAPI] = useState({});
   const [selectedDate, setSelectedDate] = useState(new Date());
-
-  const [step1, setStep1] = useState(false);
-
   useEffect(() => {
     const url =
       "https://data.laregion.fr/api/records/1.0/search/?dataset=agendas-participatif-des-sorties-en-occitanie&rows=400";
@@ -59,7 +56,6 @@ function App() {
                 selectedDate={selectedDate}
                 setSelectedDate={setSelectedDate}
                 eventArrayFromAPI={eventArrayFromAPI}
-                setStep1={setStep1}
               />
             }
           />
