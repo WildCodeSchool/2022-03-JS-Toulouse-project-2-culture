@@ -38,7 +38,10 @@ function App() {
         <Routes>
           <Route path="/nav" element={<Navbar />} />
           <Route path="/quand" element={<Quand />} />
-          <Route path="/map" element={<Map />} />
+          <Route
+            path="/map"
+            element={<Map events={listEvent.records} className="MapCont" />}
+          />
           <Route
             path="/quoi"
             element={<CardShowResults events={listEvent.records} />}
