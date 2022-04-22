@@ -16,14 +16,30 @@ import listEvent from "./components/event";
 function App() {
   const [eventArrayFromAPI, setEventArrayfromAPI] = useState({});
   const [selectedDate, setSelectedDate] = useState(new Date());
+  const [step1, setStep1] = useState(0);
   useEffect(() => {
     const url =
       "https://data.laregion.fr/api/records/1.0/search/?dataset=agendas-participatif-des-sorties-en-occitanie&rows=400";
     axios.get(url).then((res) => setEventArrayfromAPI(res.data.records));
   }, []);
-
+  const handleSubmit = () => {
+    setStep1(1);
+  };
   return (
     <div className="App">
+      {step1 === 0 ? (
+        <Quand
+          selectedDate={selectedDate}
+          setSelectedDate={setSelectedDate}
+          eventArrayFromAPI={eventArrayFromAPI}
+        />
+      ) : (
+        "coucou"
+      )}
+
+      <button type="submit" className="BtnNext" onClick={handleSubmit}>
+        Suivant &gt;
+      </button>
       <Router>
         <ul>
           <li>
