@@ -31,7 +31,7 @@ body {
   background-color: var(--third-color);
   margin-top: 75px;
 }
-.Map-cont {
+.MapCont {
   display: flex;
   justify-content: center;
 }
