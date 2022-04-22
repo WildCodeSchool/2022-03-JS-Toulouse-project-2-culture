@@ -1,3 +1,4 @@
+/* eslint-disable no-nested-ternary */
 import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import "./App.css";
@@ -16,25 +17,29 @@ import listEvent from "./components/event";
 function App() {
   const [eventArrayFromAPI, setEventArrayfromAPI] = useState({});
   const [selectedDate, setSelectedDate] = useState(new Date());
-  const [step1, setStep1] = useState(0);
+  const [step, setStep] = useState(0);
   useEffect(() => {
     const url =
       "https://data.laregion.fr/api/records/1.0/search/?dataset=agendas-participatif-des-sorties-en-occitanie&rows=400";
     axios.get(url).then((res) => setEventArrayfromAPI(res.data.records));
   }, []);
   const handleSubmit = () => {
-    setStep1(1);
+    setStep(step + 1);
   };
   return (
     <div className="App">
-      {step1 === 0 ? (
+      {step === 0 ? (
+        <Accueil />
+      ) : step === 1 ? (
         <Quand
           selectedDate={selectedDate}
           setSelectedDate={setSelectedDate}
           eventArrayFromAPI={eventArrayFromAPI}
         />
+      ) : step === 2 ? (
+        <Map events={listEvent.records} className="MapCont" />
       ) : (
-        "coucou"
+        <CardShowResults events={listEvent.records} />
       )}
 
       <button type="submit" className="BtnNext" onClick={handleSubmit}>
@@ -76,7 +81,7 @@ function App() {
               <Quand
                 selectedDate={selectedDate}
                 setSelectedDate={setSelectedDate}
-                eventArrayFromAPI={eventArrayFromAPI}
+                eventArrayFromAPI={listEvent.records}
               />
             }
           />
@@ -86,13 +91,13 @@ function App() {
           />
           <Route
             path="/quoi"
-            element={<CardShowResults events={eventArrayFromAPI} />}
+            element={<CardShowResults events={listEvent.records} />}
           />
           <Route
             path="/themelist"
             element={
               <CardShowList
-                events={eventArrayFromAPI}
+                events={listEvent.records}
                 thematique="Environnement"
               />
             }
