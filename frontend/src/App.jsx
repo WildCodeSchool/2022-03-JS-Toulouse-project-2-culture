@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import "./App.css";
 import axios from "axios";
 import Quand from "./pages/Quand";
+import Ou from "./pages/Ou";
 import Favoris from "./pages/Favoris";
 import Apropos from "./pages/Apropos";
 import Navbar from "./components/Navbar";
@@ -36,6 +37,9 @@ function App() {
             <Link to="/quand">Quand</Link>
           </li>
           <li>
+            <Link to="/ou">Ou</Link>
+          </li>
+          <li>
             <Link to="/map">Map</Link>
           </li>
           <li>
@@ -53,6 +57,7 @@ function App() {
           <Route path="/" element={<Accueil />} />
 
           <Route path="/nav" element={<Navbar />} />
+          <Route path="/ou" element={<Ou />} />
 
           <Route
             path="/quand"
