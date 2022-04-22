@@ -43,7 +43,7 @@ function App() {
       )}
 
       <button type="submit" className="BtnNext" onClick={handleSubmit}>
-        Suivant &gt;
+        {step === 0 ? "Trouver un pretexte" : "Suivant >"}
       </button>
       <Router>
         <ul>
