@@ -1,13 +1,13 @@
 import Calendar from "react-calendar";
 
 function CalendarEvent(props) {
-  const { events, selectedDate, setselectedDate } = props;
+  const { events, selectedDate, setSelectedDate } = props;
 
   return (
     <div className="calendar-page">
       <h3>Quand ?</h3>
       <div className="calendar-container">
-        <Calendar onChange={setselectedDate} value={selectedDate} />
+        <Calendar onChange={setSelectedDate} value={selectedDate} />
       </div>
       <div>
         <p>

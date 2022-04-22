@@ -13,8 +13,9 @@ import Accueil from "./pages/Accueil";
 
 function App() {
   const [eventArrayFromAPI, setEventArrayfromAPI] = useState({});
-  const [selectedDate, setselectedDate] = useState(new Date());
-  // const [selectedTheme, setselecteTheme] = useState("Culture");
+  const [selectedDate, setSelectedDate] = useState(new Date());
+
+  const [step1, setStep1] = useState(false);
 
   useEffect(() => {
     const url =
@@ -56,8 +57,9 @@ function App() {
             element={
               <Quand
                 selectedDate={selectedDate}
-                setselectedDate={setselectedDate}
+                setSelectedDate={setSelectedDate}
                 eventArrayFromAPI={eventArrayFromAPI}
+                setStep1={setStep1}
               />
             }
           />
