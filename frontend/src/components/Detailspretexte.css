@@ -1,3 +1,5 @@
+@import url(./MapDetailEvent.css);
+
 * {
   margin: 0;
   padding: 0;
@@ -16,7 +18,6 @@
   margin: 2rem;
 }
 
-@import url(./MapDetailEvent.css);
 #boxtext {
   display: flex;
   flex-direction: column;
@@ -27,7 +28,10 @@
 }
 
 #img {
-  height: 180px;
+  height: 350px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .leaflet-container {
@@ -117,16 +121,16 @@ p {
   object-fit: contain;
   border-radius: 1rem;
   border: black solid 1px;
-  box-shadow: 1px 1px 1px;
 }
 
-/* .box-agenda {
+.box-agenda {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin-left: 2rem; */
+  margin-left: 2rem;
+  align-items: center;
+}
 
-/* } */
 #agenda {
   font-size: xxx-large;
   text-align: center;

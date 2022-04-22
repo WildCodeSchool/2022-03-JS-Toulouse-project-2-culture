@@ -1,5 +1,3 @@
-/* eslint-disable camelcase */
-/* eslint-disable react/jsx-no-comment-textnodes */
 import React from "react";
 import {
   FaFacebook,
@@ -55,7 +53,7 @@ function Detailspretext(props) {
         <div className="box" id="img">
           <MapDetailEvent
             coordinates={coordmap.coordinates}
-            titrepopup={name}
+            popupTitle={name}
           />
         </div>
       </div>
