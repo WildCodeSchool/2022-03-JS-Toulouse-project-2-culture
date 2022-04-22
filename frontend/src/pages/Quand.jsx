@@ -1,16 +1,22 @@
 import React from "react";
 import "react-calendar/dist/Calendar.css";
 import "./Quand.css";
-import listEvent from "../components/event";
 import CalendarEvent from "../components/CalendarEvent";
 
-function Quand() {
+function Quand(props) {
+  const { selectedDate, setSelectedDate, eventArrayFromAPI } = props;
+
+  const handleSubmit = () => {};
   return (
     <div className="AskDateContainer">
-      <CalendarEvent events={listEvent.records} />
-      <a href="/" className="BtnNext">
+      <CalendarEvent
+        events={eventArrayFromAPI}
+        selectedDate={selectedDate}
+        setSelectedDate={setSelectedDate}
+      />
+      <button type="submit" className="BtnNext" onClick={handleSubmit}>
         Suivant &gt;
-      </a>
+      </button>
     </div>
   );
 }

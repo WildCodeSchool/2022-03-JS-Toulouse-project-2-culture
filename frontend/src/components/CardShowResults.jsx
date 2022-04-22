@@ -29,7 +29,7 @@ function CardShowResults(props) {
         isFavorite={false}
         stylecard="Culture"
       />
-      <BtnShowMore thematique="culture" />
+      <BtnShowMore thematique="Culture" />
       <h3>Ecolo...</h3>
       <CardTheme
         title={firstEnvironnement.fields.titre}
