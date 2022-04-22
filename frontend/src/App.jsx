@@ -10,6 +10,7 @@ import Map from "./components/Map";
 import CardShowResults from "./components/CardShowResults";
 import CardShowList from "./components/CardShowList";
 import Accueil from "./pages/Accueil";
+import listEvent from "./components/event";
 
 function App() {
   const [eventArrayFromAPI, setEventArrayfromAPI] = useState({});
