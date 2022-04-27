@@ -18,7 +18,7 @@ import BtnNext from "./components/BtnNext";
 import BtnPrev from "./components/BtnPrev";
 
 function App() {
-  const [eventArrayFromAPI, setEventArrayfromAPI] = useState({});
+  const [eventArrayFromAPI, setEventArrayfromAPI] = useState([]);
   const [selectedDate, setSelectedDate] = useState(new Date());
   const [step, setStep] = useState(0);
   useEffect(() => {

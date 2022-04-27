@@ -17,10 +17,10 @@
 .legend {
   display: flex;
   justify-content: space-between;
-  width: var(--mapwidth);
-  margin: auto;
+  margin: 10vw;
 }
 .markerslgd {
-  width: 7rem;
+  width: 70%;
+  height: 60%;
   margin-top: -5rem;
 }
