@@ -84,7 +84,7 @@ function App() {
           />
           <Route
             path="/map"
-            element={<Map events={listEvent.records} className="MapCont" />}
+            element={<Map events={eventArrayFromAPI} className="MapCont" />}
           />
           <Route
             path="/quoi"
