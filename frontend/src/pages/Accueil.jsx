@@ -1,9 +1,15 @@
 import React from "react";
+import "./Accueil.css";
 
 function Accueil() {
   return (
-    <div>
-      <h1>Accueil</h1>
+    <div className="welcome">
+      <h1>NOPE</h1>
+      <img
+        id="mainLogo"
+        src="../src/assets/logo/NOPELOGO.png"
+        alt="logo Nope"
+      />
     </div>
   );
 }

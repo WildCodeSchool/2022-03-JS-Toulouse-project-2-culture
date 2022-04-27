@@ -5,8 +5,6 @@ import CalendarEvent from "../components/CalendarEvent";
 
 function Quand(props) {
   const { selectedDate, setSelectedDate, eventArrayFromAPI } = props;
-
-  const handleSubmit = () => {};
   return (
     <div className="AskDateContainer">
       <CalendarEvent
@@ -14,9 +12,6 @@ function Quand(props) {
         selectedDate={selectedDate}
         setSelectedDate={setSelectedDate}
       />
-      <button type="submit" className="BtnNext" onClick={handleSubmit}>
-        Suivant &gt;
-      </button>
     </div>
   );
 }
