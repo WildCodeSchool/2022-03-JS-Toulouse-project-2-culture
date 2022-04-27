@@ -1,3 +1,4 @@
+/* eslint-disable no-nested-ternary */
 import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import "./App.css";
@@ -13,19 +14,33 @@ import CardShowList from "./components/CardShowList";
 import Events from "./components/Events";
 import Accueil from "./pages/Accueil";
 import listEvent from "./components/event";
+import BtnNext from "./components/BtnNext";
+import BtnPrev from "./components/BtnPrev";
 
 function App() {
   const [eventArrayFromAPI, setEventArrayfromAPI] = useState({});
   const [selectedDate, setSelectedDate] = useState(new Date());
+  const [placeChoice, setUserPlace] = React.useState("");
   // const [eventArrayFromLocation, setEventArrayFromLocation] = useState({});
+  const [step, setStep] = useState(0);
   useEffect(() => {
     const url =
       "https://data.laregion.fr/api/records/1.0/search/?dataset=agendas-participatif-des-sorties-en-occitanie&rows=400";
     axios.get(url).then((res) => setEventArrayfromAPI(res.data.records));
   }, []);
-
+  const handleSubmitNext = () => {
+    if (step < 3) {
+      setStep(step + 1);
+    }
+  };
+  const handleSubmitPrev = () => {
+    if (step > 0) {
+      setStep(step - 1);
+    }
+  };
   return (
     <div className="App">
+      <Navbar />
       <Router>
         <ul>
           <li>
@@ -55,34 +70,43 @@ function App() {
         </ul>
 
         <Routes>
-          <Route path="/" element={<Accueil />} />
+          <Route path="/" element="" />
 
           <Route path="/nav" element={<Navbar />} />
 
-          <Route path="/ou" element={<Ou events={listEvent.records} />} />
+          <Route
+            path="/ou"
+            element={
+              <Ou
+                events={listEvent.records}
+                placeChoice={placeChoice}
+                setUserPlace={setUserPlace}
+              />
+            }
+          />
           <Route
             path="/quand"
             element={
               <Quand
                 selectedDate={selectedDate}
                 setSelectedDate={setSelectedDate}
-                eventArrayFromAPI={eventArrayFromAPI}
+                eventArrayFromAPI={listEvent.records}
               />
             }
           />
           <Route
             path="/map"
-            element={<Map events={listEvent.records} className="MapCont" />}
+            element={<Map events={eventArrayFromAPI} className="MapCont" />}
           />
           <Route
             path="/quoi"
-            element={<CardShowResults events={eventArrayFromAPI} />}
+            element={<CardShowResults events={listEvent.records} />}
           />
           <Route
             path="/themelist"
             element={
               <CardShowList
-                events={eventArrayFromAPI}
+                events={listEvent.records}
                 thematique="Environnement"
               />
             }
@@ -95,6 +119,31 @@ function App() {
           />
         </Routes>
       </Router>
+      {step === 0 ? (
+        <Accueil />
+      ) : step === 1 ? (
+        <Quand
+          selectedDate={selectedDate}
+          setSelectedDate={setSelectedDate}
+          eventArrayFromAPI={eventArrayFromAPI}
+        />
+      ) : step === 2 ? (
+        <Map events={listEvent.records} className="MapCont" />
+      ) : (
+        <CardShowResults events={listEvent.records} />
+      )}
+      <div className="BtnContainer">
+        {step > 0 ? (
+          <BtnPrev step={step} handleSubmitPrev={handleSubmitPrev} />
+        ) : (
+          ""
+        )}
+        {step <= 2 ? (
+          <BtnNext step={step} handleSubmitNext={handleSubmitNext} />
+        ) : (
+          ""
+        )}
+      </div>
     </div>
   );
 }

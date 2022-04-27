@@ -6,11 +6,15 @@ import listEvent from "../components/event";
 import "../components/Map.css";
 
 function Ou(props) {
-  const { events } = props;
+  const { /* events, */ placeChoice, setUserPlace } = props;
   return (
     <div className="AskPlaceContainer">
       <h3>Où ?</h3>
-      <Searchbar eventsSearch={events} />
+      <Searchbar
+        placeChoice={placeChoice}
+        setUserPlace={setUserPlace}
+        // eventsSearch={events}
+      />
       <Map events={listEvent.records} />
       <a href="/" className="BtnNext">
         Suivant &gt;

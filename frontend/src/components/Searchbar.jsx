@@ -2,9 +2,9 @@ import React from "react";
 import "./Searchbar.css";
 import Logo from "./Logo";
 
-function Searchbar() {
+function Searchbar(props) {
+  const { placeChoice, setUserPlace } = props;
   // const { eventsSearch } = props;
-  const [placeChoice, setUserPlace] = React.useState("");
   const display = (e) => {
     e.preventDefault();
     setUserPlace("");
