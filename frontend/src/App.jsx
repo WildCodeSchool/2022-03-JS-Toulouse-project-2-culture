@@ -17,6 +17,7 @@ import listEvent from "./components/event";
 function App() {
   const [eventArrayFromAPI, setEventArrayfromAPI] = useState({});
   const [selectedDate, setSelectedDate] = useState(new Date());
+  // const [eventArrayFromLocation, setEventArrayFromLocation] = useState({});
   useEffect(() => {
     const url =
       "https://data.laregion.fr/api/records/1.0/search/?dataset=agendas-participatif-des-sorties-en-occitanie&rows=400";
@@ -57,8 +58,8 @@ function App() {
           <Route path="/" element={<Accueil />} />
 
           <Route path="/nav" element={<Navbar />} />
-          <Route path="/ou" element={<Ou />} />
 
+          <Route path="/ou" element={<Ou events={listEvent.records} />} />
           <Route
             path="/quand"
             element={

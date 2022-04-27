@@ -3,6 +3,7 @@ import "./Searchbar.css";
 import Logo from "./Logo";
 
 function Searchbar() {
+  // const { eventsSearch } = props;
   const [placeChoice, setUserPlace] = React.useState("");
   const display = (e) => {
     e.preventDefault();
