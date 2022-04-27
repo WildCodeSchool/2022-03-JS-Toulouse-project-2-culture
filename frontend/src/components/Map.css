@@ -1,10 +1,30 @@
 @import "../../node_modules/leaflet/dist/leaflet.css";
+:root {
+  --mapwidth: 70vw;
+}
 
 .leaflet-container {
-  height: 50vh;
-  width: 80vw;
+  margin: auto;
+  margin-bottom: 5rem;
+  height: 70vh;
+  width: var(--mapwidth);
   border-radius: 2rem;
 }
 .leaflet-default-icon-path {
   background-color: aqua;
+}
+/* .mapdiv{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+} */
+.legend {
+  display: flex;
+  justify-content: space-between;
+  width: var(--mapwidth);
+  margin: auto;
+}
+.markerslgd {
+  width: 7rem;
+  margin-top: -5rem;
 }
