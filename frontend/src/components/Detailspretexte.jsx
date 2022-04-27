@@ -6,6 +6,7 @@ import {
   FaTwitter,
   FaLinkedin,
 } from "react-icons/fa";
+import { useParams } from "react-router-dom";
 import { GrTableAdd } from "react-icons/gr";
 import MapDetailEvent from "./MapDetailEvent";
 import "./Detailspretexte.css";
@@ -15,17 +16,19 @@ import dateConverter from "./functions";
 
 function Detailspretext() {
   const [eventDetail, setEventDetail] = useState(null);
+  const { id } = useParams();
+  // "64e77e38aa43ad9648cf4bf62f19a0140ba6edc5";
 
   useEffect(() => {
     axios
       .get(
-        "https://data.laregion.fr/api/records/1.0/search/?dataset=agendas-participatif-des-sorties-en-occitanie&facet=recordid&refine.recordid=64e77e38aa43ad9648cf4bf62f19a0140ba6edc5"
+        `https://data.laregion.fr/api/records/1.0/search/?dataset=agendas-participatif-des-sorties-en-occitanie&facet=recordid&refine.recordid=${id}`
       )
       .then((response) => response.data)
       .then((data) => {
         setEventDetail(data.records[0]);
       });
-  }, []);
+  }, [eventDetail]);
 
   // const {
   //   thematique,
