@@ -19,18 +19,18 @@ import BtnPrev from "./components/BtnPrev";
 import { filterByDate } from "./components/functions";
 
 function App() {
-  const [eventArrayFromAPI, setEventArrayfromAPI] = useState({});
+  const [eventArrayFromAPI, setEventArrayfromAPI] = useState([]);
   const [selectedDate, setSelectedDate] = useState(new Date());
 
   const [step, setStep] = useState(0);
   useEffect(() => {
     const url =
       "https://data.laregion.fr/api/records/1.0/search/?dataset=agendas-participatif-des-sorties-en-occitanie&rows=400";
-    axios.get(url).then((res) => setEventArrayfromAPI(res.data.records));
+    axios
+      .get(url)
+      .then((res) => setEventArrayfromAPI(res.data.records))
+      .catch((error) => console.error(error));
   }, []);
-
-  const filteredArray = filterByDate(listEvent.records, selectedDate);
-  console.log(filteredArray);
 
   const handleSubmitNext = () => {
     if (step < 3) {
@@ -74,23 +74,26 @@ function App() {
 
         <Routes>
           <Route path="/" element="" />
-
           <Route path="/nav" element={<Navbar />} />
           <Route path="/ou" element={<Ou />} />
-
           <Route
             path="/quand"
             element={
               <Quand
                 selectedDate={selectedDate}
                 setSelectedDate={setSelectedDate}
-                eventArrayFromAPI={listEvent.records}
+                eventArrayFromAPI={eventArrayFromAPI}
               />
             }
           />
           <Route
             path="/map"
-            element={<Map events={listEvent.records} className="MapCont" />}
+            element={
+              <Map
+                events={filterByDate(eventArrayFromAPI, selectedDate)}
+                className="MapCont"
+              />
+            }
           />
           <Route
             path="/quoi"
@@ -119,10 +122,13 @@ function App() {
         <Quand
           selectedDate={selectedDate}
           setSelectedDate={setSelectedDate}
-          eventArrayFromAPI={eventArrayFromAPI}
+          eventArrayFromAPI={listEvent.records}
         />
       ) : step === 2 ? (
-        <Map events={listEvent.records} className="MapCont" />
+        <Map
+          events={filterByDate(eventArrayFromAPI, selectedDate)}
+          className="MapCont"
+        />
       ) : (
         <CardShowResults events={listEvent.records} />
       )}

@@ -1,4 +1,5 @@
 import Calendar from "react-calendar";
+import { filterByDate } from "./functions";
 
 function CalendarEvent(props) {
   const { events, selectedDate, setSelectedDate } = props;
@@ -20,34 +21,7 @@ function CalendarEvent(props) {
         </p>
         <p>
           nombre de pretextes disponibles :
-          {
-            events.filter(
-              (event) =>
-                selectedDate.toLocaleDateString("en-gb", {
-                  year: "numeric",
-                  month: "numeric",
-                  day: "numeric",
-                }) >=
-                  new Date(event.fields.date_debut).toLocaleDateString(
-                    "en-gb",
-                    {
-                      year: "numeric",
-                      month: "numeric",
-                      day: "numeric",
-                    }
-                  ) &&
-                selectedDate.toLocaleDateString("en-gb", {
-                  year: "numeric",
-                  month: "numeric",
-                  day: "numeric",
-                }) <=
-                  new Date(event.fields.date_fin).toLocaleDateString("en-gb", {
-                    year: "numeric",
-                    month: "numeric",
-                    day: "numeric",
-                  })
-            ).length
-          }
+          {filterByDate(events, selectedDate).length}
         </p>
       </div>
     </div>

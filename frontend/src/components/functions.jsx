@@ -35,4 +35,6 @@ export function filterByDate(array, date) {
         })
   );
 }
-// export default dateJJMMConverter;
+export function filterByLocation(array, location) {
+  return array.filter((event) => event.commune === location);
+}
