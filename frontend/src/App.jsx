@@ -88,12 +88,16 @@ function App() {
           />
           <Route
             path="/map"
+<<<<<<< HEAD
             element={
               <Map
                 events={filterByDate(eventArrayFromAPI, selectedDate)}
                 className="MapCont"
               />
             }
+=======
+            element={<Map events={eventArrayFromAPI} className="MapCont" />}
+>>>>>>> 1d8c0dbdbcd8d32cc4ac03fdb5e8a33dbe617e04
           />
           <Route
             path="/quoi"
