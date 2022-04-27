@@ -1,7 +1,7 @@
 import BtnShowMore from "./BtnShowMore";
 import CardTheme from "./CardTheme";
 import "./CardTheme.css";
-import dateJJMMConverter from "./functions";
+import { dateJJMMConverter } from "./functions";
 
 function CardShowResults(props) {
   const { events } = props;

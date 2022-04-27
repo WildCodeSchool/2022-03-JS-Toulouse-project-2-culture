@@ -1,4 +1,4 @@
-function dateJJMMConverter(stringDate) {
+export function dateJJMMConverter(stringDate) {
   const dayNumber =
     new Date(stringDate).getUTCDate() < 10
       ? `0${new Date(stringDate).getUTCDate()}`
@@ -10,4 +10,29 @@ function dateJJMMConverter(stringDate) {
 
   return `${dayNumber}/${monthNumber}`;
 }
-export default dateJJMMConverter;
+export function filterByDate(array, date) {
+  return array.filter(
+    (event) =>
+      date.toLocaleDateString("en-gb", {
+        year: "numeric",
+        month: "numeric",
+        day: "numeric",
+      }) >=
+        new Date(event.fields.date_debut).toLocaleDateString("en-gb", {
+          year: "numeric",
+          month: "numeric",
+          day: "numeric",
+        }) &&
+      date.toLocaleDateString("en-gb", {
+        year: "numeric",
+        month: "numeric",
+        day: "numeric",
+      }) <=
+        new Date(event.fields.date_fin).toLocaleDateString("en-gb", {
+          year: "numeric",
+          month: "numeric",
+          day: "numeric",
+        })
+  );
+}
+// export default dateJJMMConverter;
