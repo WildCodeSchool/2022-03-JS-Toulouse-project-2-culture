@@ -21,7 +21,6 @@ function App() {
       "https://data.laregion.fr/api/records/1.0/search/?dataset=agendas-participatif-des-sorties-en-occitanie&rows=400";
     axios.get(url).then((res) => setEventArrayfromAPI(res.data.records));
   }, []);
-
   return (
     <div className="App">
       <Router>
@@ -66,7 +65,7 @@ function App() {
           />
           <Route
             path="/map"
-            element={<Map events={listEvent.records} className="MapCont" />}
+            element={<Map events={eventArrayFromAPI} className="MapCont" />}
           />
           <Route
             path="/quoi"
