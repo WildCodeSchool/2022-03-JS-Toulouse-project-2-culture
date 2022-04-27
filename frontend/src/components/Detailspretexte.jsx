@@ -17,7 +17,6 @@ import dateConverter from "./functions";
 function Detailspretext() {
   const [eventDetail, setEventDetail] = useState(null);
   const { id } = useParams();
-  // "64e77e38aa43ad9648cf4bf62f19a0140ba6edc5";
 
   useEffect(() => {
     axios
@@ -29,17 +28,6 @@ function Detailspretext() {
         setEventDetail(data.records[0]);
       });
   }, [eventDetail]);
-
-  // const {
-  //   thematique,
-  //   name,
-  //   date,
-  //   description,
-  //   url,
-  //   adresse,
-  //   coordmap,
-  //   datedebut,
-  // } = props;
 
   const [isFavorite, setIsfavorite] = useState(false);
 
