@@ -41,6 +41,7 @@
   text-align: center;
   color: var(--primary-color);
   background-color: var(--third-color);
+  margin-top: 75px;
 }
 .heartLogo {
   height: 50px;
