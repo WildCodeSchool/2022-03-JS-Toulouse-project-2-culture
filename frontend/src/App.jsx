@@ -16,11 +16,12 @@ import Accueil from "./pages/Accueil";
 import listEvent from "./components/event";
 import BtnNext from "./components/BtnNext";
 import BtnPrev from "./components/BtnPrev";
-import { filterByDate } from "./components/functions";
+import { filterByDate, filterByLocation } from "./components/functions";
 
 function App() {
   const [eventArrayFromAPI, setEventArrayfromAPI] = useState([]);
   const [selectedDate, setSelectedDate] = useState(new Date());
+  const selectedLocation = "Toulouse";
 
   const [step, setStep] = useState(0);
   useEffect(() => {
@@ -88,16 +89,12 @@ function App() {
           />
           <Route
             path="/map"
-<<<<<<< HEAD
             element={
               <Map
                 events={filterByDate(eventArrayFromAPI, selectedDate)}
                 className="MapCont"
               />
             }
-=======
-            element={<Map events={eventArrayFromAPI} className="MapCont" />}
->>>>>>> 1d8c0dbdbcd8d32cc4ac03fdb5e8a33dbe617e04
           />
           <Route
             path="/quoi"
@@ -129,12 +126,15 @@ function App() {
           eventArrayFromAPI={listEvent.records}
         />
       ) : step === 2 ? (
-        <Map
-          events={filterByDate(eventArrayFromAPI, selectedDate)}
-          className="MapCont"
-        />
+        <Ou events={listEvent.records} />
       ) : (
-        <CardShowResults events={listEvent.records} />
+        <CardShowResults
+          events={filterByLocation(
+            listEvent.records,
+            selectedDate,
+            selectedLocation
+          )}
+        />
       )}
       <div className="BtnContainer">
         {step > 0 ? (
