@@ -31,13 +31,6 @@ function CardShowResults(props) {
     <div className="showcase">
       <h2>Vos pretextes</h2>
       <h3>Intello...</h3>
-      {console.log(
-        firstCulture,
-        firstEnvironnement,
-        firstSport,
-        firstBrocantes,
-        firstAutres
-      )}
       {firstCulture ? (
         <>
           <CardTheme
@@ -79,7 +72,6 @@ function CardShowResults(props) {
       ) : (
         "Pas de résultats"
       )}
-
       <h3>Flanneur...</h3>
       {firstBrocantes ? (
         <>
