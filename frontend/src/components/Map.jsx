@@ -6,10 +6,6 @@ import Green from "../assets/markers/Green.png";
 import Blue from "../assets/markers/Blue.png";
 import Yellow from "../assets/markers/Yellow.png";
 import Red from "../assets/markers/Red.png";
-import Bluelgd from "../assets/markers/Bluelgd.png";
-import Greenlgd from "../assets/markers/Greenlgd.png";
-import Redlgd from "../assets/markers/Redlgd.png";
-import Yellowlgd from "../assets/markers/Yellowlgd.png";
 import "./Map.css";
 
 const GreenIcon = new L.Icon({
@@ -45,7 +41,7 @@ function Map(props) {
     return CustomIcon;
   }
   return (
-    <div className="mapdiv">
+    <div>
       <MapContainer
         class="map-cont"
         center={[43.59709218840526, 1.4307425383881127]}
@@ -64,12 +60,6 @@ function Map(props) {
         ))}
         <LocationMarker />;
       </MapContainer>
-      <div className="legend">
-        <img className="markerslgd" src={Bluelgd} alt="Bleu = Culture" />
-        <img className="markerslgd" src={Greenlgd} alt="Vert = Environnement" />
-        <img className="markerslgd" src={Redlgd} alt="Rouge = Sport" />
-        <img className="markerslgd" src={Yellowlgd} alt="Jaune = Autres" />
-      </div>
     </div>
   );
 }
