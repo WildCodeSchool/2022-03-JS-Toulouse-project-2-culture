@@ -12,7 +12,7 @@ import MapDetailEvent from "./MapDetailEvent";
 import "./Detailspretexte.css";
 import CardThemeHeart from "./CardThemeHeart";
 import "./CardTheme.css";
-import dateConverter from "./functions";
+import { dateJJMMConverter } from "./functions";
 
 function Detailspretext() {
   const [eventDetail, setEventDetail] = useState(null);
@@ -57,7 +57,7 @@ function Detailspretext() {
                       : eventDetail.fields.thematique
                   }`}
                 >
-                  {dateConverter(eventDetail.fields.date_debut)}
+                  {dateJJMMConverter(eventDetail.fields.date_debut)}
                 </h4>
               </div>
               <CardThemeHeart
