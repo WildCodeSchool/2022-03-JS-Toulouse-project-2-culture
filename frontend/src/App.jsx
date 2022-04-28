@@ -59,12 +59,6 @@ function App() {
           <li>
             <Link to="/map">Map</Link>
           </li>
-          <li>
-            <Link to="/quoi">Quoi</Link>
-          </li>
-          <li>
-            <Link to="/themelist">Liste Theme</Link>
-          </li>
         </ul>
 
         <Routes>
