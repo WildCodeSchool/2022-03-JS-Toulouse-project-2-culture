@@ -93,14 +93,11 @@
   background-color: var(--autre-color);
 }
 
-#favoriteicon {
-  font-size: x-large;
-  color: blanchedalmond;
-}
-
 h1 {
   text-align: center;
   text-shadow: 0 0 3px var(--primary-color), 0 0 10px var(--secondary-color);
+  font-family: var(--secondary-font);
+  text-transform: uppercase;
 }
 
 #textdate {
@@ -113,6 +110,7 @@ p {
 
 .textaligndescription {
   text-align: justify;
+  font-family: var(--primary-font);
 }
 
 .photomap {
@@ -146,6 +144,7 @@ p {
   color: black;
   font-size: large;
   font-style: italic;
+  text-align: center;
 }
 
 #sociallink {
