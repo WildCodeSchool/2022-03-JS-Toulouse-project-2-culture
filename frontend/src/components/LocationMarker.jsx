@@ -1,9 +1,10 @@
-import React, { useState } from "react";
+import React from "react";
 import { Marker, Popup } from "react-leaflet";
 import { useMapEvents } from "react-leaflet/esm/hooks";
 
-function LocationMarker() {
-  const [position, setPosition] = useState(null);
+function LocationMarker(props) {
+  const { setPosition, position } = props;
+
   const map = useMapEvents({
     click() {
       map.locate();
