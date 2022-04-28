@@ -1,6 +1,6 @@
 import CardTheme from "./CardTheme";
 import "./CardTheme.css";
-import dateJJMMConverter from "./functions";
+import { dateJJMMConverter } from "./functions";
 
 function CardShowList(props) {
   const { events, thematique } = props;
