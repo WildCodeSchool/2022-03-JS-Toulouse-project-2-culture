@@ -1,105 +1,129 @@
-import BtnShowMore from "./BtnShowMore";
+import React from "react";
+import "react-responsive-carousel/lib/styles/carousel.min.css";
+import { Carousel } from "react-responsive-carousel";
 import CardTheme from "./CardTheme";
+
+import "./carousel.css";
 import "./CardTheme.css";
 import { dateJJMMConverter } from "./functions";
 
 function CardShowResults(props) {
   const { events } = props;
 
-  const firstCulture = events.filter(
+  const eventsCulture = events.filter(
     (event) => event.fields.thematique === "Culture"
-  )[0];
-  const firstEnvironnement = events.filter(
+  );
+  const eventsEnvironnement = events.filter(
     (event) => event.fields.thematique === "Environnement"
-  )[0];
-  const firstSport = events.filter(
+  );
+  const eventsSport = events.filter(
     (event) => event.fields.thematique === "Sport"
-  )[0];
-  const firstBrocantes = events.filter(
+  );
+  const eventsBrocantes = events.filter(
     (event) =>
       event.fields.thematique === "Vides Grenier / Brocantes / Foires et salons"
-  )[0];
-  const firstAutres = events.filter(
-    (event) =>
-      event.fields.thematique !== "Culture" &&
-      event.fields.thematique !== "Environnement" &&
-      event.fields.thematique !== "Sport" &&
-      event.fields.thematique !== "Vides Grenier / Brocantes / Foires et salons"
-  )[0];
-
+  );
+  const eventsAutres = events.filter(
+    (event) => event.fields.thematique === "Autres"
+  );
   return (
     <div className="showcase">
       <h2>Vos pretextes</h2>
       <h3>Intello...</h3>
-      {firstCulture ? (
-        <>
-          <CardTheme
-            title={firstCulture.fields.titre}
-            date={dateJJMMConverter(firstCulture.fields.date_debut)}
-            isFavorite={false}
-            stylecard="Culture"
-          />
-          <BtnShowMore events={events} thematique="Culture" />
-        </>
-      ) : (
-        "Pas de résultats"
-      )}
+      <div className="carousel-container">
+        <Carousel showThumbs={false} showStatus={false}>
+          {eventsCulture.length > 0
+            ? eventsCulture.map((event) => (
+                <div key={event.recordid}>
+                  <CardTheme
+                    title={event.fields.titre}
+                    date={dateJJMMConverter(event.fields.date_debut)}
+                    isFavorite={false}
+                    stylecard="Culture"
+                    recordid={event.recordid}
+                  />
+                </div>
+              ))
+            : "Pas de résultats"}
+        </Carousel>
+      </div>
       <h3>Ecolo...</h3>
-      {firstEnvironnement ? (
-        <>
-          <CardTheme
-            title={firstEnvironnement.fields.titre}
-            date={dateJJMMConverter(firstEnvironnement.fields.date_debut)}
-            isFavorite={false}
-            stylecard="Environnement"
-          />
-          <BtnShowMore thematique="Environnement" />
-        </>
-      ) : (
-        "Pas de résultats"
-      )}
+      <div className="carousel-container">
+        <Carousel showThumbs={false} showStatus={false}>
+          {eventsEnvironnement.length > 0
+            ? eventsEnvironnement.map((event) => (
+                <div>
+                  <CardTheme
+                    key={event.recordid}
+                    title={event.fields.titre}
+                    date={dateJJMMConverter(event.fields.date_debut)}
+                    isFavorite={false}
+                    stylecard="Environnement"
+                    recordid={event.recordid}
+                  />
+                </div>
+              ))
+            : "Pas de résultats"}
+        </Carousel>
+      </div>
+
       <h3>Sportif...</h3>
-      {firstSport ? (
-        <>
-          <CardTheme
-            title={firstSport.fields.titre}
-            date={dateJJMMConverter(firstSport.fields.date_debut)}
-            isFavorite={false}
-            stylecard="Sport"
-          />
-          <BtnShowMore thematique="Sport" />
-        </>
-      ) : (
-        "Pas de résultats"
-      )}
+      <div className="carousel-container">
+        <Carousel showThumbs={false} showStatus={false}>
+          {eventsSport.length > 0
+            ? eventsSport.map((event) => (
+                <div>
+                  <CardTheme
+                    key={event.recordid}
+                    title={event.fields.titre}
+                    date={dateJJMMConverter(event.fields.date_debut)}
+                    isFavorite={false}
+                    stylecard="Sport"
+                    recordid={event.recordid}
+                  />
+                </div>
+              ))
+            : "Pas de résultats"}
+        </Carousel>
+      </div>
       <h3>Flanneur...</h3>
-      {firstBrocantes ? (
-        <>
-          <CardTheme
-            title={firstBrocantes.fields.titre}
-            date={dateJJMMConverter(firstBrocantes.fields.date_debut)}
-            isFavorite={false}
-            stylecard="Brocantes"
-          />
-          <BtnShowMore thematique="Brocantes" />
-        </>
-      ) : (
-        "Pas de résultats"
-      )}
+      <div className="carousel-container">
+        <Carousel showThumbs={false} showStatus={false}>
+          {eventsBrocantes.length > 0
+            ? eventsBrocantes.map((event) => (
+                <div>
+                  <CardTheme
+                    key={event.recordid}
+                    title={event.fields.titre}
+                    date={dateJJMMConverter(event.fields.date_debut)}
+                    // isFavorite={false}
+                    stylecard="Brocantes"
+                    recordid={event.recordid}
+                  />
+                </div>
+              ))
+            : "Pas de résultats"}
+        </Carousel>
+      </div>
       <h3>Autres...</h3>
-      {firstAutres ? (
-        <>
-          <CardTheme
-            title={firstAutres.fields.titre}
-            date={dateJJMMConverter(firstAutres.fields.date_debut)}
-            isFavorite={false}
-            stylecard="Autres"
-          />
-          <BtnShowMore thematique="Autres" />
-        </>
-      ) : (
-        "Pas de résultats"
-      )}
+      <div className="carousel-container">
+        <Carousel showThumbs={false} showStatus={false}>
+          {eventsAutres.length > 0
+            ? eventsAutres.map((event) => (
+                <div>
+                  <CardTheme
+                    key={event.recordid}
+                    title={event.fields.titre}
+                    date={dateJJMMConverter(event.fields.date_debut)}
+                    isFavorite={false}
+                    stylecard="Autres"
+                    recordid={event.recordid}
+                  />
+                </div>
+              ))
+            : "Pas de résultats"}
+        </Carousel>
+      </div>
     </div>
   );
 }
