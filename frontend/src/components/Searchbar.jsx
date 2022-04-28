@@ -2,11 +2,11 @@ import React from "react";
 import "./Searchbar.css";
 import Logo from "./Logo";
 
-function Searchbar() {
-  const [placeChoice, setUserPlace] = React.useState("");
+function Searchbar(props) {
+  const { selectedPlace, setSelectedPlace } = props;
   const display = (e) => {
     e.preventDefault();
-    setUserPlace("");
+    setSelectedPlace("");
   };
 
   return (
@@ -15,8 +15,8 @@ function Searchbar() {
         <input
           className="searchbar"
           placeholder="OÙ ?"
-          value={placeChoice}
-          onChange={(e) => setUserPlace(e.target.value)}
+          value={selectedPlace}
+          onChange={(e) => setSelectedPlace(e.target.value)}
         />
         <button type="button" onClick={display}>
           <Logo />
