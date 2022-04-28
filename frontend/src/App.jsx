@@ -27,10 +27,7 @@ function App() {
   useEffect(() => {
     const url =
       "https://data.laregion.fr/api/records/1.0/search/?dataset=agendas-participatif-des-sorties-en-occitanie&rows=400";
-    axios
-      .get(url)
-      .then((res) => setEventArrayfromAPI(res.data.records))
-      .catch((error) => console.error(error));
+    axios.get(url).then((res) => setEventArrayfromAPI(res.data.records));
   }, []);
 
   const handleSubmitNext = () => {
