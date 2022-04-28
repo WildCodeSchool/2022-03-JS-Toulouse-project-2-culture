@@ -2,15 +2,18 @@ import React from "react";
 import "./Ou.css";
 import Map from "../components/Map";
 import Searchbar from "../components/Searchbar";
-import listEvent from "../components/event";
+import "../components/Map.css";
 
 function Ou(props) {
-  const { events } = props;
+  const { selectedPlace, setSelectedPlace, events } = props;
   return (
     <div className="AskPlaceContainer">
       <h3>Où ?</h3>
-      <Searchbar events={listEvent.records} />
-      <Map events={events} className="MapCont" />
+      <Searchbar
+        selectedPlace={selectedPlace}
+        setSelectedPlace={setSelectedPlace}
+      />
+      <Map events={events} />
     </div>
   );
 }

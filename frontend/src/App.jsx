@@ -21,6 +21,7 @@ import { filterByDate, filterByLocation } from "./components/functions";
 function App() {
   const [eventArrayFromAPI, setEventArrayfromAPI] = useState([]);
   const [selectedDate, setSelectedDate] = useState(new Date());
+  const [selectedPlace, setSelectedPlace] = useState("");
   const selectedLocation = "Toulouse";
 
   const [step, setStep] = useState(0);
@@ -42,6 +43,7 @@ function App() {
   };
   return (
     <div className="App">
+      <Navbar />
       <Router>
         <ul>
           <li>
@@ -70,7 +72,18 @@ function App() {
         <Routes>
           <Route path="/" element="" />
           <Route path="/nav" element={<Navbar />} />
+
           <Route path="/ou" element={<Ou />} />
+          <Route
+            path="/ou"
+            element={
+              <Ou
+                events={listEvent.records}
+                selectedPlace={selectedPlace}
+                setSelectedPlace={setSelectedPlace}
+              />
+            }
+          />
           <Route
             path="/quand"
             element={
