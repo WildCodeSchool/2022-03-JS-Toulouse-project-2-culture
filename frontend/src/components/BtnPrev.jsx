@@ -4,7 +4,7 @@ function BtnPrev(props) {
   const { step, handleSubmitPrev } = props;
   return (
     <button type="submit" className="BtnNext" onClick={handleSubmitPrev}>
-      {step === 0 ? "Trouver un pretexte" : "< Précédent"}
+      {step === 0 ? "Trouver un prétexte" : "< Précédent"}
     </button>
   );
 }

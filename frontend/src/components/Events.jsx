@@ -1,6 +1,6 @@
 import React from "react";
 import Detailspretext from "./Detailspretexte";
-import dateConverter from "./functions";
+import { dateJJMMConverter } from "./functions";
 
 function Events(props) {
   const { event } = props;
@@ -10,7 +10,7 @@ function Events(props) {
         thematique={event.fields.thematique}
         name={event.fields.titre}
         date={event.fields.date}
-        datedebut={dateConverter(event.fields.date_debut)}
+        datedebut={dateJJMMConverter(event.fields.date_debut)}
         description={event.fields.description}
         url={event.fields.url}
         adresse={event.fields.adresse}
