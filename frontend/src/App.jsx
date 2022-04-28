@@ -11,9 +11,9 @@ import Navbar from "./components/Navbar";
 import Map from "./components/Map";
 import CardShowResults from "./components/CardShowResults";
 import CardShowList from "./components/CardShowList";
-import Events from "./components/Events";
 import Accueil from "./pages/Accueil";
 import listEvent from "./components/event";
+import Detailspretext from "./components/Detailspretexte";
 import BtnNext from "./components/BtnNext";
 import BtnPrev from "./components/BtnPrev";
 import { filterByDate, filterByLocation } from "./components/functions";
@@ -68,9 +68,6 @@ function App() {
           <li>
             <Link to="/themelist">Liste Theme</Link>
           </li>
-          <li>
-            <Link to="/Event">Page event</Link>
-          </li>
         </ul>
 
         <Routes>
@@ -111,10 +108,7 @@ function App() {
           />
           <Route path="/favoris" element={<Favoris />} />
           <Route path="/apropos" element={<Apropos />} />
-          <Route
-            path="/Event"
-            element={<Events event={listEvent.records[3]} />}
-          />
+          <Route path="/event/:id" element={<Detailspretext />} />
         </Routes>
       </Router>
       {step === 0 ? (

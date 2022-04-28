@@ -18,10 +18,11 @@ function CardShowList(props) {
         )
         .map((event) => (
           <CardTheme
-            key={event.fields.recordid}
+            key={event.recordid}
             title={event.fields.titre}
             date={dateJJMMConverter(event.fields.date_debut)}
             isFavorite={false}
+            recordid={event.recordid}
             stylecard={
               event.fields.thematique ===
               "Vides Grenier / Brocantes / Foires et salons"
