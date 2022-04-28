@@ -39,7 +39,7 @@ function CardShowResults(props) {
             isFavorite={false}
             stylecard="Culture"
           />
-          <BtnShowMore thematique="Culture" />
+          <BtnShowMore events={events} thematique="Culture" />
         </>
       ) : (
         "Pas de résultats"
