@@ -1,6 +1,7 @@
 import React from "react";
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import L from "leaflet";
+import LocationMarker from "./LocationMarker";
 import Green from "../assets/markers/Green.png";
 import Blue from "../assets/markers/Blue.png";
 import Yellow from "../assets/markers/Yellow.png";
@@ -61,6 +62,7 @@ function Map(props) {
             </Popup>
           </Marker>
         ))}
+        <LocationMarker />;
       </MapContainer>
       <div className="legend">
         <img className="markerslgd" src={Bluelgd} alt="Bleu = Culture" />
