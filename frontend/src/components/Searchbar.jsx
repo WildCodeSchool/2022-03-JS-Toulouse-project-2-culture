@@ -3,11 +3,10 @@ import "./Searchbar.css";
 import Logo from "./Logo";
 
 function Searchbar(props) {
-  const { placeChoice, setUserPlace } = props;
-  // const { eventsSearch } = props;
+  const { selectedPlace, setSelectedPlace } = props;
   const display = (e) => {
     e.preventDefault();
-    setUserPlace("");
+    setSelectedPlace("");
   };
 
   return (
@@ -16,8 +15,8 @@ function Searchbar(props) {
         <input
           className="searchbar"
           placeholder="OÙ ?"
-          value={placeChoice}
-          onChange={(e) => setUserPlace(e.target.value)}
+          value={selectedPlace}
+          onChange={(e) => setSelectedPlace(e.target.value)}
         />
         <button type="button" onClick={display}>
           <Logo />

@@ -20,8 +20,7 @@ import BtnPrev from "./components/BtnPrev";
 function App() {
   const [eventArrayFromAPI, setEventArrayfromAPI] = useState({});
   const [selectedDate, setSelectedDate] = useState(new Date());
-  const [placeChoice, setUserPlace] = React.useState("");
-  // const [eventArrayFromLocation, setEventArrayFromLocation] = useState({});
+  const [selectedPlace, setSelectedPlace] = useState("");
   const [step, setStep] = useState(0);
   useEffect(() => {
     const url =
@@ -79,8 +78,8 @@ function App() {
             element={
               <Ou
                 events={listEvent.records}
-                placeChoice={placeChoice}
-                setUserPlace={setUserPlace}
+                selectedPlace={selectedPlace}
+                setSelectedPlace={setSelectedPlace}
               />
             }
           />
