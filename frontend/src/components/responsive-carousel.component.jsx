@@ -14,10 +14,10 @@ function ResponsiveCarouselComponent(props) {
         {events.map((event) => (
           <div>
             <CardTheme
-              // key={event.recordid}
+              key={event.recordid}
               title={event.fields.titre}
               date={dateJJMMConverter(event.fields.date_debut)}
-              // isFavorite={false}
+              isFavorite={false}
               stylecard={
                 event.fields.thematique ===
                 "Vides Grenier / Brocantes / Foires et salons"
