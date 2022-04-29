@@ -7,6 +7,7 @@ function CardTheme({ title, date, stylecard, recordid, handleSubmitNext }) {
   const [isFavorite, setIsfavorite] = useState(false);
   const handlefavorite = () => {
     setIsfavorite(!isFavorite);
+    window.localStorage.setItem("favorite", { recordid });
   };
 
   return (

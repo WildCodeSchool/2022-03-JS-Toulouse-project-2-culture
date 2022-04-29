@@ -19,7 +19,6 @@ function App() {
   const [eventArrayFromAPI, setEventArrayfromAPI] = useState([]);
   const [selectedDate, setSelectedDate] = useState(new Date());
   const [selectedPlace, setSelectedPlace] = useState("");
-  // const selectedLocation = "Toulouse";
 
   const [step, setStep] = useState(0);
   useEffect(() => {
