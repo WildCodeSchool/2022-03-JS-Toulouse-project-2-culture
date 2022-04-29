@@ -106,3 +106,16 @@ h4 {
 .BtnShowMore {
   margin: 0 0 2rem 0;
 }
+
+.recordidlink {
+  color: black;
+  text-decoration: dotted;
+  padding: 1rem;
+  font-weight: bolder;
+}
+
+.recordidlink:hover {
+  text-decoration: underline;
+  text-decoration-color: var(--secondary-color)
+}
+
