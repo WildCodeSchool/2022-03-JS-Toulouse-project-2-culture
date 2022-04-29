@@ -27,7 +27,7 @@ function Detailspretext() {
       .then((data) => {
         setEventDetail(data.records[0]);
       });
-  }, [eventDetail]);
+  }, []);
 
   const [isFavorite, setIsfavorite] = useState(false);
 

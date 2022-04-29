@@ -97,7 +97,7 @@ function App() {
         ) : (
           <CardShowResults
             events={filterByLocation(
-              listEvent.records,
+              eventArrayFromAPI,
               selectedDate,
               selectedLocation
             )}
