@@ -1,6 +1,6 @@
 @import "../../node_modules/leaflet/dist/leaflet.css";
 :root {
-  --mapwidth: 70vw;
+  --mapwidth: 95vw;
 }
 
 .leaflet-container {
