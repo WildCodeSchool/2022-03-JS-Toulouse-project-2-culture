@@ -10,7 +10,7 @@ import Apropos from "./pages/Apropos";
 import Navbar from "./components/Navbar";
 import CardShowResults from "./components/CardShowResults";
 import Accueil from "./pages/Accueil";
-import listEvent from "./components/event";
+// import listEvent from "./components/event";
 import Detailspretext from "./components/Detailspretexte";
 import BtnNext from "./components/BtnNext";
 import BtnPrev from "./components/BtnPrev";
@@ -20,7 +20,7 @@ function App() {
   const [eventArrayFromAPI, setEventArrayfromAPI] = useState([]);
   const [selectedDate, setSelectedDate] = useState(new Date());
   const [selectedPlace, setSelectedPlace] = useState("");
-  const selectedLocation = "Toulouse";
+  // const selectedLocation = "Toulouse";
 
   const [step, setStep] = useState(0);
   useEffect(() => {
@@ -86,7 +86,7 @@ function App() {
           <Quand
             selectedDate={selectedDate}
             setSelectedDate={setSelectedDate}
-            eventArrayFromAPI={listEvent.records}
+            eventArrayFromAPI={eventArrayFromAPI}
           />
         ) : step === 2 ? (
           <Ou
@@ -97,9 +97,9 @@ function App() {
         ) : (
           <CardShowResults
             events={filterByLocation(
-              listEvent.records,
+              eventArrayFromAPI,
               selectedDate,
-              selectedLocation
+              selectedPlace
             )}
           />
         )}

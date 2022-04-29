@@ -52,7 +52,7 @@ function CardShowResults(props) {
         <Carousel showThumbs={false} showStatus={false}>
           {eventsEnvironnement.length > 0
             ? eventsEnvironnement.map((event) => (
-                <div>
+                <div key={event.recordid}>
                   <CardTheme
                     key={event.recordid}
                     title={event.fields.titre}
@@ -72,7 +72,7 @@ function CardShowResults(props) {
         <Carousel showThumbs={false} showStatus={false}>
           {eventsSport.length > 0
             ? eventsSport.map((event) => (
-                <div>
+                <div key={event.recordid}>
                   <CardTheme
                     key={event.recordid}
                     title={event.fields.titre}
@@ -91,7 +91,7 @@ function CardShowResults(props) {
         <Carousel showThumbs={false} showStatus={false}>
           {eventsBrocantes.length > 0
             ? eventsBrocantes.map((event) => (
-                <div>
+                <div key={event.recordid}>
                   <CardTheme
                     key={event.recordid}
                     title={event.fields.titre}
@@ -110,7 +110,7 @@ function CardShowResults(props) {
         <Carousel showThumbs={false} showStatus={false}>
           {eventsAutres.length > 0
             ? eventsAutres.map((event) => (
-                <div>
+                <div key={event.recordid}>
                   <CardTheme
                     key={event.recordid}
                     title={event.fields.titre}
