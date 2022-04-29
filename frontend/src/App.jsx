@@ -10,7 +10,6 @@ import Apropos from "./pages/Apropos";
 import Navbar from "./components/Navbar";
 import CardShowResults from "./components/CardShowResults";
 import Accueil from "./pages/Accueil";
-// import listEvent from "./components/event";
 import Detailspretext from "./components/Detailspretexte";
 import BtnNext from "./components/BtnNext";
 import BtnPrev from "./components/BtnPrev";
