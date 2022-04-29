@@ -96,7 +96,7 @@ function CardShowResults(props) {
                     key={event.recordid}
                     title={event.fields.titre}
                     date={dateJJMMConverter(event.fields.date_debut)}
-                    // isFavorite={false}
+                    isFavorite={false}
                     stylecard="Brocantes"
                     recordid={event.recordid}
                   />
