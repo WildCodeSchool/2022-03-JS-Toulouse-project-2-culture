@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import "./CardTheme.css";
 import CardThemeHeart from "./CardThemeHeart";
 
-function CardTheme({ title, date, stylecard, recordid }) {
+function CardTheme({ title, date, stylecard, recordid, handleSubmitNext }) {
   const [isFavorite, setIsfavorite] = useState(false);
   const handlefavorite = () => {
     setIsfavorite(!isFavorite);
@@ -22,7 +22,12 @@ function CardTheme({ title, date, stylecard, recordid }) {
           />
         </div>
         <h3>{title}</h3>
-        <Link className="recordidlink" to={`/event/${recordid}`}>
+
+        <Link
+          className="recordidlink"
+          to={`/event/${recordid}`}
+          onClick={handleSubmitNext}
+        >
           Plus d&apos;informations
         </Link>
       </div>

@@ -30,8 +30,9 @@ function App() {
   }, []);
 
   const handleSubmitNext = () => {
-    if (step < 3) {
+    if (step < 4) {
       setStep(step + 1);
+      console.log(step);
     }
   };
   const handleSubmitPrev = () => {
@@ -39,9 +40,11 @@ function App() {
       setStep(step - 1);
     }
   };
+
+  const zerostep = () => setStep(0);
   return (
     <div className="App">
-      <Navbar />
+      <Navbar zerostep={zerostep} />
       <Router>
         <ul>
           <li>
@@ -94,22 +97,25 @@ function App() {
             selectedPlace={selectedPlace}
             setSelectedPlace={setSelectedPlace}
           />
-        ) : (
+        ) : step === 3 ? (
           <CardShowResults
             events={filterByLocation(
               eventArrayFromAPI,
               selectedDate,
               selectedPlace
             )}
+            handleSubmitNext={handleSubmitNext}
           />
+        ) : (
+          <Favoris />
         )}
         <div className="BtnContainer">
-          {step > 0 ? (
+          {step > 0 && step < 3 ? (
             <BtnPrev step={step} handleSubmitPrev={handleSubmitPrev} />
           ) : (
             ""
           )}
-          {step <= 2 ? (
+          {step < 3 ? (
             <BtnNext step={step} handleSubmitNext={handleSubmitNext} />
           ) : (
             ""
