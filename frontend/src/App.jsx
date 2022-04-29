@@ -107,7 +107,7 @@ function App() {
           <Favoris />
         )}
         <div className="BtnContainer">
-          {step > 0 && step < 3 ? (
+          {step > 0 && step <= 3 ? (
             <BtnPrev step={step} handleSubmitPrev={handleSubmitPrev} />
           ) : (
             ""

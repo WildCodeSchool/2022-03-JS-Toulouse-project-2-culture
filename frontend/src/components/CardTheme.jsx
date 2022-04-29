@@ -5,9 +5,14 @@ import CardThemeHeart from "./CardThemeHeart";
 
 function CardTheme({ title, date, stylecard, recordid, handleSubmitNext }) {
   const [isFavorite, setIsfavorite] = useState(false);
+
   const handlefavorite = () => {
     setIsfavorite(!isFavorite);
-    window.localStorage.setItem("favorite", { recordid });
+
+    window.localStorage.setItem(
+      `favorite${window.localStorage.length}`,
+      recordid
+    );
   };
 
   return (

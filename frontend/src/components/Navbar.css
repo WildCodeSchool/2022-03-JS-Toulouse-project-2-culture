@@ -30,6 +30,7 @@
   position: fixed;
   background-color: var(--primary-color);
   color: var(--secondary-color);
+  z-index: 5;
 }
 
 .navbar_links {
