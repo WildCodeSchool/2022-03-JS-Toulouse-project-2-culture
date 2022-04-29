@@ -12,7 +12,7 @@ import MapDetailEvent from "./MapDetailEvent";
 import "./Detailspretexte.css";
 import CardThemeHeart from "./CardThemeHeart";
 import "./CardTheme.css";
-import dateConverter from "./functions";
+import { dateJJMMConverter } from "./functions";
 
 function Detailspretext() {
   const [eventDetail, setEventDetail] = useState(null);
@@ -57,7 +57,7 @@ function Detailspretext() {
                       : eventDetail.fields.thematique
                   }`}
                 >
-                  {dateConverter(eventDetail.fields.date_debut)}
+                  {dateJJMMConverter(eventDetail.fields.date_debut)}
                 </h4>
               </div>
               <CardThemeHeart
@@ -66,14 +66,16 @@ function Detailspretext() {
               />
             </div>
             <h1>{eventDetail.fields.titre}</h1>
-            <p>{eventDetail.fields.thematique}</p>
+            <p className="thematique">{eventDetail.fields.thematique}</p>
             <p id="textdate">{eventDetail.fields.date}</p>
             <p className="textaligndescription">
               {eventDetail.fields.description}
             </p>
-            <p>Adresse : {eventDetail.fields.adresse}</p>
-            <p>Site internet :</p>
-            <a href={eventDetail.fields.url}>{eventDetail.fields.url}</a>
+            <p className="adress">Adresse : {eventDetail.fields.adresse}</p>
+            <p className="website">Site internet :</p>
+            <a className="websitelink" href={eventDetail.fields.url}>
+              {eventDetail.fields.url}
+            </a>
             <div className="box" id="img">
               <MapDetailEvent
                 coordinates={eventDetail.fields.geo_shape.coordinates}
