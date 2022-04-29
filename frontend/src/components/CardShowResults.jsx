@@ -8,7 +8,7 @@ import "./CardTheme.css";
 import { dateJJMMConverter } from "./functions";
 
 function CardShowResults(props) {
-  const { events } = props;
+  const { events, handleSubmitNext } = props;
 
   const eventsCulture = events.filter(
     (event) => event.fields.thematique === "Culture"
@@ -41,6 +41,7 @@ function CardShowResults(props) {
                     isFavorite={false}
                     stylecard="Culture"
                     recordid={event.recordid}
+                    handleSubmitNext={handleSubmitNext}
                   />
                 </div>
               ))
@@ -52,7 +53,7 @@ function CardShowResults(props) {
         <Carousel showThumbs={false} showStatus={false}>
           {eventsEnvironnement.length > 0
             ? eventsEnvironnement.map((event) => (
-                <div>
+                <div key={event.recordid}>
                   <CardTheme
                     key={event.recordid}
                     title={event.fields.titre}
@@ -60,6 +61,7 @@ function CardShowResults(props) {
                     isFavorite={false}
                     stylecard="Environnement"
                     recordid={event.recordid}
+                    handleSubmitNext={handleSubmitNext}
                   />
                 </div>
               ))
@@ -72,7 +74,7 @@ function CardShowResults(props) {
         <Carousel showThumbs={false} showStatus={false}>
           {eventsSport.length > 0
             ? eventsSport.map((event) => (
-                <div>
+                <div key={event.recordid}>
                   <CardTheme
                     key={event.recordid}
                     title={event.fields.titre}
@@ -80,6 +82,7 @@ function CardShowResults(props) {
                     isFavorite={false}
                     stylecard="Sport"
                     recordid={event.recordid}
+                    handleSubmitNext={handleSubmitNext}
                   />
                 </div>
               ))
@@ -91,7 +94,7 @@ function CardShowResults(props) {
         <Carousel showThumbs={false} showStatus={false}>
           {eventsBrocantes.length > 0
             ? eventsBrocantes.map((event) => (
-                <div>
+                <div key={event.recordid}>
                   <CardTheme
                     key={event.recordid}
                     title={event.fields.titre}
@@ -99,6 +102,7 @@ function CardShowResults(props) {
                     isFavorite={false}
                     stylecard="Brocantes"
                     recordid={event.recordid}
+                    handleSubmitNext={handleSubmitNext}
                   />
                 </div>
               ))
@@ -110,7 +114,7 @@ function CardShowResults(props) {
         <Carousel showThumbs={false} showStatus={false}>
           {eventsAutres.length > 0
             ? eventsAutres.map((event) => (
-                <div>
+                <div key={event.recordid}>
                   <CardTheme
                     key={event.recordid}
                     title={event.fields.titre}
@@ -118,6 +122,7 @@ function CardShowResults(props) {
                     isFavorite={false}
                     stylecard="Autres"
                     recordid={event.recordid}
+                    handleSubmitNext={handleSubmitNext}
                   />
                 </div>
               ))

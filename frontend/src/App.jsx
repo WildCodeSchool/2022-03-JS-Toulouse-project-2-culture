@@ -10,7 +10,6 @@ import Apropos from "./pages/Apropos";
 import Navbar from "./components/Navbar";
 import CardShowResults from "./components/CardShowResults";
 import Accueil from "./pages/Accueil";
-import listEvent from "./components/event";
 import Detailspretext from "./components/Detailspretexte";
 import BtnNext from "./components/BtnNext";
 import BtnPrev from "./components/BtnPrev";
@@ -20,7 +19,6 @@ function App() {
   const [eventArrayFromAPI, setEventArrayfromAPI] = useState([]);
   const [selectedDate, setSelectedDate] = useState(new Date());
   const [selectedPlace, setSelectedPlace] = useState("");
-  const selectedLocation = "Toulouse";
 
   const [step, setStep] = useState(0);
   useEffect(() => {
@@ -30,7 +28,7 @@ function App() {
   }, []);
 
   const handleSubmitNext = () => {
-    if (step < 3) {
+    if (step < 4) {
       setStep(step + 1);
     }
   };
@@ -39,9 +37,11 @@ function App() {
       setStep(step - 1);
     }
   };
+
+  const zerostep = () => setStep(0);
   return (
     <div className="App">
-      <Navbar />
+      <Navbar zerostep={zerostep} />
       <Router>
         <ul>
           <li>
@@ -86,7 +86,7 @@ function App() {
           <Quand
             selectedDate={selectedDate}
             setSelectedDate={setSelectedDate}
-            eventArrayFromAPI={listEvent.records}
+            eventArrayFromAPI={eventArrayFromAPI}
           />
         ) : step === 2 ? (
           <Ou
@@ -94,22 +94,25 @@ function App() {
             selectedPlace={selectedPlace}
             setSelectedPlace={setSelectedPlace}
           />
-        ) : (
+        ) : step === 3 ? (
           <CardShowResults
             events={filterByLocation(
               eventArrayFromAPI,
               selectedDate,
-              selectedLocation
+              selectedPlace
             )}
+            handleSubmitNext={handleSubmitNext}
           />
+        ) : (
+          <Favoris />
         )}
         <div className="BtnContainer">
-          {step > 0 ? (
+          {step > 0 && step < 3 ? (
             <BtnPrev step={step} handleSubmitPrev={handleSubmitPrev} />
           ) : (
             ""
           )}
-          {step <= 2 ? (
+          {step < 3 ? (
             <BtnNext step={step} handleSubmitNext={handleSubmitNext} />
           ) : (
             ""
