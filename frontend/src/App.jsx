@@ -8,9 +8,7 @@ import Ou from "./pages/Ou";
 import Favoris from "./pages/Favoris";
 import Apropos from "./pages/Apropos";
 import Navbar from "./components/Navbar";
-import Map from "./components/Map";
 import CardShowResults from "./components/CardShowResults";
-import CardShowList from "./components/CardShowList";
 import Accueil from "./pages/Accueil";
 import listEvent from "./components/event";
 import Detailspretext from "./components/Detailspretexte";
@@ -61,58 +59,19 @@ function App() {
           <li>
             <Link to="/map">Map</Link>
           </li>
-          <li>
-            <Link to="/quoi">Quoi</Link>
-          </li>
-          <li>
-            <Link to="/themelist">Liste Theme</Link>
-          </li>
         </ul>
 
         <Routes>
           <Route path="/" element="" />
           <Route path="/nav" element={<Navbar />} />
-
           <Route path="/ou" element={<Ou />} />
           <Route
             path="/ou"
             element={
               <Ou
-                events={listEvent.records}
+                events={filterByDate(eventArrayFromAPI, selectedDate)}
                 selectedPlace={selectedPlace}
                 setSelectedPlace={setSelectedPlace}
-              />
-            }
-          />
-          <Route
-            path="/quand"
-            element={
-              <Quand
-                selectedDate={selectedDate}
-                setSelectedDate={setSelectedDate}
-                eventArrayFromAPI={eventArrayFromAPI}
-              />
-            }
-          />
-          <Route
-            path="/map"
-            element={
-              <Map
-                events={filterByDate(eventArrayFromAPI, selectedDate)}
-                className="MapCont"
-              />
-            }
-          />
-          <Route
-            path="/quoi"
-            element={<CardShowResults events={listEvent.records} />}
-          />
-          <Route
-            path="/themelist"
-            element={
-              <CardShowList
-                events={listEvent.records}
-                thematique="Environnement"
               />
             }
           />
@@ -130,7 +89,11 @@ function App() {
             eventArrayFromAPI={listEvent.records}
           />
         ) : step === 2 ? (
-          <Ou events={listEvent.records} />
+          <Ou
+            events={filterByDate(eventArrayFromAPI, selectedDate)}
+            selectedPlace={selectedPlace}
+            setSelectedPlace={setSelectedPlace}
+          />
         ) : (
           <CardShowResults
             events={filterByLocation(
