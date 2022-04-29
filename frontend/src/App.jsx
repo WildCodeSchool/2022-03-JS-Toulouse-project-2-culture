@@ -32,7 +32,6 @@ function App() {
   const handleSubmitNext = () => {
     if (step < 4) {
       setStep(step + 1);
-      console.log(step);
     }
   };
   const handleSubmitPrev = () => {
