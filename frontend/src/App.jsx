@@ -11,21 +11,26 @@ import Navbar from "./components/Navbar";
 import Map from "./components/Map";
 import CardShowResults from "./components/CardShowResults";
 import CardShowList from "./components/CardShowList";
-import Events from "./components/Events";
 import Accueil from "./pages/Accueil";
 import listEvent from "./components/event";
+import Detailspretext from "./components/Detailspretexte";
 import BtnNext from "./components/BtnNext";
 import BtnPrev from "./components/BtnPrev";
+import { filterByDate, filterByLocation } from "./components/functions";
 
 function App() {
   const [eventArrayFromAPI, setEventArrayfromAPI] = useState([]);
   const [selectedDate, setSelectedDate] = useState(new Date());
+  const [selectedPlace, setSelectedPlace] = useState("");
+  const selectedLocation = "Toulouse";
+
   const [step, setStep] = useState(0);
   useEffect(() => {
     const url =
       "https://data.laregion.fr/api/records/1.0/search/?dataset=agendas-participatif-des-sorties-en-occitanie&rows=400";
     axios.get(url).then((res) => setEventArrayfromAPI(res.data.records));
   }, []);
+
   const handleSubmitNext = () => {
     if (step < 3) {
       setStep(step + 1);
@@ -38,6 +43,7 @@ function App() {
   };
   return (
     <div className="App">
+      <Navbar />
       <Router>
         <ul>
           <li>
@@ -61,30 +67,41 @@ function App() {
           <li>
             <Link to="/themelist">Liste Theme</Link>
           </li>
-          <li>
-            <Link to="/Event">Page event</Link>
-          </li>
         </ul>
 
         <Routes>
           <Route path="/" element="" />
-
           <Route path="/nav" element={<Navbar />} />
-          <Route path="/ou" element={<Ou />} />
 
+          <Route path="/ou" element={<Ou />} />
+          <Route
+            path="/ou"
+            element={
+              <Ou
+                events={listEvent.records}
+                selectedPlace={selectedPlace}
+                setSelectedPlace={setSelectedPlace}
+              />
+            }
+          />
           <Route
             path="/quand"
             element={
               <Quand
                 selectedDate={selectedDate}
                 setSelectedDate={setSelectedDate}
-                eventArrayFromAPI={listEvent.records}
+                eventArrayFromAPI={eventArrayFromAPI}
               />
             }
           />
           <Route
             path="/map"
-            element={<Map events={eventArrayFromAPI} className="MapCont" />}
+            element={
+              <Map
+                events={filterByDate(eventArrayFromAPI, selectedDate)}
+                className="MapCont"
+              />
+            }
           />
           <Route
             path="/quoi"
@@ -101,10 +118,7 @@ function App() {
           />
           <Route path="/favoris" element={<Favoris />} />
           <Route path="/apropos" element={<Apropos />} />
-          <Route
-            path="/Event"
-            element={<Events event={listEvent.records[3]} />}
-          />
+          <Route path="/event/:id" element={<Detailspretext />} />
         </Routes>
       </Router>
       {step === 0 ? (
@@ -113,12 +127,18 @@ function App() {
         <Quand
           selectedDate={selectedDate}
           setSelectedDate={setSelectedDate}
-          eventArrayFromAPI={eventArrayFromAPI}
+          eventArrayFromAPI={listEvent.records}
         />
       ) : step === 2 ? (
-        <Map events={listEvent.records} className="MapCont" />
+        <Ou events={listEvent.records} />
       ) : (
-        <CardShowResults events={listEvent.records} />
+        <CardShowResults
+          events={filterByLocation(
+            listEvent.records,
+            selectedDate,
+            selectedLocation
+          )}
+        />
       )}
       <div className="BtnContainer">
         {step > 0 ? (

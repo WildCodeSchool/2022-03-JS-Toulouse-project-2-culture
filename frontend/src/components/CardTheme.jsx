@@ -1,8 +1,9 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import "./CardTheme.css";
 import CardThemeHeart from "./CardThemeHeart";
 
-function CardTheme({ title, date, stylecard }) {
+function CardTheme({ title, date, stylecard, recordid }) {
   const [isFavorite, setIsfavorite] = useState(false);
   const handlefavorite = () => {
     setIsfavorite(!isFavorite);
@@ -21,6 +22,7 @@ function CardTheme({ title, date, stylecard }) {
           />
         </div>
         <h3>{title}</h3>
+        <Link to={`/event/${recordid}`}>Page Event</Link>
       </div>
     </div>
   );
