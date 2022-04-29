@@ -6,13 +6,29 @@ import CardThemeHeart from "./CardThemeHeart";
 function CardTheme({ title, date, stylecard, recordid, handleSubmitNext }) {
   const [isFavorite, setIsfavorite] = useState(false);
 
-  const handlefavorite = () => {
-    setIsfavorite(!isFavorite);
+  /*  Vérifie si le recordid figure dans la liste localStorage : vrai / faux */
 
-    window.localStorage.setItem(
-      `favorite${window.localStorage.length}`,
-      recordid
-    );
+  const includedFavorite = () => {
+    return Object.values(window.localStorage).includes(recordid);
+  };
+
+  const handlefavorite = () => {
+    if (includedFavorite()) {
+      /*  Supprime le favoris de la liste localStorage si déjà present */
+      setIsfavorite(false);
+      window.localStorage.removeItem(
+        Object.keys(window.localStorage).find(
+          (key) => window.localStorage[key] === recordid
+        )
+      );
+    } else {
+      /*  ajoute le favoris de la liste localStorage si pas dans la liste */
+      setIsfavorite(true);
+      window.localStorage.setItem(
+        `favorite${window.localStorage.length}`,
+        recordid
+      );
+    }
   };
 
   return (
