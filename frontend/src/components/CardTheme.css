@@ -95,3 +95,28 @@ h4 {
   border: none;
   background: none;
 }
+
+.BtnShowMore a {
+  color: var(--secondary-color);
+  background-color: var(--primary-color);
+  border-radius: 1rem;
+  padding: 0 0.5rem;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1rem;
+}
+.BtnShowMore {
+  margin: 0 0 2rem 0;
+}
+
+.recordidlink {
+  color: black;
+  text-decoration: dotted;
+  padding: 1rem;
+  font-weight: bolder;
+}
+
+.recordidlink:hover {
+  text-decoration: underline;
+  text-decoration-color: var(--secondary-color);
+}

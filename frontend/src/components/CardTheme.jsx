@@ -22,7 +22,9 @@ function CardTheme({ title, date, stylecard, recordid }) {
           />
         </div>
         <h3>{title}</h3>
-        <Link to={`/event/${recordid}`}>Page Event</Link>
+        <Link className="recordidlink" to={`/event/${recordid}`}>
+          Plus d&apos;informations
+        </Link>
       </div>
     </div>
   );
