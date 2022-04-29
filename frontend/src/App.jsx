@@ -120,38 +120,39 @@ function App() {
           <Route path="/apropos" element={<Apropos />} />
           <Route path="/event/:id" element={<Detailspretext />} />
         </Routes>
-      </Router>
-      {step === 0 ? (
-        <Accueil />
-      ) : step === 1 ? (
-        <Quand
-          selectedDate={selectedDate}
-          setSelectedDate={setSelectedDate}
-          eventArrayFromAPI={listEvent.records}
-        />
-      ) : step === 2 ? (
-        <Ou events={listEvent.records} />
-      ) : (
-        <CardShowResults
-          events={filterByLocation(
-            listEvent.records,
-            selectedDate,
-            selectedLocation
+
+        {step === 0 ? (
+          <Accueil />
+        ) : step === 1 ? (
+          <Quand
+            selectedDate={selectedDate}
+            setSelectedDate={setSelectedDate}
+            eventArrayFromAPI={listEvent.records}
+          />
+        ) : step === 2 ? (
+          <Ou events={listEvent.records} />
+        ) : (
+          <CardShowResults
+            events={filterByLocation(
+              listEvent.records,
+              selectedDate,
+              selectedLocation
+            )}
+          />
+        )}
+        <div className="BtnContainer">
+          {step > 0 ? (
+            <BtnPrev step={step} handleSubmitPrev={handleSubmitPrev} />
+          ) : (
+            ""
           )}
-        />
-      )}
-      <div className="BtnContainer">
-        {step > 0 ? (
-          <BtnPrev step={step} handleSubmitPrev={handleSubmitPrev} />
-        ) : (
-          ""
-        )}
-        {step <= 2 ? (
-          <BtnNext step={step} handleSubmitNext={handleSubmitNext} />
-        ) : (
-          ""
-        )}
-      </div>
+          {step <= 2 ? (
+            <BtnNext step={step} handleSubmitNext={handleSubmitNext} />
+          ) : (
+            ""
+          )}
+        </div>
+      </Router>
     </div>
   );
 }
