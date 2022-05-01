@@ -6,15 +6,19 @@ import CardThemeHeart from "./CardThemeHeart";
 function CardTheme({ title, date, stylecard, recordid, handleSubmitNext }) {
   const [isFavorite, setIsfavorite] = useState(false);
 
-  /*  Vérifie si le recordid figure dans la liste localStorage : vrai / faux */
-
+  /**
+   * If the recordid is in the localStorage, return true, otherwise return false.
+   * @returns a boolean value.
+   */
   const includedFavorite = () => {
     return Object.values(window.localStorage).includes(recordid);
   };
 
+  /**
+   * If the recordid is already in localStorage, remove it. If it's not in localStorage, add it
+   */
   const handlefavorite = () => {
     if (includedFavorite()) {
-      /*  Supprime le favoris de la liste localStorage si déjà present */
       setIsfavorite(false);
       window.localStorage.removeItem(
         Object.keys(window.localStorage).find(
@@ -22,7 +26,6 @@ function CardTheme({ title, date, stylecard, recordid, handleSubmitNext }) {
         )
       );
     } else {
-      /*  ajoute le favoris de la liste localStorage si pas dans la liste */
       setIsfavorite(true);
       window.localStorage.setItem(
         `favorite${window.localStorage.length}`,

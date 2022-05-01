@@ -75,7 +75,10 @@ function App() {
               />
             }
           />
-          <Route path="/favoris" element={<Favoris />} />
+          <Route
+            path="/favoris"
+            element={<Favoris eventArrayFromAPI={eventArrayFromAPI} />}
+          />
           <Route path="/apropos" element={<Apropos />} />
           <Route path="/event/:id" element={<Detailspretext />} />
         </Routes>
