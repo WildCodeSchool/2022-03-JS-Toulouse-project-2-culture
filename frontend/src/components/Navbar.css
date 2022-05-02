@@ -20,6 +20,7 @@
 }
 
 .navbar {
+  z-index: 1001;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
@@ -161,4 +162,7 @@
 .show-nav .slideInDown-3 {
   flex-direction: column;
   transition: all 1.2s ease-out;
+}
+.navbar_logo{
+margin-left: 10px;
 }

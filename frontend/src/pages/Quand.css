@@ -18,11 +18,11 @@
 .react-calendar {
   width: 300px;
   max-width: 100%;
-  background-color: var(--third-color);
+  background: radial-gradient(rgba(245, 245, 245, 0.613),rgb(255, 254, 254) );
   color: #222;
   border-radius: 1rem;
   box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
-  font-family: var(--secondary-font);
+  font-family: var(--primary-font);
   line-height: 1.125rem;
 }
 
