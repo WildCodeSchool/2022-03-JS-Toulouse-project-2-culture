@@ -34,7 +34,7 @@ function CardShowResults(props) {
         <Carousel showThumbs={false} showStatus={false}>
           {eventsCulture.length > 0
             ? eventsCulture.map((event) => (
-                <div key={event.recordid}>
+                <div key={event.recordid} className="carousel-card">
                   <CardTheme
                     title={event.fields.titre}
                     date={dateJJMMConverter(event.fields.date_debut)}

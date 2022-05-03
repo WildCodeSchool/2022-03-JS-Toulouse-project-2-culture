@@ -20,21 +20,11 @@ function Favoris() {
             res.data.records.find((event) => event.recordid === id)
           )
         )
-      )
-      .then(console.log(favorites));
+      );
   }, []);
-
-  // const arrayFav = listFavorite.map((id) =>
-  //   eventsAPI.find((event) => event.recordid === id)
-  // );
-  // console.log(arrayFav);
   return (
     <div className="favContainer">
       <h3>Vos favoris</h3>
-      {/* {listFavorite.map((fav) => (
-        <li>{fav}</li>
-      ))} */}
-
       {favorites.map((event) => (
         <div className="favList">
           <CardTheme
@@ -42,7 +32,12 @@ function Favoris() {
             title={event.fields.titre}
             date={dateJJMMConverter(event.fields.date_debut)}
             isFavorite={false}
-            stylecard="Brocantes"
+            stylecard={
+              event.fields.thematique ===
+              "Vides Grenier / Brocantes / Foires et salons"
+                ? "Brocantes"
+                : event.fields.thematique
+            }
             recordid={event.recordid}
           />
         </div>
