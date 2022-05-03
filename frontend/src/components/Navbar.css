@@ -20,12 +20,13 @@
 }
 
 .navbar {
+  z-index: 1001;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
   padding: 1rem;
-  width: 100vw;
+  width: 100%;
   min-height: 75px;
   position: fixed;
   background-color: var(--primary-color);
@@ -42,7 +43,7 @@
   right: -100vw;
   bottom: 0;
   width: 0;
-  height: 100vh;
+  height: 100%;
   padding: 2rem;
   background-color: var(--primary-color);
   visibility: hidden;
@@ -162,4 +163,7 @@
 .show-nav .slideInDown-3 {
   flex-direction: column;
   transition: all 1.2s ease-out;
+}
+.navbar_logo {
+  margin-left: 10px;
 }
