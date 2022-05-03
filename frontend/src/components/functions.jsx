@@ -1,14 +1,8 @@
 export function dateJJMMConverter(stringDate) {
-  const dayNumber =
-    new Date(stringDate).getUTCDate() < 10
-      ? `0${new Date(stringDate).getUTCDate()}`
-      : new Date(stringDate).getUTCDate();
-  const monthNumber =
-    new Date(stringDate).getUTCMonth() < 10
-      ? `0${new Date(stringDate).getUTCMonth()}`
-      : new Date(stringDate).getUTCMonth();
-
-  return `${dayNumber}/${monthNumber}`;
+  return new Date(stringDate).toLocaleDateString("en-gb", {
+    month: "numeric",
+    day: "numeric",
+  });
 }
 export function filterByDate(array, date) {
   return array.filter(
@@ -36,7 +30,9 @@ export function filterByDate(array, date) {
   );
 }
 export function filterByLocation(array, date, location) {
-  return filterByDate(array, date).filter(
-    (event) => event.fields.commune === location
-  );
+  if (location)
+    return filterByDate(array, date).filter(
+      (event) => event.fields.commune === location
+    );
+  return filterByDate(array, date);
 }

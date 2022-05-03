@@ -2,7 +2,7 @@ import React from "react";
 import "./Favoris.css";
 
 function Favoris() {
-  return <div>Favoris</div>;
+  return <div />;
 }
 
 export default Favoris;

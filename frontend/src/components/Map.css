@@ -1,6 +1,6 @@
 @import "../../node_modules/leaflet/dist/leaflet.css";
 :root {
-  --mapwidth: 70vw;
+  --mapwidth: 95vw;
 }
 
 .leaflet-container {
@@ -22,5 +22,5 @@
 .markerslgd {
   width: 70%;
   height: 60%;
-  margin-top: -6rem;
+  margin-top: -5rem;
 }

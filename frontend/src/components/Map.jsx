@@ -55,9 +55,14 @@ function Map(props) {
           url="https://{s}.tile.openstreetmap.fr/osmfr/{z}/{x}/{y}.png"
         />
         {events.map((el) => (
-          <Marker position={el.fields.geo_point_2d} icon={IconColor(el)}>
+          <Marker
+            key={el.recordid}
+            position={el.fields.geo_point_2d}
+            icon={IconColor(el)}
+          >
             <Popup class="popup">
-              A pretty CSS3 popup. <br /> Easily customizable.
+              {el.fields.titre}
+              <br /> {el.fields.date}
             </Popup>
           </Marker>
         ))}

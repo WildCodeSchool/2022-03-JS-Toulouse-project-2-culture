@@ -9,11 +9,8 @@ import Ou from "./pages/Ou";
 import Favoris from "./pages/Favoris";
 import Apropos from "./pages/Apropos";
 import Navbar from "./components/Navbar";
-import Map from "./components/Map";
 import CardShowResults from "./components/CardShowResults";
-import CardShowList from "./components/CardShowList";
 import Accueil from "./pages/Accueil";
-import listEvent from "./components/event";
 import Detailspretext from "./components/Detailspretexte";
 import BtnNext from "./components/BtnNext";
 import BtnPrev from "./components/BtnPrev";
@@ -23,7 +20,6 @@ function App() {
   const [eventArrayFromAPI, setEventArrayfromAPI] = useState([]);
   const [selectedDate, setSelectedDate] = useState(new Date());
   const [selectedPlace, setSelectedPlace] = useState("");
-  const selectedLocation = "Toulouse";
 
   const [step, setStep] = useState(0);
   useEffect(() => {
@@ -33,7 +29,7 @@ function App() {
   }, []);
 
   const handleSubmitNext = () => {
-    if (step < 3) {
+    if (step < 4) {
       setStep(step + 1);
     }
   };
@@ -42,6 +38,8 @@ function App() {
       setStep(step - 1);
     }
   };
+
+  const zerostep = () => setStep(0);
   return (
     <div className="App">
       <div id="background">
@@ -50,6 +48,7 @@ function App() {
         <div id="stars3" />
       </div>
       <Navbar />
+      <Navbar zerostep={zerostep} />
       <Router>
         <ul id="app-ul">
           <li>
@@ -67,58 +66,19 @@ function App() {
           <li>
             <Link to="/map">Map</Link>
           </li>
-          <li>
-            <Link to="/quoi">Quoi</Link>
-          </li>
-          <li>
-            <Link to="/themelist">Liste Theme</Link>
-          </li>
         </ul>
 
         <Routes>
           <Route path="/" element="" />
           <Route path="/nav" element={<Navbar />} />
-
           <Route path="/ou" element={<Ou />} />
           <Route
             path="/ou"
             element={
               <Ou
-                events={listEvent.records}
+                events={filterByDate(eventArrayFromAPI, selectedDate)}
                 selectedPlace={selectedPlace}
                 setSelectedPlace={setSelectedPlace}
-              />
-            }
-          />
-          <Route
-            path="/quand"
-            element={
-              <Quand
-                selectedDate={selectedDate}
-                setSelectedDate={setSelectedDate}
-                eventArrayFromAPI={eventArrayFromAPI}
-              />
-            }
-          />
-          <Route
-            path="/map"
-            element={
-              <Map
-                events={filterByDate(eventArrayFromAPI, selectedDate)}
-                className="MapCont"
-              />
-            }
-          />
-          <Route
-            path="/quoi"
-            element={<CardShowResults events={listEvent.records} />}
-          />
-          <Route
-            path="/themelist"
-            element={
-              <CardShowList
-                events={listEvent.records}
-                thematique="Environnement"
               />
             }
           />
@@ -126,38 +86,46 @@ function App() {
           <Route path="/apropos" element={<Apropos />} />
           <Route path="/event/:id" element={<Detailspretext />} />
         </Routes>
-      </Router>
-      {step === 0 ? (
-        <Accueil />
-      ) : step === 1 ? (
-        <Quand
-          selectedDate={selectedDate}
-          setSelectedDate={setSelectedDate}
-          eventArrayFromAPI={listEvent.records}
-        />
-      ) : step === 2 ? (
-        <Ou events={listEvent.records} />
-      ) : (
-        <CardShowResults
-          events={filterByLocation(
-            listEvent.records,
-            selectedDate,
-            selectedLocation
+
+        {step === 0 ? (
+          <Accueil />
+        ) : step === 1 ? (
+          <Quand
+            selectedDate={selectedDate}
+            setSelectedDate={setSelectedDate}
+            eventArrayFromAPI={eventArrayFromAPI}
+          />
+        ) : step === 2 ? (
+          <Ou
+            events={filterByDate(eventArrayFromAPI, selectedDate)}
+            selectedPlace={selectedPlace}
+            setSelectedPlace={setSelectedPlace}
+          />
+        ) : step === 3 ? (
+          <CardShowResults
+            events={filterByLocation(
+              eventArrayFromAPI,
+              selectedDate,
+              selectedPlace
+            )}
+            handleSubmitNext={handleSubmitNext}
+          />
+        ) : (
+          <Favoris />
+        )}
+        <div className="BtnContainer">
+          {step > 0 && step < 3 ? (
+            <BtnPrev step={step} handleSubmitPrev={handleSubmitPrev} />
+          ) : (
+            ""
           )}
-        />
-      )}
-      <div className="BtnContainer">
-        {step > 0 ? (
-          <BtnPrev step={step} handleSubmitPrev={handleSubmitPrev} />
-        ) : (
-          ""
-        )}
-        {step <= 2 ? (
-          <BtnNext step={step} handleSubmitNext={handleSubmitNext} />
-        ) : (
-          ""
-        )}
-      </div>
+          {step < 3 ? (
+            <BtnNext step={step} handleSubmitNext={handleSubmitNext} />
+          ) : (
+            ""
+          )}
+        </div>
+      </Router>
     </div>
   );
 }

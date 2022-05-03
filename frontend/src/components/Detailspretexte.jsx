@@ -27,7 +27,7 @@ function Detailspretext() {
       .then((data) => {
         setEventDetail(data.records[0]);
       });
-  }, [eventDetail]);
+  }, []);
 
   const [isFavorite, setIsfavorite] = useState(false);
 
@@ -66,14 +66,16 @@ function Detailspretext() {
               />
             </div>
             <h1>{eventDetail.fields.titre}</h1>
-            <p>{eventDetail.fields.thematique}</p>
+            <p className="thematique">{eventDetail.fields.thematique}</p>
             <p id="textdate">{eventDetail.fields.date}</p>
             <p className="textaligndescription">
               {eventDetail.fields.description}
             </p>
-            <p>Adresse : {eventDetail.fields.adresse}</p>
-            <p>Site internet :</p>
-            <a href={eventDetail.fields.url}>{eventDetail.fields.url}</a>
+            <p className="adress">Adresse : {eventDetail.fields.adresse}</p>
+            <p className="website">Site internet :</p>
+            <a className="websitelink" href={eventDetail.fields.url}>
+              {eventDetail.fields.url}
+            </a>
             <div className="box" id="img">
               <MapDetailEvent
                 coordinates={eventDetail.fields.geo_shape.coordinates}
