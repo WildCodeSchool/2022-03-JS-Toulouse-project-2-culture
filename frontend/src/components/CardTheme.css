@@ -12,6 +12,7 @@
   min-height: 200px;
   text-align: center;
   font-family: var(--secondary-font);
+  overflow: auto;
 }
 
 .Culture {

@@ -30,7 +30,9 @@ export function filterByDate(array, date) {
   );
 }
 export function filterByLocation(array, date, location) {
-  return filterByDate(array, date).filter(
-    (event) => event.fields.commune === location
-  );
+  if (location)
+    return filterByDate(array, date).filter(
+      (event) => event.fields.commune === location
+    );
+  return filterByDate(array, date);
 }
