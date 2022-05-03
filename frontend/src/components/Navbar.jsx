@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Logo from "./Logo";
 import "./Navbar.css";
 
-function Navbar({ zerostep }) {
+function Navbar() {
   const [showLinks, setShowLinks] = useState(false);
 
   const handleShowLinks = () => {
@@ -16,9 +16,9 @@ function Navbar({ zerostep }) {
       </div>
       <ul className="navbar_links">
         <li className="navbar_item slideInDown-1">
-          <button type="submit" className="navbar_link" onClick={zerostep}>
+          <a href="/" className="navbar_link">
             Accueil
-          </button>
+          </a>
         </li>
         <li className="navbar_item slideInDown-2">
           <a href="/favoris" className="navbar_link">

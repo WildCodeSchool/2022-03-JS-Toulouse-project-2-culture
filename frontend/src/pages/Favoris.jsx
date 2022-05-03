@@ -26,7 +26,7 @@ function Favoris() {
     <div className="favContainer">
       <h3>Vos favoris</h3>
       {favorites.map((event) => (
-        <div className="favList">
+        <div key={event.recordid} className="favList">
           <CardTheme
             key={event.recordid}
             title={event.fields.titre}

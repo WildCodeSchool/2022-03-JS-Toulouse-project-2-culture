@@ -1,6 +1,6 @@
 /* eslint-disable no-nested-ternary */
 import React, { useState, useEffect } from "react";
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "./App.css";
 import axios from "axios";
 import Quand from "./pages/Quand";
@@ -11,9 +11,8 @@ import Navbar from "./components/Navbar";
 import CardShowResults from "./components/CardShowResults";
 import Accueil from "./pages/Accueil";
 import Detailspretext from "./components/Detailspretexte";
-import BtnNext from "./components/BtnNext";
-import BtnPrev from "./components/BtnPrev";
 import { filterByDate, filterByLocation } from "./components/functions";
+import BtnNav from "./components/BtnNav";
 
 function App() {
   const [eventArrayFromAPI, setEventArrayfromAPI] = useState([]);
@@ -38,31 +37,39 @@ function App() {
     }
   };
 
-  const zerostep = () => setStep(0);
   return (
     <div className="App">
-      <Navbar zerostep={zerostep} />
+      <Navbar />
       <Router>
-        <ul>
-          <li>
-            <Link to="/">Accueil</Link>
-          </li>
-          <li>
-            <Link to="/nav">Navbar</Link>
-          </li>
-          <li>
-            <Link to="/quand">Quand</Link>
-          </li>
-          <li>
-            <Link to="/ou">Ou</Link>
-          </li>
-          <li>
-            <Link to="/map">Map</Link>
-          </li>
-        </ul>
-
         <Routes>
-          <Route path="/" element="" />
+          <Route
+            path="/"
+            element={
+              step === 0 ? (
+                <Accueil />
+              ) : step === 1 ? (
+                <Quand
+                  selectedDate={selectedDate}
+                  setSelectedDate={setSelectedDate}
+                  eventArrayFromAPI={eventArrayFromAPI}
+                />
+              ) : step === 2 ? (
+                <Ou
+                  events={filterByDate(eventArrayFromAPI, selectedDate)}
+                  selectedPlace={selectedPlace}
+                  setSelectedPlace={setSelectedPlace}
+                />
+              ) : (
+                <CardShowResults
+                  events={filterByLocation(
+                    eventArrayFromAPI,
+                    selectedDate,
+                    selectedPlace
+                  )}
+                />
+              )
+            }
+          />
           <Route path="/nav" element={<Navbar />} />
           <Route path="/ou" element={<Ou />} />
           <Route
@@ -82,46 +89,12 @@ function App() {
           <Route path="/apropos" element={<Apropos />} />
           <Route path="/event/:id" element={<Detailspretext />} />
         </Routes>
-
-        {step === 0 ? (
-          <Accueil />
-        ) : step === 1 ? (
-          <Quand
-            selectedDate={selectedDate}
-            setSelectedDate={setSelectedDate}
-            eventArrayFromAPI={eventArrayFromAPI}
-          />
-        ) : step === 2 ? (
-          <Ou
-            events={filterByDate(eventArrayFromAPI, selectedDate)}
-            selectedPlace={selectedPlace}
-            setSelectedPlace={setSelectedPlace}
-          />
-        ) : step === 3 ? (
-          <CardShowResults
-            events={filterByLocation(
-              eventArrayFromAPI,
-              selectedDate,
-              selectedPlace
-            )}
-            handleSubmitNext={handleSubmitNext}
-          />
-        ) : (
-          <Favoris />
-        )}
-        <div className="BtnContainer">
-          {step > 0 && step <= 3 ? (
-            <BtnPrev step={step} handleSubmitPrev={handleSubmitPrev} />
-          ) : (
-            ""
-          )}
-          {step < 3 ? (
-            <BtnNext step={step} handleSubmitNext={handleSubmitNext} />
-          ) : (
-            ""
-          )}
-        </div>
       </Router>
+      <BtnNav
+        step={step}
+        handleSubmitNext={handleSubmitNext}
+        handleSubmitPrev={handleSubmitPrev}
+      />
     </div>
   );
 }
