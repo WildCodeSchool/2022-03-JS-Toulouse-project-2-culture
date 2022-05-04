@@ -6,7 +6,7 @@ import {
   FaTwitter,
   FaLinkedin,
 } from "react-icons/fa";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import { GrTableAdd } from "react-icons/gr";
 import MapDetailEvent from "./MapDetailEvent";
 import "./Detailspretexte.css";
@@ -14,9 +14,10 @@ import CardThemeHeart from "./CardThemeHeart";
 import "./CardTheme.css";
 import { dateJJMMConverter } from "./functions";
 
-function Detailspretext() {
+function Detailspretext(props) {
   const [eventDetail, setEventDetail] = useState(null);
   const { id } = useParams();
+  const { setStep } = props;
 
   useEffect(() => {
     axios
@@ -91,6 +92,16 @@ function Detailspretext() {
             <button type="submit" id="btn-agenda">
               Ajouter à mon agenda
             </button>
+            <button type="button" onClick={() => setStep(0)}>
+              click
+            </button>
+            <ul>
+              <Link to="/">
+                <button type="submit">
+                  <span>Retour à l&apos;accueil</span>
+                </button>
+              </Link>
+            </ul>
           </div>
           <p id="sharesociallink">Partager</p>
           <div className="box" id="sociallink">

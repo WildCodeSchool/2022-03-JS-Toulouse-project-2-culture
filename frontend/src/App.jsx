@@ -84,7 +84,10 @@ function App() {
           />
           <Route path="/favoris" element={<Favoris />} />
           <Route path="/apropos" element={<Apropos />} />
-          <Route path="/event/:id" element={<Detailspretext />} />
+          <Route
+            path="/event/:id"
+            element={<Detailspretext setStep={setStep} />}
+          />
         </Routes>
 
         {step === 0 ? (
