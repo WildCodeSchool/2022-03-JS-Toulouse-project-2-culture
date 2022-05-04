@@ -111,10 +111,7 @@ function App() {
             element={<Favoris eventArrayFromAPI={eventArrayFromAPI} />}
           />
           <Route path="/apropos" element={<Apropos />} />
-          <Route
-            path="/event/:id"
-            element={<Detailspretext setStep={setStep} />}
-          />
+          <Route path="/event/:id" element={<Detailspretext />} />
         </Routes>
       </Router>
       <BtnNav

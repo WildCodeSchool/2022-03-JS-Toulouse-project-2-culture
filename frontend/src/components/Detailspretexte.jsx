@@ -14,10 +14,9 @@ import CardThemeHeart from "./CardThemeHeart";
 import "./CardTheme.css";
 import { dateJJMMConverter } from "./functions";
 
-function Detailspretext(props) {
+function Detailspretext() {
   const [eventDetail, setEventDetail] = useState(null);
   const { id } = useParams();
-  const { setStep } = props;
 
   useEffect(() => {
     axios
@@ -92,9 +91,7 @@ function Detailspretext(props) {
             <button type="submit" id="btn-agenda">
               Ajouter à mon agenda
             </button>
-            <button type="button" onClick={() => setStep(0)}>
-              click
-            </button>
+
             <ul>
               <Link to="/">
                 <button type="submit">
