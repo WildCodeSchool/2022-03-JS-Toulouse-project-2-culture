@@ -8,7 +8,7 @@ import "./CardTheme.css";
 import { dateJJMMConverter } from "./functions";
 
 function CardShowResults(props) {
-  const { events, handleSubmitNext } = props;
+  const { events } = props;
 
   const eventsCulture = events.filter(
     (event) => event.fields.thematique === "Culture"
@@ -34,14 +34,13 @@ function CardShowResults(props) {
         <Carousel showThumbs={false} showStatus={false}>
           {eventsCulture.length > 0
             ? eventsCulture.map((event) => (
-                <div key={event.recordid}>
+                <div key={event.recordid} className="carousel-card">
                   <CardTheme
                     title={event.fields.titre}
                     date={dateJJMMConverter(event.fields.date_debut)}
                     isFavorite={false}
                     stylecard="Culture"
                     recordid={event.recordid}
-                    handleSubmitNext={handleSubmitNext}
                   />
                 </div>
               ))
@@ -61,7 +60,6 @@ function CardShowResults(props) {
                     isFavorite={false}
                     stylecard="Environnement"
                     recordid={event.recordid}
-                    handleSubmitNext={handleSubmitNext}
                   />
                 </div>
               ))
@@ -82,7 +80,6 @@ function CardShowResults(props) {
                     isFavorite={false}
                     stylecard="Sport"
                     recordid={event.recordid}
-                    handleSubmitNext={handleSubmitNext}
                   />
                 </div>
               ))
@@ -102,7 +99,6 @@ function CardShowResults(props) {
                     isFavorite={false}
                     stylecard="Brocantes"
                     recordid={event.recordid}
-                    handleSubmitNext={handleSubmitNext}
                   />
                 </div>
               ))
@@ -122,7 +118,6 @@ function CardShowResults(props) {
                     isFavorite={false}
                     stylecard="Autres"
                     recordid={event.recordid}
-                    handleSubmitNext={handleSubmitNext}
                   />
                 </div>
               ))

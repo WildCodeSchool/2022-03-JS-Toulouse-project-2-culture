@@ -1,0 +1,7 @@
+.favContainer {
+  margin-top: 75px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 1rem;
+}
