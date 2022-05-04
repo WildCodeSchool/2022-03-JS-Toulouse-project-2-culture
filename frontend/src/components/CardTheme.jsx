@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import "./CardTheme.css";
 import CardThemeHeart from "./CardThemeHeart";
 
-function CardTheme({ title, date, stylecard, recordid }) {
+function CardTheme({ title, date, stylecard, recordid, refresh }) {
   /**
    * If the recordid is in the localStorage, return true, otherwise return false.
    * @returns a boolean value.
@@ -31,6 +31,7 @@ function CardTheme({ title, date, stylecard, recordid }) {
         recordid
       );
     }
+    refresh();
   };
 
   return (

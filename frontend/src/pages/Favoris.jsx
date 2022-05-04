@@ -22,12 +22,18 @@ function Favoris() {
         )
       );
   }, []);
+
+  function refresh() {
+    window.location.reload();
+  }
   return (
     <div className="favContainer">
       <h3>Vos favoris</h3>
       {favorites.map((event) => (
         <div key={event.recordid} className="favList">
           <CardTheme
+            // eslint-disable-next-line react/jsx-no-bind
+            refresh={refresh}
             key={event.recordid}
             title={event.fields.titre}
             date={dateJJMMConverter(event.fields.date_debut)}
