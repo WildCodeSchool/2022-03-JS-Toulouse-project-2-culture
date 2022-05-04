@@ -4,15 +4,14 @@ import "./CardTheme.css";
 import CardThemeHeart from "./CardThemeHeart";
 
 function CardTheme({ title, date, stylecard, recordid }) {
-  const includedFavorite = () => {
-    return Object.values(window.localStorage).includes(recordid);
-  };
-  const [isFavorite, setIsfavorite] = useState(includedFavorite());
-
   /**
    * If the recordid is in the localStorage, return true, otherwise return false.
    * @returns a boolean value.
    */
+  const includedFavorite = () => {
+    return Object.values(window.localStorage).includes(recordid);
+  };
+  const [isFavorite, setIsfavorite] = useState(includedFavorite());
 
   /**
    * If the recordid is already in localStorage, remove it. If it's not in localStorage, add it
