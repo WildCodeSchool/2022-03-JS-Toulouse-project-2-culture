@@ -1,13 +1,8 @@
 import React, { useEffect } from "react";
 import "./Searchbar.css";
-import Logo from "./Logo";
 
 function Searchbar(props) {
   const { selectedPlace, setSelectedPlace, setMapEvent, events } = props;
-  const display = (e) => {
-    e.preventDefault();
-    setSelectedPlace("");
-  };
 
   useEffect(() => {
     if (selectedPlace) {
@@ -18,21 +13,16 @@ function Searchbar(props) {
   }, [selectedPlace]);
 
   return (
-    <div className="search-page">
-      <form className="search-container">
-        <input
-          className="searchbar"
-          placeholder="OÙ ?"
-          value={selectedPlace}
-          onChange={(e) => {
-            setSelectedPlace(e.target.value);
-          }}
-        />
-        <button type="button" onClick={display}>
-          <Logo />
-        </button>
-      </form>
-    </div>
+    <form className="search-container">
+      <input
+        className="searchbar"
+        placeholder="OÙ ?"
+        value={selectedPlace}
+        onChange={(e) => {
+          setSelectedPlace(e.target.value);
+        }}
+      />
+    </form>
   );
 }
 
