@@ -12,7 +12,7 @@
   min-height: 200px;
   text-align: center;
   font-family: var(--secondary-font);
-  overflow: auto;
+  overflow: hidden;
 }
 
 .Culture {
@@ -38,11 +38,14 @@
 .showcase {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  /* gap: 1rem; */
   text-align: center;
   color: var(--primary-color);
   background-color: var(--third-color);
   margin-top: 75px;
+  /* overflow: hidden; */
+  width: 90vw;
+  opacity: 0.2;
 }
 .heartLogo {
   height: 50px;

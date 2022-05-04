@@ -68,6 +68,7 @@ function Map(props) {
         ))}
         <LocationMarker setPosition={setPosition} position={position} />;
       </MapContainer>
+      <div id="lgdback" />
       <div className="legend">
         <img className="markerslgd" src={Bluelgd} alt="Bleu = Culture" />
         <img className="markerslgd" src={Greenlgd} alt="Vert = Environnement" />

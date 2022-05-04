@@ -1,9 +1,10 @@
 /* eslint-disable no-nested-ternary */
 import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import axios from "axios";
+import Ostr from "./components/Ostr";
 import "./Background.scss";
 import "./App.css";
-import axios from "axios";
 import Quand from "./pages/Quand";
 import Ou from "./pages/Ou";
 import Favoris from "./pages/Favoris";
@@ -26,7 +27,6 @@ function App() {
       "https://data.laregion.fr/api/records/1.0/search/?dataset=agendas-participatif-des-sorties-en-occitanie&rows=400";
     axios.get(url).then((res) => setEventArrayfromAPI(res.data.records));
   }, []);
-
   const handleSubmitNext = () => {
     if (step < 4) {
       setStep(step + 1);
@@ -40,11 +40,7 @@ function App() {
 
   return (
     <div className="App">
-      <div id="background">
-        <div id="stars" />
-        <div id="stars2" />
-        <div id="stars3" />
-      </div>
+      <Ostr />
       <Navbar />
       <Router>
         <ul id="app-ul">

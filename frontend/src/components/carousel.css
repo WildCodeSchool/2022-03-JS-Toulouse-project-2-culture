@@ -1,3 +1,12 @@
+/********************************************
+	BREAKPOINT WIDTHS
+********************************************/
+/********************************************
+	FONTS
+********************************************/
+/********************************************
+	COLOURS
+********************************************/
 .carousel .control-arrow,
 .carousel.carousel-slider .control-arrow {
   -webkit-transition: all 0.25s ease-in;
@@ -5,7 +14,7 @@
   -ms-transition: all 0.25s ease-in;
   -o-transition: all 0.25s ease-in;
   transition: all 0.25s ease-in;
-  opacity: 0.4;
+  opacity: 1;
   filter: alpha(opacity=40);
   position: absolute;
   z-index: 2;
@@ -29,26 +38,31 @@
   content: "";
 }
 .carousel .control-disabled.control-arrow {
-  opacity: 0;
+  opacity: 1;
   filter: alpha(opacity=0);
   cursor: inherit;
   display: none;
 }
 .carousel .control-prev.control-arrow {
+  border: red solid 2px;
   left: 0;
 }
 .carousel .control-prev.control-arrow:before {
   border-right: 8px solid #fff;
 }
 .carousel .control-next.control-arrow {
-  right: 0;
+  border: red solid 2px;
+  right: 0px;
 }
 .carousel .control-next.control-arrow:before {
+  border: red solid 2px;
   border-left: 8px solid #fff;
 }
+
 .carousel-root {
   outline: none;
 }
+
 .carousel {
   position: relative;
   width: 100%;
@@ -69,7 +83,7 @@
 .carousel .control-arrow {
   outline: 0;
   border: 0;
-  background: none;
+  background: blue;
   top: 50%;
   margin-top: -13px;
   font-size: 18px;
@@ -120,7 +134,6 @@
 .carousel.carousel-slider {
   position: relative;
   margin: 0;
-  overflow: hidden;
 }
 .carousel.carousel-slider .control-arrow {
   top: 0;
@@ -174,7 +187,7 @@
   padding: 0;
   position: relative;
   list-style: none;
-  width: 60%;
+  width: 100%;
 }
 .carousel .slider.animated {
   -webkit-transition: all 0.35s ease-in-out;
