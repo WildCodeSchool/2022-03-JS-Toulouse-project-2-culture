@@ -9,11 +9,8 @@ import Ou from "./pages/Ou";
 import Favoris from "./pages/Favoris";
 import Apropos from "./pages/Apropos";
 import Navbar from "./components/Navbar";
-// import CardShowResults from "./components/CardShowResults";
-// import Accueil from "./pages/Accueil";
 import Detailspretext from "./components/Detailspretexte";
 import { filterByDate } from "./components/functions";
-// import BtnNav from "./components/BtnNav";
 import Parcours from "./components/parcours";
 
 function App() {
