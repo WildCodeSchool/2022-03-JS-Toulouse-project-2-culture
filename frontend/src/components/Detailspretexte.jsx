@@ -1,11 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import {
-  FaFacebook,
-  FaInstagramSquare,
-  FaTwitter,
-  FaLinkedin,
-} from "react-icons/fa";
+import { FaInstagramSquare, FaTwitter, FaLinkedin } from "react-icons/fa";
 import { useParams, Link } from "react-router-dom";
 import { GrTableAdd } from "react-icons/gr";
 import MapDetailEvent from "./MapDetailEvent";
@@ -13,6 +8,7 @@ import "./Detailspretexte.css";
 import CardThemeHeart from "./CardThemeHeart";
 import "./CardTheme.css";
 import { dateJJMMConverter } from "./functions";
+import Facebooksharebutton from "./Facebooksharebutton";
 
 function Detailspretext() {
   const [eventDetail, setEventDetail] = useState(null);
@@ -102,7 +98,7 @@ function Detailspretext() {
           </div>
           <p id="sharesociallink">Partager</p>
           <div className="box" id="sociallink">
-            <FaFacebook className="facebookicon" />
+            <Facebooksharebutton />
             <FaInstagramSquare className="instagramicon" />
             <FaTwitter className="twittericon" />
             <FaLinkedin className="linkedinicon" />
