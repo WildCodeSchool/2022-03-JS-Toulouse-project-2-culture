@@ -2,7 +2,6 @@ import React from "react";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from "react-responsive-carousel";
 import CardTheme from "./CardTheme";
-
 import "./carousel.css";
 import "./CardTheme.css";
 import { dateJJMMConverter } from "./functions";
