@@ -9,13 +9,9 @@ import BtnNav from "./BtnNav";
 import "../App.css";
 import "../Background.scss";
 
-function Parcours({
-  selectedDate,
-  setSelectedDate,
-  selectedPlace,
-  setSelectedPlace,
-  eventArrayFromAPI,
-}) {
+function UserPath({ eventArrayFromAPI }) {
+  const [selectedDate, setSelectedDate] = useState(new Date());
+  const [selectedPlace, setSelectedPlace] = useState("");
   const [step, setStep] = useState(0);
 
   const handleSubmitNext = () => {
@@ -62,4 +58,4 @@ function Parcours({
   );
 }
 
-export default Parcours;
+export default UserPath;
