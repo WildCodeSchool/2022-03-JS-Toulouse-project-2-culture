@@ -83,6 +83,7 @@ function Detailspretext() {
               />
             </div>
           </div>
+
           <div className="box-agenda">
             <div>
               <GrTableAdd id="agenda" />
