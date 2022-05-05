@@ -31,7 +31,7 @@ const RedIcon = new L.Icon({
 });
 
 function Map(props) {
-  const { events, mapLocation, setMapLocation } = props;
+  const { events, setMapLocation } = props;
 
   const [position, setPosition] = useState([
     43.59709218840526, 1.4307425383881127,
@@ -52,7 +52,7 @@ function Map(props) {
   return (
     <div className="mapdiv">
       <MapContainer class="map-cont" center={position} zoom={12}>
-        <Mapbounds mapLocation={mapLocation} setMapLocation={setMapLocation} />
+        <Mapbounds setMapLocation={setMapLocation} />
         <TileLayer
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
           url="https://{s}.tile.openstreetmap.fr/osmfr/{z}/{x}/{y}.png"
