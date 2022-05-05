@@ -26,10 +26,23 @@ function Detailspretext() {
       });
   }, []);
 
-  const [isFavorite, setIsfavorite] = useState(false);
+  const includedFavorite = () => {
+    return Object.values(window.localStorage).includes(id);
+  };
+  const [isFavorite, setIsfavorite] = useState(includedFavorite());
 
   const handlefavorite = () => {
-    setIsfavorite(!isFavorite);
+    if (includedFavorite()) {
+      setIsfavorite(false);
+      window.localStorage.removeItem(
+        Object.keys(window.localStorage).find(
+          (key) => window.localStorage[key] === id
+        )
+      );
+    } else {
+      setIsfavorite(true);
+      window.localStorage.setItem(`favorite${window.localStorage.length}`, id);
+    }
   };
 
   return (
