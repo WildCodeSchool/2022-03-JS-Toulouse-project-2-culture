@@ -5,15 +5,21 @@ function Searchbar(props) {
   const { selectedPlace, setSelectedPlace, setMapEvent, events } = props;
 
   useEffect(() => {
-    if (selectedPlace) {
-      setMapEvent(
-        events.filter((event) => event.fields.commune === selectedPlace)
-      );
-    }
+    setMapEvent(
+      events.filter((event) =>
+        event?.fields?.commune
+          ?.toLowerCase()
+          .includes(selectedPlace.toLowerCase())
+      )
+    );
   }, [selectedPlace]);
 
+  function onSubmit(e) {
+    e.preventDefault();
+  }
+
   return (
-    <form className="search-container">
+    <form className="search-container" onSubmit={onSubmit}>
       <input
         className="searchbar"
         placeholder="OÙ ?"
