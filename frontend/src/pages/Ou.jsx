@@ -5,7 +5,13 @@ import Searchbar from "../components/Searchbar";
 import "../components/Map.css";
 
 function Ou(props) {
-  const { selectedPlace, setSelectedPlace, events } = props;
+  const {
+    selectedPlace,
+    setSelectedPlace,
+    mapLocation,
+    setMapLocation,
+    events,
+  } = props;
   const [mapEvents, setMapEvent] = useState(events);
 
   return (
@@ -17,7 +23,11 @@ function Ou(props) {
         setMapEvent={setMapEvent}
         events={events}
       />
-      <Map events={mapEvents} />
+      <Map
+        events={mapEvents}
+        mapLocation={mapLocation}
+        setMapLocation={setMapLocation}
+      />
     </div>
   );
 }
