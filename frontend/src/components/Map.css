@@ -17,7 +17,7 @@
 .legend {
   display: flex;
   justify-content: space-between;
- margin: 10vw;
+  margin: 10vw;
 }
 .markerslgd {
   width: 70%;
@@ -26,7 +26,7 @@
   margin-top: -6rem;
   border-radius: 2rem;
 }
-#lgdback{
+#lgdback {
   padding-left: 100px;
   z-index: 10;
   /* border: red solid 2px; */
@@ -35,6 +35,10 @@
   margin: auto;
   margin-top: -7rem;
   border-radius: 0 0 2rem 2rem;
-  background: linear-gradient(rgb(245, 237, 208) 25%, rgba(250, 242, 210, 0.562)) ;
-  box-shadow: 0px 0px 20px 10px rgba(248, 209, 52, 0.902),0px 0px 20px 25px rgb(250, 248, 242) inset;
+  background: linear-gradient(
+    rgb(245, 237, 208) 25%,
+    rgba(250, 242, 210, 0.562)
+  );
+  box-shadow: 0px 0px 20px 10px rgba(248, 209, 52, 0.902),
+    0px 0px 20px 25px rgb(250, 248, 242) inset;
 }
