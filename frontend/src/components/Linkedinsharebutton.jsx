@@ -1,5 +1,5 @@
 import React from "react";
-import { LinkedinShareButton, TwitterIcon } from "react-share";
+import { LinkedinShareButton, LinkedinIcon } from "react-share";
 
 function Linkedinsharebutton({ recordid }) {
   // url ne peut fonctionner qu'avec un url valide donc un site déployé (localhost ne fonctionne pas)
@@ -7,7 +7,7 @@ function Linkedinsharebutton({ recordid }) {
   return (
     <div>
       <LinkedinShareButton url={url}>
-        <TwitterIcon size={40} round />
+        <LinkedinIcon size={40} round />
       </LinkedinShareButton>
     </div>
   );
