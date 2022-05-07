@@ -1,12 +1,11 @@
 import React from "react";
-import "./BtnNav.css";
 import BtnNext from "./BtnNext";
 import BtnPrev from "./BtnPrev";
 
 function BtnNav({ step, handleSubmitPrev, handleSubmitNext }) {
   return (
     <div className="BtnContainer">
-      {step > 0 && step <= 3 ? (
+      {step > 0 && step <= 4 ? (
         <BtnPrev step={step} handleSubmitPrev={handleSubmitPrev} />
       ) : (
         ""

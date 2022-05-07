@@ -49,78 +49,86 @@ function CardShowResults(props) {
       <h3>Ecolo...</h3>
       <div className="carousel-container">
         <Carousel showThumbs={false} showStatus={false}>
-          {eventsEnvironnement.length > 0
-            ? eventsEnvironnement.map((event) => (
-                <div key={event.recordid}>
-                  <CardTheme
-                    key={event.recordid}
-                    title={event.fields.titre}
-                    date={dateJJMMConverter(event.fields.date_debut)}
-                    isFavorite={false}
-                    stylecard="Environnement"
-                    recordid={event.recordid}
-                  />
-                </div>
-              ))
-            : "Pas de résultats"}
+          {eventsEnvironnement.length > 0 ? (
+            eventsEnvironnement.map((event) => (
+              <div key={event.recordid}>
+                <CardTheme
+                  key={event.recordid}
+                  title={event.fields.titre}
+                  date={dateJJMMConverter(event.fields.date_debut)}
+                  isFavorite={false}
+                  stylecard="Environnement"
+                  recordid={event.recordid}
+                />
+              </div>
+            ))
+          ) : (
+            <h4>Oups... pas de résultats</h4>
+          )}
         </Carousel>
       </div>
 
       <h3>Sportif...</h3>
       <div className="carousel-container">
         <Carousel showThumbs={false} showStatus={false}>
-          {eventsSport.length > 0
-            ? eventsSport.map((event) => (
-                <div key={event.recordid}>
-                  <CardTheme
-                    key={event.recordid}
-                    title={event.fields.titre}
-                    date={dateJJMMConverter(event.fields.date_debut)}
-                    isFavorite={false}
-                    stylecard="Sport"
-                    recordid={event.recordid}
-                  />
-                </div>
-              ))
-            : "Pas de résultats"}
+          {eventsSport.length > 0 ? (
+            eventsSport.map((event) => (
+              <div key={event.recordid}>
+                <CardTheme
+                  key={event.recordid}
+                  title={event.fields.titre}
+                  date={dateJJMMConverter(event.fields.date_debut)}
+                  isFavorite={false}
+                  stylecard="Sport"
+                  recordid={event.recordid}
+                />
+              </div>
+            ))
+          ) : (
+            <h4>Oups... pas de résultats</h4>
+          )}
         </Carousel>
       </div>
       <h3>Flanneur...</h3>
       <div className="carousel-container">
         <Carousel showThumbs={false} showStatus={false}>
-          {eventsBrocantes.length > 0
-            ? eventsBrocantes.map((event) => (
-                <div key={event.recordid}>
-                  <CardTheme
-                    key={event.recordid}
-                    title={event.fields.titre}
-                    date={dateJJMMConverter(event.fields.date_debut)}
-                    isFavorite={false}
-                    stylecard="Brocantes"
-                    recordid={event.recordid}
-                  />
-                </div>
-              ))
-            : "Pas de résultats"}
+          {eventsBrocantes.length > 0 ? (
+            eventsBrocantes.map((event) => (
+              <div key={event.recordid}>
+                <CardTheme
+                  key={event.recordid}
+                  title={event.fields.titre}
+                  date={dateJJMMConverter(event.fields.date_debut)}
+                  isFavorite={false}
+                  stylecard="Brocantes"
+                  recordid={event.recordid}
+                />
+              </div>
+            ))
+          ) : (
+            <h4>Oups... pas de résultats</h4>
+          )}
         </Carousel>
       </div>
       <h3>Autres...</h3>
       <div className="carousel-container">
         <Carousel showThumbs={false} showStatus={false}>
-          {eventsAutres.length > 0
-            ? eventsAutres.map((event) => (
-                <div key={event.recordid}>
-                  <CardTheme
-                    key={event.recordid}
-                    title={event.fields.titre}
-                    date={dateJJMMConverter(event.fields.date_debut)}
-                    isFavorite={false}
-                    stylecard="Autres"
-                    recordid={event.recordid}
-                  />
-                </div>
-              ))
-            : "Pas de résultats"}
+          {eventsAutres.length > 0 ? (
+            eventsAutres.map((event) => (
+              <div key={event.recordid}>
+                <CardTheme
+                  key={event.recordid}
+                  title={event.fields.titre}
+                  date={dateJJMMConverter(event.fields.date_debut)}
+                  isFavorite={false}
+                  stylecard="Autres"
+                  recordid={event.recordid}
+                />
+              </div>
+            ))
+          ) : (
+            <h4>Oups... pas de résultats</h4>
+          )}
         </Carousel>
       </div>
     </div>
