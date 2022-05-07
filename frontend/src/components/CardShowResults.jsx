@@ -5,7 +5,7 @@ import Slider from "react-slick";
 import { dateJJMMConverter } from "./functions";
 import CardTheme from "./CardTheme";
 import "./carousel2.css";
-// import "./CardTheme.css";
+import "./CardTheme.css";
 
 function CardShowResults(props) {
   const { events } = props;
@@ -36,11 +36,11 @@ function CardShowResults(props) {
     slidesToScroll: 1,
   };
   return (
-    <div className="Carousel">
-      <h2> Vos pretextes</h2>
-      <Slider {...settings}>
-        <div className="carousel-container">
-          <h3>Intello...</h3>
+    <div className="showcase">
+      <h2>Vos pretextes</h2>
+      <h3>Intello...</h3>
+      <div className="carousel-container">
+        <Slider {...settings}>
           {eventsCulture.length > 0
             ? eventsCulture.map((event) => (
                 <div key={event.recordid} className="carousel-card">
@@ -54,23 +54,92 @@ function CardShowResults(props) {
                 </div>
               ))
             : "Pas de résultats"}
-        </div>
-        <div>
-          <h3>2</h3>
-        </div>
-        <div>
-          <h3>3</h3>
-        </div>
-        <div>
-          <h3>4</h3>
-        </div>
-        <div>
-          <h3>5</h3>
-        </div>
-        <div>
-          <h3>6</h3>
-        </div>
-      </Slider>
+        </Slider>
+      </div>
+      <h3>Ecolo...</h3>
+      <div className="carousel-container">
+        <Slider {...settings}>
+          {eventsEnvironnement.length > 0
+            ? eventsEnvironnement.map((event) => (
+                <div key={event.recordid}>
+                  <CardTheme
+                    key={event.recordid}
+                    title={event.fields.titre}
+                    date={dateJJMMConverter(event.fields.date_debut)}
+                    isFavorite={false}
+                    stylecard="Environnement"
+                    recordid={event.recordid}
+                  />
+                </div>
+              ))
+            : "Pas de résultats"}
+        </Slider>
+      </div>
+
+      <h3>Sportif...</h3>
+      <div className="carousel-container">
+        {eventsSport.length > 0 ? (
+          <Slider {...settings}>
+            {eventsSport.map((event) => (
+              <div key={event.recordid}>
+                <CardTheme
+                  key={event.recordid}
+                  title={event.fields.titre}
+                  date={dateJJMMConverter(event.fields.date_debut)}
+                  isFavorite={false}
+                  stylecard="Sport"
+                  recordid={event.recordid}
+                />
+              </div>
+            ))}
+          </Slider>
+        ) : (
+          "Pas de résultats"
+        )}
+      </div>
+
+      <h3>Flanneur...</h3>
+      <div className="carousel-container">
+        {eventsBrocantes.length > 0 ? (
+          <Slider {...settings}>
+            {eventsBrocantes.map((event) => (
+              <div key={event.recordid}>
+                <CardTheme
+                  key={event.recordid}
+                  title={event.fields.titre}
+                  date={dateJJMMConverter(event.fields.date_debut)}
+                  isFavorite={false}
+                  stylecard="Brocantes"
+                  recordid={event.recordid}
+                />
+              </div>
+            ))}
+          </Slider>
+        ) : (
+          "Pas de résultats"
+        )}
+      </div>
+      <h3>Autres...</h3>
+      <div className="carousel-container">
+        {eventsAutres.length > 0 ? (
+          <Slider {...settings}>
+            {eventsAutres.map((event) => (
+              <div key={event.recordid}>
+                <CardTheme
+                  key={event.recordid}
+                  title={event.fields.titre}
+                  date={dateJJMMConverter(event.fields.date_debut)}
+                  isFavorite={false}
+                  stylecard="Autres"
+                  recordid={event.recordid}
+                />
+              </div>
+            ))}
+          </Slider>
+        ) : (
+          "Pas de résultats"
+        )}
+      </div>
     </div>
   );
 }
