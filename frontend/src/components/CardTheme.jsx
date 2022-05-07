@@ -46,10 +46,11 @@ function CardTheme({ title, date, stylecard, recordid, refresh }) {
             handlefavorite={handlefavorite}
           />
         </div>
-        <h3>{title}</h3>
-
         <Link className="recordidlink" to={`/event/${recordid}`}>
-          Plus d&apos;informations
+          <div className="CardThemeTitle">
+            <h3>{title}</h3>
+            Plus d&apos;informations
+          </div>
         </Link>
       </div>
     </div>

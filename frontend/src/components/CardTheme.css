@@ -4,7 +4,6 @@
   justify-content: space-between;
   font-size: 1.3rem;
   color: var(--third-color);
-  background-color: var(--secondary-color);
   background-size: cover;
   padding: 1rem;
   margin: 0 1rem;
@@ -56,6 +55,7 @@
 }
 h2 {
   font-size: 3rem;
+  filter: blur(0);
 }
 h3 {
   font-size: 2rem;
@@ -92,6 +92,16 @@ h4 {
 }
 .CardThemeHeaderDateAutres {
   background-color: var(--autres-color);
+}
+.CardThemeTitle {
+  /* display: flex;
+  flex-direction: column;
+  justify-content: space-between; */
+  font-size: 1.3rem;
+  color: var(--third-color);
+  text-align: center;
+  font-family: var(--secondary-font);
+  overflow: auto;
 }
 
 .heartBtn {
