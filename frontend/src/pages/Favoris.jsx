@@ -29,25 +29,29 @@ function Favoris() {
   return (
     <div className="favContainer">
       <h3>Vos favoris</h3>
-      {favorites.map((event) => (
-        <div key={event.recordid} className="favList">
-          <CardTheme
-            // eslint-disable-next-line react/jsx-no-bind
-            refresh={refresh}
-            key={event.recordid}
-            title={event.fields.titre}
-            date={dateJJMMConverter(event.fields.date_debut)}
-            isFavorite={false}
-            stylecard={
-              event.fields.thematique ===
-              "Vides Grenier / Brocantes / Foires et salons"
-                ? "Brocantes"
-                : event.fields.thematique
-            }
-            recordid={event.recordid}
-          />
-        </div>
-      ))}
+      {favorites.length > 0 ? (
+        favorites.map((event) => (
+          <div key={event.recordid} className="favList">
+            <CardTheme
+              // eslint-disable-next-line react/jsx-no-bind
+              refresh={refresh}
+              key={event.recordid}
+              title={event.fields.titre}
+              date={dateJJMMConverter(event.fields.date_debut)}
+              isFavorite={false}
+              stylecard={
+                event.fields.thematique ===
+                "Vides Grenier / Brocantes / Foires et salons"
+                  ? "Brocantes"
+                  : event.fields.thematique
+              }
+              recordid={event.recordid}
+            />
+          </div>
+        ))
+      ) : (
+        <h4>Pas de favoris</h4>
+      )}
     </div>
   );
 }
