@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 
 import "./Favoris.css";
 import axios from "axios";
-import { dateJJMMConverter } from "../components/functions";
+import { dateJJMMConverter, stringStyliser } from "../components/functions";
 import CardTheme from "../components/CardTheme";
 
 function Favoris() {
@@ -36,7 +36,7 @@ function Favoris() {
               // eslint-disable-next-line react/jsx-no-bind
               refresh={refresh}
               key={event.recordid}
-              title={event.fields.titre}
+              title={stringStyliser(event.fields.titre, 45)}
               date={dateJJMMConverter(event.fields.date_debut)}
               isFavorite={false}
               stylecard={
