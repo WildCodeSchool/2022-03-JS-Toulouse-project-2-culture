@@ -138,3 +138,18 @@ abbr[title] {
   background: var(--primary-color);
   color: white;
 }
+
+.PretextNumber {
+  background-color: var(--secondary-color);
+  border-radius: 2rem;
+  padding: 0.8rem;
+  font-weight: bold;
+  border: solid 2px var(--third-color);
+}
+
+.PretextData {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
