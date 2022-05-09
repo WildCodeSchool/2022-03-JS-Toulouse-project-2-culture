@@ -45,10 +45,7 @@ function CardShowResults(props) {
                     isFavorite={false}
                     stylecard="Culture"
                     recordid={event.recordid}
-                  />{" "}
-                  <p className="legend">
-                    {stringStyliser(event.fields.titre, 45)}
-                  </p>
+                  />
                 </div>
               ))
             : "Pas de résultats"}
