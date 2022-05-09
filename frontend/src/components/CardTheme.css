@@ -41,7 +41,7 @@
   text-align: center;
   color: var(--primary-color);
   background-color: transparent;
-  margin-top: 75px;
+  /* margin-top: 75px; */
   width: 95 vw;
   max-width: 320px;
 }

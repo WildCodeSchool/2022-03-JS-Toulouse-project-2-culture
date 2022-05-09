@@ -38,6 +38,10 @@ p {
   opacity: 0;
 }
 
+.pathClass {
+  margin-top: 7rem;
+}
+
 body {
   max-width: 100%;
   margin: 0;
@@ -68,7 +72,7 @@ h4 {
 .BtnContainer {
   display: flex;
   flex-direction: row;
-  margin-bottom: 4rem;
+  margin: 1rem 0 4rem 0;
   gap: 2vw;
   justify-content: center;
   align-items: flex-end;
