@@ -50,28 +50,29 @@ function Map(props) {
     return CustomIcon;
   }
   return (
-    <div className="mapdiv">
-      <MapContainer class="map-cont" center={position} zoom={12}>
-        <Mapbounds setMapLocation={setMapLocation} />
-        <TileLayer
-          attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-          url="https://{s}.tile.openstreetmap.fr/osmfr/{z}/{x}/{y}.png"
-        />
-        {events.map((el) => (
-          <Marker
-            key={el.recordid}
-            position={el.fields.geo_point_2d}
-            icon={IconColor(el)}
-          >
-            <Popup class="popup">
-              {el.fields.titre}
-              <br /> {el.fields.date}
-            </Popup>
-          </Marker>
-        ))}
-        <LocationMarker setPosition={setPosition} position={position} />;
-      </MapContainer>
-
+    <div>
+      <div className="mapdiv">
+        <MapContainer class="map-cont" center={position} zoom={12}>
+          <Mapbounds setMapLocation={setMapLocation} />
+          <TileLayer
+            attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+            url="https://{s}.tile.openstreetmap.fr/osmfr/{z}/{x}/{y}.png"
+          />
+          {events.map((el) => (
+            <Marker
+              key={el.recordid}
+              position={el.fields.geo_point_2d}
+              icon={IconColor(el)}
+            >
+              <Popup class="popup">
+                {el.fields.titre}
+                <br /> {el.fields.date}
+              </Popup>
+            </Marker>
+          ))}
+          <LocationMarker setPosition={setPosition} position={position} />;
+        </MapContainer>
+      </div>
       <div className="legend">
         <img className="markerslgd" src={Bluelgd} alt="Bleu = Culture" />
         <img className="markerslgd" src={Greenlgd} alt="Vert = Environnement" />

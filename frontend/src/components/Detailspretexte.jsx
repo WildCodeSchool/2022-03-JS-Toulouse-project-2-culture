@@ -6,7 +6,7 @@ import MapDetailEvent from "./MapDetailEvent";
 import "./Detailspretexte.css";
 import CardThemeHeart from "./CardThemeHeart";
 import "./CardTheme.css";
-import { dateJJMMConverter } from "./functions";
+import { dateJJMMConverter, stringStyliser } from "./functions";
 import Facebooksharebutton from "./Facebooksharebutton";
 import Twittersharebutton from "./Twittersharebutton";
 import Linkedinsharebutton from "./Linkedinsharebutton";
@@ -75,7 +75,7 @@ function Detailspretext() {
                 handlefavorite={handlefavorite}
               />
             </div>
-            <h1>{eventDetail.fields.titre}</h1>
+            <h1>{stringStyliser(eventDetail.fields.titre, 50)}</h1>
             <p className="thematique">{eventDetail.fields.thematique}</p>
             <p id="textdate">{eventDetail.fields.date}</p>
             <p className="textaligndescription">

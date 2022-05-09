@@ -62,3 +62,19 @@ export function filterByLocation(array, date, location, maplocation) {
   }
   return filterByDate(array, date);
 }
+
+export function stringStyliser(string, number) {
+  const array = string.split("");
+
+  if (array.includes("&")) {
+    const cut = array.findIndex((el) => el === "&");
+    if (array[cut + 1] === "#") {
+      array.splice(cut, 7, "'");
+    } else if (array[cut + 1] === "n") {
+      array.splice(cut, 6, " ");
+    }
+  }
+  return string.length > number
+    ? `${array.slice(0, number).join("")} (...)`
+    : array.join("");
+}

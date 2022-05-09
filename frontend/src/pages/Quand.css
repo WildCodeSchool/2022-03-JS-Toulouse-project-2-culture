@@ -52,6 +52,7 @@
   align-items: center;
   justify-content: center;
   font-size: 2rem;
+  border-radius: 1rem;
 }
 .react-calendar__navigation__arrow.react-calendar__navigation__next2-button,
 .react-calendar__navigation__arrow.react-calendar__navigation__next-button {
@@ -60,6 +61,7 @@
   align-items: center;
   justify-content: center;
   font-size: 2rem;
+  border-radius: 1rem;
 }
 .react-calendar__navigation__label__labelText.react-calendar__navigation__label__labelText--from {
   align-self: center;
