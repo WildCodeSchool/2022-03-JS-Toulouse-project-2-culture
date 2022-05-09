@@ -141,8 +141,8 @@ abbr[title] {
 
 .PretextNumber {
   background-color: var(--secondary-color);
-  border-radius: 2rem;
-  padding: 0.8rem;
+  border-radius: 3rem;
+  padding: 0.5rem 0.7rem;
   font-weight: bold;
   border: solid 2px var(--third-color);
 }

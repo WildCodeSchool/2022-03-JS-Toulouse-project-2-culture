@@ -12,7 +12,7 @@ function CalendarEvent(props) {
       </div>
       <div>
         <p>
-          Date selectionnées -
+          Date selectionnée : &nbsp;
           {selectedDate.toLocaleDateString("en-gb", {
             year: "numeric",
             month: "numeric",
@@ -20,7 +20,7 @@ function CalendarEvent(props) {
           })}
         </p>
         <div className="PretextData">
-          Pretextes disponibles
+          Pretextes disponibles : &nbsp;
           <div className="PretextNumber">
             {filterByDate(events, selectedDate).length}
           </div>
