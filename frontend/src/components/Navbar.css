@@ -33,6 +33,16 @@
   z-index: 500;
 }
 
+.close_navbar {
+  background-color: transparent;
+  top: 0;
+  left: 0;
+  position: absolute;
+  height: 100vh;
+  width: 100vw;
+  z-index: 0;
+}
+
 .navbar_links {
   display: flex;
   flex-direction: column;
