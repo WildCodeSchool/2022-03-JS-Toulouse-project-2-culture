@@ -4,7 +4,6 @@ import { loadFull } from "tsparticles";
 import { tsParticles } from "tsparticles-engine";
 import { loadImageShape } from "tsparticles-shape-image";
 
-// console.log(loadFull);
 loadImageShape(tsParticles);
 
 function Ostr() {
@@ -22,7 +21,6 @@ function Ostr() {
         background: {
           color: {
             value: "transparent",
-            // value: "000000",
           },
         },
         fpsLimit: 60,
@@ -49,9 +47,9 @@ function Ostr() {
           },
         },
         particles: {
-          // color: {
-          //   value: "#ffffff",
-          // },
+          color: {
+            value: "#ffffff",
+          },
           links: {
             color: "#ffffff",
             distance: 150,
