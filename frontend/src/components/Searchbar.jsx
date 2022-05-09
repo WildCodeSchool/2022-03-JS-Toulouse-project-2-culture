@@ -12,13 +12,6 @@ function Searchbar(props) {
           .includes(selectedPlace.toLowerCase())
       )
     );
-    // setMapEvent(
-    //   events.filter((event) =>
-    //     event?.fields?.commune
-    //       ?.toLowerCase()
-    //       .includes(selectedPlace.toLowerCase())
-    //   )
-    // );
   }, [selectedPlace]);
 
   function onSubmit(e) {
@@ -35,9 +28,6 @@ function Searchbar(props) {
           setSelectedPlace(e.target.value);
         }}
       />
-      {/* <span>{eventFiltered[0]?.fields.commune}</span>
-      <span>{eventFiltered[1]?.fields.commune}</span>
-      <span>{eventFiltered[2]?.fields.commune}</span> */}
     </form>
   );
 }
