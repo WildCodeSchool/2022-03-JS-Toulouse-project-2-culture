@@ -1,6 +1,7 @@
 /* eslint-disable no-nested-ternary */
 import React, { useState, useEffect } from "react";
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+
 import "./Background.scss";
 import "./App.css";
 import axios from "axios";
@@ -21,31 +22,8 @@ function App() {
 
   return (
     <div className="App">
-      <div id="background">
-        <div id="stars" />
-        <div id="stars2" />
-        <div id="stars3" />
-      </div>
+      <Navbar />
       <Router>
-        <Navbar />
-        <ul id="app-ul">
-          <li>
-            <Link to="/">Accueil</Link>
-          </li>
-          <li>
-            <Link to="/nav">Navbar</Link>
-          </li>
-          <li>
-            <Link to="/quand">Quand</Link>
-          </li>
-          <li>
-            <Link to="/ou">Ou</Link>
-          </li>
-          <li>
-            <Link to="/map">Map</Link>
-          </li>
-        </ul>
-
         <Routes>
           <Route
             path="/"

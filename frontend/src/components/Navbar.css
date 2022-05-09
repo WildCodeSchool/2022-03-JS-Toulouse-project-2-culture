@@ -19,10 +19,6 @@
   text-decoration: none;
 }
 
-/* .navBarP {
-  color: red;
-} */
-
 .navbar {
   display: flex;
   flex-wrap: wrap;
