@@ -94,9 +94,6 @@ h4 {
   background-color: var(--autres-color);
 }
 .CardThemeTitle {
-  /* display: flex;
-  flex-direction: column;
-  justify-content: space-between; */
   font-size: 1.3rem;
   color: var(--third-color);
   text-align: center;
