@@ -16,9 +16,13 @@ function Navbar() {
           <Logo />
         </a>
       </div>
-      <textbox
+      <div
         className={`${showLinks ? "close_navbar" : ""}`}
         onClick={handleShowLinks}
+        role="button"
+        onKeyPress={handleShowLinks}
+        tabIndex="0"
+        label="close navbar"
       />
       <ul className="navbar_links">
         <li className="navbar_item slideInDown-1">
