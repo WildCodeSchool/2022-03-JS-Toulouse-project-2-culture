@@ -1,3 +1,4 @@
+/* eslint-disable no-nested-ternary */
 import React, { useState, useEffect } from "react";
 
 import "./Favoris.css";
@@ -40,8 +41,10 @@ function Favoris() {
               date={dateJJMMConverter(event.fields.date_debut)}
               isFavorite={false}
               stylecard={
-                event.fields.thematique ===
-                "Vides Grenier / Brocantes / Foires et salons"
+                event.fields.thematique.split(" ").includes("Emploi")
+                  ? "Autres"
+                  : event.fields.thematique ===
+                    "Vides Grenier / Brocantes / Foires et salons"
                   ? "Brocantes"
                   : event.fields.thematique
               }
