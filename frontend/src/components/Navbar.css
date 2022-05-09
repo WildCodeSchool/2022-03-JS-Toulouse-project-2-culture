@@ -20,7 +20,6 @@
 }
 
 .navbar {
-  z-index: 1001;
   display: flex;
   flex-wrap: wrap;
   align-items: center;

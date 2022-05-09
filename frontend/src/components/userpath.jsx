@@ -29,7 +29,7 @@ function UserPath({ eventArrayFromAPI }) {
   };
 
   return (
-    <div>
+    <div className="pathClass">
       {step === 0 ? (
         <Accueil />
       ) : step === 1 ? (
