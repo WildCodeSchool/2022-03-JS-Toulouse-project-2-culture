@@ -34,8 +34,8 @@ function CardShowResults(props) {
   return (
     <div className="showcase">
       <motion.div initial={{ x: "100%" }} animate={{ x: "0" }}>
-        <h2>Vos pretextes</h2>
-        <h3>Intello...</h3>
+        <h3>Vos pretextes</h3>
+        <h4>Intello...</h4>
         <div className="carousel-container">
           <Carousel
             showThumbs={false}
@@ -56,11 +56,11 @@ function CardShowResults(props) {
                 </div>
               ))
             ) : (
-              <h4>Oups... pas de résultats</h4>
+              <h5>Oups... pas de résultats</h5>
             )}
           </Carousel>
         </div>
-        <h3>Ecolo...</h3>
+        <h4>Ecolo...</h4>
         <div className="carousel-container">
           <Carousel
             showThumbs={false}
@@ -82,12 +82,12 @@ function CardShowResults(props) {
                 </div>
               ))
             ) : (
-              <h4>Oups... pas de résultats</h4>
+              <h5>Oups... pas de résultats</h5>
             )}
           </Carousel>
         </div>
 
-        <h3>Sportif...</h3>
+        <h4>Sportif...</h4>
         <div className="carousel-container">
           <Carousel
             showThumbs={false}
@@ -109,11 +109,11 @@ function CardShowResults(props) {
                 </div>
               ))
             ) : (
-              <h4>Oups... pas de résultats</h4>
+              <h5>Oups... pas de résultats</h5>
             )}
           </Carousel>
         </div>
-        <h3>Flanneur...</h3>
+        <h4>Flanneur...</h4>
         <div className="carousel-container">
           <Carousel
             showThumbs={false}
@@ -135,11 +135,11 @@ function CardShowResults(props) {
                 </div>
               ))
             ) : (
-              <h4>Oups... pas de résultats</h4>
+              <h5>Oups... pas de résultats</h5>
             )}
           </Carousel>
         </div>
-        <h3>Autres...</h3>
+        <h4>Autres...</h4>
         <div className="carousel-container">
           <Carousel
             showThumbs={false}
@@ -161,7 +161,7 @@ function CardShowResults(props) {
                 </div>
               ))
             ) : (
-              <h4>Oups... pas de résultats</h4>
+              <h5>Oups... pas de résultats</h5>
             )}
           </Carousel>
         </div>
