@@ -36,7 +36,7 @@ function CardShowResults(props) {
       <motion.div initial={{ x: "100%" }} animate={{ x: "0" }}>
         <h3>Vos pretextes</h3>
         <h4>Intello...</h4>
-        <div className="carousel-container">
+        <div>
           <Carousel
             showThumbs={false}
             showStatus={false}
@@ -61,7 +61,7 @@ function CardShowResults(props) {
           </Carousel>
         </div>
         <h4>Ecolo...</h4>
-        <div className="carousel-container">
+        <div>
           <Carousel
             showThumbs={false}
             showStatus={false}
@@ -86,9 +86,8 @@ function CardShowResults(props) {
             )}
           </Carousel>
         </div>
-
         <h4>Sportif...</h4>
-        <div className="carousel-container">
+        <div>
           <Carousel
             showThumbs={false}
             showStatus={false}
@@ -114,7 +113,7 @@ function CardShowResults(props) {
           </Carousel>
         </div>
         <h4>Flanneur...</h4>
-        <div className="carousel-container">
+        <div>
           <Carousel
             showThumbs={false}
             showStatus={false}
@@ -140,7 +139,7 @@ function CardShowResults(props) {
           </Carousel>
         </div>
         <h4>Autres...</h4>
-        <div className="carousel-container">
+        <div>
           <Carousel
             showThumbs={false}
             showStatus={false}
