@@ -12,6 +12,8 @@ import "../Background.scss";
 function UserPath({ eventArrayFromAPI }) {
   const [selectedDate, setSelectedDate] = useState(new Date());
   const [selectedPlace, setSelectedPlace] = useState("");
+  const [mapLocation, setMapLocation] = useState("");
+
   const [step, setStep] = useState(0);
 
   const handleSubmitNext = () => {
@@ -24,6 +26,7 @@ function UserPath({ eventArrayFromAPI }) {
       setStep(step - 1);
     }
   };
+
   return (
     <div>
       {step === 0 ? (
@@ -39,13 +42,16 @@ function UserPath({ eventArrayFromAPI }) {
           events={filterByDate(eventArrayFromAPI, selectedDate)}
           selectedPlace={selectedPlace}
           setSelectedPlace={setSelectedPlace}
+          mapLocation={mapLocation}
+          setMapLocation={setMapLocation}
         />
       ) : (
         <CardShowResults
           events={filterByLocation(
             eventArrayFromAPI,
             selectedDate,
-            selectedPlace
+            selectedPlace,
+            mapLocation
           )}
         />
       )}
