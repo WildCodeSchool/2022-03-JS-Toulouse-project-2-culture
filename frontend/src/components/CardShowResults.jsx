@@ -23,7 +23,12 @@ function CardShowResults(props) {
       event.fields.thematique === "Vides Grenier / Brocantes / Foires et salons"
   );
   const eventsAutres = events.filter(
-    (event) => event.fields.thematique === "Autres"
+    (event) =>
+      event.fields.thematique !==
+        "Vides Grenier / Brocantes / Foires et salons" &&
+      event.fields.thematique !== "Culture" &&
+      event.fields.thematique !== "Environnement" &&
+      event.fields.thematique !== "Sport"
   );
   return (
     <div className="showcase">
@@ -36,24 +41,31 @@ function CardShowResults(props) {
           showIndicators={false}
           autoPlay
         >
-          {eventsCulture.length > 0
-            ? eventsCulture.map((event) => (
-                <div key={event.recordid} className="carousel-card">
-                  <CardTheme
-                    title={stringStyliser(event.fields.titre, 45)}
-                    date={dateJJMMConverter(event.fields.date_debut)}
-                    isFavorite={false}
-                    stylecard="Culture"
-                    recordid={event.recordid}
-                  />
-                </div>
-              ))
-            : "Pas de résultats"}
+          {eventsCulture.length > 0 ? (
+            eventsCulture.map((event) => (
+              <div key={event.recordid} className="carousel-card">
+                <CardTheme
+                  title={stringStyliser(event.fields.titre, 45)}
+                  date={dateJJMMConverter(event.fields.date_debut)}
+                  isFavorite={false}
+                  stylecard="Culture"
+                  recordid={event.recordid}
+                />
+              </div>
+            ))
+          ) : (
+            <h4>Oups... pas de résultats</h4>
+          )}
         </Carousel>
       </div>
       <h3>Ecolo...</h3>
       <div className="carousel-container">
-        <Carousel showThumbs={false} showStatus={false} showIndicators={false}>
+        <Carousel
+          showThumbs={false}
+          showStatus={false}
+          showIndicators={false}
+          autoPlay
+        >
           {eventsEnvironnement.length > 0 ? (
             eventsEnvironnement.map((event) => (
               <div key={event.recordid}>
@@ -75,7 +87,12 @@ function CardShowResults(props) {
 
       <h3>Sportif...</h3>
       <div className="carousel-container">
-        <Carousel showThumbs={false} showStatus={false} showIndicators={false}>
+        <Carousel
+          showThumbs={false}
+          showStatus={false}
+          showIndicators={false}
+          autoPlay
+        >
           {eventsSport.length > 0 ? (
             eventsSport.map((event) => (
               <div key={event.recordid}>
@@ -96,7 +113,12 @@ function CardShowResults(props) {
       </div>
       <h3>Flanneur...</h3>
       <div className="carousel-container">
-        <Carousel showThumbs={false} showStatus={false} showIndicators={false}>
+        <Carousel
+          showThumbs={false}
+          showStatus={false}
+          showIndicators={false}
+          autoPlay
+        >
           {eventsBrocantes.length > 0 ? (
             eventsBrocantes.map((event) => (
               <div key={event.recordid}>
@@ -117,7 +139,12 @@ function CardShowResults(props) {
       </div>
       <h3>Autres...</h3>
       <div className="carousel-container">
-        <Carousel showThumbs={false} showStatus={false} showIndicators={false}>
+        <Carousel
+          showThumbs={false}
+          showStatus={false}
+          showIndicators={false}
+          autoPlay
+        >
           {eventsAutres.length > 0 ? (
             eventsAutres.map((event) => (
               <div key={event.recordid}>
