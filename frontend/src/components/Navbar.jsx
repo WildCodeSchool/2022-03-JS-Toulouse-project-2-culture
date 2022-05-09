@@ -12,8 +12,18 @@ function Navbar() {
   return (
     <nav className={`navbar ${showLinks ? "show-nav" : "hide-nav"}`}>
       <div className="navbar_logo">
-        <Logo />
+        <a href="/">
+          <Logo />
+        </a>
       </div>
+      <div
+        className={`${showLinks ? "close_navbar" : ""}`}
+        onClick={handleShowLinks}
+        role="button"
+        onKeyPress={handleShowLinks}
+        tabIndex="0"
+        label="close navbar"
+      />
       <ul className="navbar_links">
         <li className="navbar_item slideInDown-1">
           <a href="/" className="navbar_link">

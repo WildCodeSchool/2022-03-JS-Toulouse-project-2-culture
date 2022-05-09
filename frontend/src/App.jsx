@@ -1,6 +1,6 @@
 /* eslint-disable no-nested-ternary */
 import React, { useState, useEffect } from "react";
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import axios from "axios";
 import Ostr from "./components/Ostr";
 import "./Background.scss";
@@ -25,24 +25,6 @@ function App() {
       <Ostr />
       <Navbar />
       <Router>
-        <ul id="app-ul">
-          <li>
-            <Link to="/">Accueil</Link>
-          </li>
-          <li>
-            <Link to="/nav">Navbar</Link>
-          </li>
-          <li>
-            <Link to="/quand">Quand</Link>
-          </li>
-          <li>
-            <Link to="/ou">Ou</Link>
-          </li>
-          <li>
-            <Link to="/map">Map</Link>
-          </li>
-        </ul>
-
         <Routes>
           <Route
             path="/"
