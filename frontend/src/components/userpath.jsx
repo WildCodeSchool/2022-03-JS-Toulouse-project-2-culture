@@ -41,26 +41,22 @@ function UserPath({ eventArrayFromAPI }) {
           />
         </motion.div>
       ) : step === 2 ? (
-        <motion.div initial={{ x: "100%" }} animate={{ x: "0" }}>
-          <Ou
-            events={filterByDate(eventArrayFromAPI, selectedDate)}
-            selectedPlace={selectedPlace}
-            setSelectedPlace={setSelectedPlace}
-            mapLocation={mapLocation}
-            setMapLocation={setMapLocation}
-          />
-        </motion.div>
+        <Ou
+          events={filterByDate(eventArrayFromAPI, selectedDate)}
+          selectedPlace={selectedPlace}
+          setSelectedPlace={setSelectedPlace}
+          mapLocation={mapLocation}
+          setMapLocation={setMapLocation}
+        />
       ) : (
-        <motion.div initial={{ x: "100%" }} animate={{ x: "0" }}>
-          <CardShowResults
-            events={filterByLocation(
-              eventArrayFromAPI,
-              selectedDate,
-              selectedPlace,
-              mapLocation
-            )}
-          />
-        </motion.div>
+        <CardShowResults
+          events={filterByLocation(
+            eventArrayFromAPI,
+            selectedDate,
+            selectedPlace,
+            mapLocation
+          )}
+        />
       )}
       <BtnNav
         step={step}

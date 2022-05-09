@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { motion } from "framer-motion";
 import "./Ou.css";
 import Map from "../components/Map";
 import Searchbar from "../components/Searchbar";
@@ -10,14 +11,16 @@ function Ou(props) {
 
   return (
     <div className="AskPlaceContainer">
-      <h3>Où ?</h3>
-      <Searchbar
-        selectedPlace={selectedPlace}
-        setSelectedPlace={setSelectedPlace}
-        setMapEvent={setMapEvent}
-        events={events}
-      />
-      <Map events={mapEvents} setMapLocation={setMapLocation} />
+      <motion.div initial={{ x: "100%" }} animate={{ x: "0" }}>
+        <h3>Où ?</h3>
+        <Searchbar
+          selectedPlace={selectedPlace}
+          setSelectedPlace={setSelectedPlace}
+          setMapEvent={setMapEvent}
+          events={events}
+        />
+        <Map events={mapEvents} setMapLocation={setMapLocation} />
+      </motion.div>
     </div>
   );
 }
