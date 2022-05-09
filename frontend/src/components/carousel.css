@@ -149,7 +149,7 @@
 .carousel .slider-wrapper {
   overflow: hidden;
   margin: auto;
-  width: 100%;
+  max-width: 100%;
   -webkit-transition: height 0.15s ease-in;
   -moz-transition: height 0.15s ease-in;
   -ms-transition: height 0.15s ease-in;
@@ -187,7 +187,7 @@
   padding: 0;
   position: relative;
   list-style: none;
-  width: 100%;
+  width: 90%;
 }
 .carousel .slider.animated {
   -webkit-transition: all 0.35s ease-in-out;

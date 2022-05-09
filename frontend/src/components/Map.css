@@ -1,12 +1,13 @@
 @import "../../node_modules/leaflet/dist/leaflet.css";
 :root {
-  --mapwidth: 95vw;
+  --mapwidth: 90vw;
+  --mapheight: 45vh;
 }
 
 .leaflet-container {
   margin: auto;
   margin-bottom: 5rem;
-  height: 70vh;
+  height: var(--mapheight);
   width: var(--mapwidth);
   border-radius: 2rem;
 }
@@ -16,15 +17,12 @@
 
 .legend {
   display: flex;
-  justify-content: space-between;
- margin: 10vw;
+  justify-content: space-around;
 }
 .markerslgd {
-  width: 70%;
-  height: 60%;
-  /* border: red solid 2px; */
-  margin-top: -6rem;
-  border-radius: 2rem;
+  width: 5.5rem;
+  height: 4.5rem;
+  margin-top: -5rem;
 }
 #lgdback{
   padding-left: 100px;

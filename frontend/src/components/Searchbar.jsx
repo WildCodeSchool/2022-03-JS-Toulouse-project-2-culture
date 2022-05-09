@@ -1,28 +1,34 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./Searchbar.css";
-import Logo from "./Logo";
 
 function Searchbar(props) {
-  const { selectedPlace, setSelectedPlace } = props;
-  const display = (e) => {
+  const { selectedPlace, setSelectedPlace, setMapEvent, events } = props;
+
+  useEffect(() => {
+    setMapEvent(
+      events.filter((event) =>
+        event?.fields?.commune
+          ?.toLowerCase()
+          .includes(selectedPlace.toLowerCase())
+      )
+    );
+  }, [selectedPlace]);
+
+  function onSubmit(e) {
     e.preventDefault();
-    setSelectedPlace("");
-  };
+  }
 
   return (
-    <div className="search-page">
-      <form className="search-container">
-        <input
-          className="searchbar"
-          placeholder="OÙ ?"
-          value={selectedPlace}
-          onChange={(e) => setSelectedPlace(e.target.value)}
-        />
-        <button type="button" onClick={display}>
-          <Logo />
-        </button>
-      </form>
-    </div>
+    <form className="search-container" onSubmit={onSubmit}>
+      <input
+        className="searchbar"
+        placeholder="OÙ ?"
+        value={selectedPlace}
+        onChange={(e) => {
+          setSelectedPlace(e.target.value);
+        }}
+      />
+    </form>
   );
 }
 

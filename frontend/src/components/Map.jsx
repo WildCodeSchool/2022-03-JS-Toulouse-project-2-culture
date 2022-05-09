@@ -11,6 +11,7 @@ import Greenlgd from "../assets/markers/Greenlgd.png";
 import Redlgd from "../assets/markers/Redlgd.png";
 import Yellowlgd from "../assets/markers/Yellowlgd.png";
 import "./Map.css";
+import Mapbounds from "./mapbounds";
 
 const GreenIcon = new L.Icon({
   iconUrl: Green,
@@ -30,7 +31,8 @@ const RedIcon = new L.Icon({
 });
 
 function Map(props) {
-  const { events } = props;
+  const { events, setMapLocation } = props;
+
   const [position, setPosition] = useState([
     43.59709218840526, 1.4307425383881127,
   ]);
@@ -48,27 +50,29 @@ function Map(props) {
     return CustomIcon;
   }
   return (
-    <div className="mapdiv">
-      <MapContainer class="map-cont" center={position} zoom={12}>
-        <TileLayer
-          attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-          url="https://{s}.tile.openstreetmap.fr/osmfr/{z}/{x}/{y}.png"
-        />
-        {events.map((el) => (
-          <Marker
-            key={el.recordid}
-            position={el.fields.geo_point_2d}
-            icon={IconColor(el)}
-          >
-            <Popup class="popup">
-              {el.fields.titre}
-              <br /> {el.fields.date}
-            </Popup>
-          </Marker>
-        ))}
-        <LocationMarker setPosition={setPosition} position={position} />;
-      </MapContainer>
-      <div id="lgdback" />
+    <div>
+      <div className="mapdiv">
+        <MapContainer class="map-cont" center={position} zoom={12}>
+          <Mapbounds setMapLocation={setMapLocation} />
+          <TileLayer
+            attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+            url="https://{s}.tile.openstreetmap.fr/osmfr/{z}/{x}/{y}.png"
+          />
+          {events.map((el) => (
+            <Marker
+              key={el.recordid}
+              position={el.fields.geo_point_2d}
+              icon={IconColor(el)}
+            >
+              <Popup class="popup">
+                {el.fields.titre}
+                <br /> {el.fields.date}
+              </Popup>
+            </Marker>
+          ))}
+          <LocationMarker setPosition={setPosition} position={position} />;
+        </MapContainer>
+      </div>
       <div className="legend">
         <img className="markerslgd" src={Bluelgd} alt="Bleu = Culture" />
         <img className="markerslgd" src={Greenlgd} alt="Vert = Environnement" />

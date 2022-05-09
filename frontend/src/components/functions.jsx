@@ -42,10 +42,39 @@ export function filterByDate(array, date) {
  * It filters an array of events by date and location
  * @returns An array of events that match the date and location.
  */
-export function filterByLocation(array, date, location) {
+export function filterByLocation(array, date, location, maplocation) {
   if (location)
-    return filterByDate(array, date).filter(
-      (event) => event.fields.commune === location
+    return filterByDate(array, date).filter((event) =>
+      event?.fields?.commune?.toLowerCase().includes(location.toLowerCase())
     );
+  if (maplocation) {
+    const LatMax = maplocation.getNorthEast().lat;
+    const LngMax = maplocation.getNorthEast().lng;
+    const LatMin = maplocation.getSouthWest().lat;
+    const LngMin = maplocation.getSouthWest().lng;
+    return filterByDate(array, date).filter(
+      (event) =>
+        event.fields.geo_point_2d[0] < LatMax &&
+        event.fields.geo_point_2d[0] > LatMin &&
+        event.fields.geo_point_2d[1] < LngMax &&
+        event.fields.geo_point_2d[1] > LngMin
+    );
+  }
   return filterByDate(array, date);
+}
+
+export function stringStyliser(string, number) {
+  const array = string.split("");
+
+  if (array.includes("&")) {
+    const cut = array.findIndex((el) => el === "&");
+    if (array[cut + 1] === "#") {
+      array.splice(cut, 7, "'");
+    } else if (array[cut + 1] === "n") {
+      array.splice(cut, 6, " ");
+    }
+  }
+  return string.length > number
+    ? `${array.slice(0, number).join("")} (...)`
+    : array.join("");
 }

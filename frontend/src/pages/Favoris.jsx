@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 
 import "./Favoris.css";
 import axios from "axios";
-import { dateJJMMConverter } from "../components/functions";
+import { dateJJMMConverter, stringStyliser } from "../components/functions";
 import CardTheme from "../components/CardTheme";
 
 function Favoris() {
@@ -22,26 +22,36 @@ function Favoris() {
         )
       );
   }, []);
+
+  function refresh() {
+    window.location.reload();
+  }
   return (
     <div className="favContainer">
       <h3>Vos favoris</h3>
-      {favorites.map((event) => (
-        <div key={event.recordid} className="favList">
-          <CardTheme
-            key={event.recordid}
-            title={event.fields.titre}
-            date={dateJJMMConverter(event.fields.date_debut)}
-            isFavorite={false}
-            stylecard={
-              event.fields.thematique ===
-              "Vides Grenier / Brocantes / Foires et salons"
-                ? "Brocantes"
-                : event.fields.thematique
-            }
-            recordid={event.recordid}
-          />
-        </div>
-      ))}
+      {favorites.length > 0 ? (
+        favorites.map((event) => (
+          <div key={event.recordid} className="favList">
+            <CardTheme
+              // eslint-disable-next-line react/jsx-no-bind
+              refresh={refresh}
+              key={event.recordid}
+              title={stringStyliser(event.fields.titre, 45)}
+              date={dateJJMMConverter(event.fields.date_debut)}
+              isFavorite={false}
+              stylecard={
+                event.fields.thematique ===
+                "Vides Grenier / Brocantes / Foires et salons"
+                  ? "Brocantes"
+                  : event.fields.thematique
+              }
+              recordid={event.recordid}
+            />
+          </div>
+        ))
+      ) : (
+        <h4>Pas de favoris</h4>
+      )}
     </div>
   );
 }

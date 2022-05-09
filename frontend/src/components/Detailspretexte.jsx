@@ -1,18 +1,15 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import {
-  FaFacebook,
-  FaInstagramSquare,
-  FaTwitter,
-  FaLinkedin,
-} from "react-icons/fa";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import { GrTableAdd } from "react-icons/gr";
 import MapDetailEvent from "./MapDetailEvent";
 import "./Detailspretexte.css";
 import CardThemeHeart from "./CardThemeHeart";
 import "./CardTheme.css";
-import { dateJJMMConverter } from "./functions";
+import { dateJJMMConverter, stringStyliser } from "./functions";
+import Facebooksharebutton from "./Facebooksharebutton";
+import Twittersharebutton from "./Twittersharebutton";
+import Linkedinsharebutton from "./Linkedinsharebutton";
 
 function Detailspretext() {
   const [eventDetail, setEventDetail] = useState(null);
@@ -29,10 +26,23 @@ function Detailspretext() {
       });
   }, []);
 
-  const [isFavorite, setIsfavorite] = useState(false);
+  const includedFavorite = () => {
+    return Object.values(window.localStorage).includes(id);
+  };
+  const [isFavorite, setIsfavorite] = useState(includedFavorite());
 
   const handlefavorite = () => {
-    setIsfavorite(!isFavorite);
+    if (includedFavorite()) {
+      setIsfavorite(false);
+      window.localStorage.removeItem(
+        Object.keys(window.localStorage).find(
+          (key) => window.localStorage[key] === id
+        )
+      );
+    } else {
+      setIsfavorite(true);
+      window.localStorage.setItem(`favorite${window.localStorage.length}`, id);
+    }
   };
 
   return (
@@ -65,7 +75,7 @@ function Detailspretext() {
                 handlefavorite={handlefavorite}
               />
             </div>
-            <h1>{eventDetail.fields.titre}</h1>
+            <h1>{stringStyliser(eventDetail.fields.titre, 50)}</h1>
             <p className="thematique">{eventDetail.fields.thematique}</p>
             <p id="textdate">{eventDetail.fields.date}</p>
             <p className="textaligndescription">
@@ -83,6 +93,7 @@ function Detailspretext() {
               />
             </div>
           </div>
+
           <div className="box-agenda">
             <div>
               <GrTableAdd id="agenda" />
@@ -90,13 +101,20 @@ function Detailspretext() {
             <button type="submit" id="btn-agenda">
               Ajouter à mon agenda
             </button>
+
+            <ul>
+              <Link to="/">
+                <button type="submit">
+                  <span>Retour à l&apos;accueil</span>
+                </button>
+              </Link>
+            </ul>
           </div>
           <p id="sharesociallink">Partager</p>
           <div className="box" id="sociallink">
-            <FaFacebook className="facebookicon" />
-            <FaInstagramSquare className="instagramicon" />
-            <FaTwitter className="twittericon" />
-            <FaLinkedin className="linkedinicon" />
+            <Facebooksharebutton recordid={id} />
+            <Twittersharebutton recordid={id} />
+            <Linkedinsharebutton recordid={id} />
           </div>
         </div>
       ) : (
