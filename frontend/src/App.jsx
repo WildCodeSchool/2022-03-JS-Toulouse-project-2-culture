@@ -5,7 +5,6 @@ import axios from "axios";
 import Ostr from "./components/Ostr";
 import "./Background.scss";
 import "./App.css";
-import axios from "axios";
 import Favoris from "./pages/Favoris";
 import Apropos from "./pages/Apropos";
 import Navbar from "./components/Navbar";

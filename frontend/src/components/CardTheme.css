@@ -9,6 +9,7 @@
   margin: 0 1rem;
   border-radius: 1rem;
   min-height: 300px;
+  max-height: 100%;
   text-align: center;
   font-family: var(--secondary-font);
   overflow: hidden;
@@ -47,11 +48,13 @@
 }
 .heartLogo {
   height: 50px;
+
 }
 
 .CardThemeHeader {
   display: flex;
   justify-content: space-between;
+  padding: 0px;
 }
 h2 {
   font-size: 3rem;
@@ -104,6 +107,7 @@ h4 {
 .heartBtn {
   border: none;
   background: none;
+
 }
 
 .BtnShowMore a {

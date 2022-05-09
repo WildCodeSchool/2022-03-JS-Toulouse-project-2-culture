@@ -1,15 +1,16 @@
-@import url(./MapDetailEvent.css);
-
 * {
   margin: 0;
   padding: 0;
 }
-
 .boxcontainer {
   display: flex;
   flex-direction: column;
   background-color: var(--third-color);
   box-shadow: 5px 10px 5px;
+}
+.mapcontainer.leaflet-container {
+  max-width: 85vw;
+  max-height: 10rem;
 }
 
 .box {

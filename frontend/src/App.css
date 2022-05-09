@@ -41,11 +41,11 @@ p {
 
 /* background: radial-gradient(white 0%, #c2c44899 50%, #050505ca 100%);}  */
 
-body {
+#root {
   background: radial-gradient(white 0%, #c2c44899 50%, #050505ca 120%);
   background-attachment: fixed;
   max-width: 100vw;
-  /* max-height: 1000vh; */
+  /* height: 100vh; */
   margin: 0;
   font-family: var(--secondary-font);
   padding: 0;
