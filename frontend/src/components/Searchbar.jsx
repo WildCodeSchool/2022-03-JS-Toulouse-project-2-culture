@@ -2,13 +2,7 @@ import React, { useEffect } from "react";
 import "./Searchbar.css";
 
 function Searchbar(props) {
-  const {
-    selectedPlace,
-    setSelectedPlace,
-    setMapEvent,
-    events,
-    eventFiltered,
-  } = props;
+  const { selectedPlace, setSelectedPlace, setMapEvent, events } = props;
 
   useEffect(() => {
     setMapEvent(
@@ -30,7 +24,7 @@ function Searchbar(props) {
   function onSubmit(e) {
     e.preventDefault();
   }
-  console.log(eventFiltered);
+
   return (
     <form className="search-container" onSubmit={onSubmit}>
       <input
