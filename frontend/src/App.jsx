@@ -26,8 +26,8 @@ function App() {
         <div id="stars2" />
         <div id="stars3" />
       </div>
-      <Navbar />
       <Router>
+        <Navbar />
         <ul id="app-ul">
           <li>
             <Link to="/">Accueil</Link>

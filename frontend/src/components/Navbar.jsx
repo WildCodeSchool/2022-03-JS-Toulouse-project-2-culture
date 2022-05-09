@@ -12,7 +12,9 @@ function Navbar() {
   return (
     <nav className={`navbar ${showLinks ? "show-nav" : "hide-nav"}`}>
       <div className="navbar_logo">
-        <Logo />
+        <a href="/">
+          <Logo />
+        </a>
       </div>
       <ul className="navbar_links">
         <li className="navbar_item slideInDown-1">
