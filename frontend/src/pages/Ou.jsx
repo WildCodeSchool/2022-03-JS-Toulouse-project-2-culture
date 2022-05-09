@@ -16,6 +16,7 @@ function Ou(props) {
         setSelectedPlace={setSelectedPlace}
         setMapEvent={setMapEvent}
         events={events}
+        // eventFiltered={mapEvents}
       />
       <Map events={mapEvents} />
     </div>
