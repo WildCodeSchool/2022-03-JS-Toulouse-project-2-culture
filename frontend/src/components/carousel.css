@@ -23,8 +23,12 @@
   border-radius: 10rem;
   font-size: 32px;
   cursor: pointer;
-  box-shadow: 0px 0px 10px 5px rgba(204, 204, 204, 0.463);
-  
+  box-shadow: 0px 0px 10px 5px rgba(204, 204, 204, 0.463); 
+}
+
+.carousel-card{
+  box-sizing: inherit;
+
 }
 .carousel .control-arrow:focus,
 .carousel .control-arrow:hover {

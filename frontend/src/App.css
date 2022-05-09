@@ -45,7 +45,6 @@ p {
   background: radial-gradient(white 0%, #c2c44899 50%, #050505ca 120%);
   background-attachment: fixed;
   max-width: 100vw;
-  /* height: 100vh; */
   margin: 0;
   font-family: var(--secondary-font);
   padding: 0;
