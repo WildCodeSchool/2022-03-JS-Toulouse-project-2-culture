@@ -1,5 +1,6 @@
 /* eslint-disable no-nested-ternary */
 import React, { useState } from "react";
+import { motion } from "framer-motion";
 import Quand from "../pages/Quand";
 import Accueil from "../pages/Accueil";
 import Ou from "../pages/Ou";
@@ -32,28 +33,34 @@ function UserPath({ eventArrayFromAPI }) {
       {step === 0 ? (
         <Accueil />
       ) : step === 1 ? (
-        <Quand
-          selectedDate={selectedDate}
-          setSelectedDate={setSelectedDate}
-          eventArrayFromAPI={eventArrayFromAPI}
-        />
+        <motion.div initial={{ x: "100%" }} animate={{ x: "0" }}>
+          <Quand
+            selectedDate={selectedDate}
+            setSelectedDate={setSelectedDate}
+            eventArrayFromAPI={eventArrayFromAPI}
+          />
+        </motion.div>
       ) : step === 2 ? (
-        <Ou
-          events={filterByDate(eventArrayFromAPI, selectedDate)}
-          selectedPlace={selectedPlace}
-          setSelectedPlace={setSelectedPlace}
-          mapLocation={mapLocation}
-          setMapLocation={setMapLocation}
-        />
+        <motion.div initial={{ x: "100%" }} animate={{ x: "0" }}>
+          <Ou
+            events={filterByDate(eventArrayFromAPI, selectedDate)}
+            selectedPlace={selectedPlace}
+            setSelectedPlace={setSelectedPlace}
+            mapLocation={mapLocation}
+            setMapLocation={setMapLocation}
+          />
+        </motion.div>
       ) : (
-        <CardShowResults
-          events={filterByLocation(
-            eventArrayFromAPI,
-            selectedDate,
-            selectedPlace,
-            mapLocation
-          )}
-        />
+        <motion.div initial={{ x: "100%" }} animate={{ x: "0" }}>
+          <CardShowResults
+            events={filterByLocation(
+              eventArrayFromAPI,
+              selectedDate,
+              selectedPlace,
+              mapLocation
+            )}
+          />
+        </motion.div>
       )}
       <BtnNav
         step={step}
