@@ -1,0 +1,26 @@
+.fav-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 7rem;
+  gap: 2rem;
+  padding: 0 1rem;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  text-align: center;
+}
+
+#wildLogo {
+  height: 3rem;
+  align-self: center;
+}
+
+.credits {
+  display: flex;
+  flex-direction: column;
+}
