@@ -47,12 +47,14 @@ function CardShowResults(props) {
               eventsCulture.map((event) => (
                 <div key={event.recordid} className="carousel-card">
                   <CardTheme
-                    title={stringStyliser(event.fields.titre, 45)}
                     date={dateJJMMConverter(event.fields.date_debut)}
                     isFavorite={false}
                     stylecard="Culture"
                     recordid={event.recordid}
                   />
+                  <p className="legend">
+                    {stringStyliser(event.fields.titre, 45)}
+                  </p>
                 </div>
               ))
             ) : (
@@ -73,12 +75,14 @@ function CardShowResults(props) {
                 <div key={event.recordid}>
                   <CardTheme
                     key={event.recordid}
-                    title={stringStyliser(event.fields.titre, 45)}
                     date={dateJJMMConverter(event.fields.date_debut)}
                     isFavorite={false}
                     stylecard="Environnement"
                     recordid={event.recordid}
                   />
+                  <p className="legend">
+                    {stringStyliser(event.fields.titre, 45)}
+                  </p>
                 </div>
               ))
             ) : (
@@ -100,12 +104,14 @@ function CardShowResults(props) {
                 <div key={event.recordid}>
                   <CardTheme
                     key={event.recordid}
-                    title={stringStyliser(event.fields.titre, 45)}
                     date={dateJJMMConverter(event.fields.date_debut)}
                     isFavorite={false}
                     stylecard="Sport"
                     recordid={event.recordid}
                   />
+                  <p className="legend">
+                    {stringStyliser(event.fields.titre, 45)}
+                  </p>
                 </div>
               ))
             ) : (
@@ -126,12 +132,14 @@ function CardShowResults(props) {
                 <div key={event.recordid}>
                   <CardTheme
                     key={event.recordid}
-                    title={stringStyliser(event.fields.titre, 45)}
                     date={dateJJMMConverter(event.fields.date_debut)}
                     isFavorite={false}
                     stylecard="Brocantes"
                     recordid={event.recordid}
                   />
+                  <p className="legend">
+                    {stringStyliser(event.fields.titre, 45)}
+                  </p>
                 </div>
               ))
             ) : (
@@ -152,12 +160,14 @@ function CardShowResults(props) {
                 <div key={event.recordid}>
                   <CardTheme
                     key={event.recordid}
-                    title={stringStyliser(event.fields.titre, 45)}
                     date={dateJJMMConverter(event.fields.date_debut)}
                     isFavorite={false}
                     stylecard="Autres"
                     recordid={event.recordid}
                   />
+                  <p className="legend">
+                    {stringStyliser(event.fields.titre, 45)}
+                  </p>
                 </div>
               ))
             ) : (

@@ -17,13 +17,14 @@
   opacity: 1;
   filter: alpha(opacity=40);
   position: absolute;
-  z-index: 2;
-  top :20%;
+  z-index: 5;
+  top :30%;
   background: none;
   border-radius: 10rem;
   font-size: 32px;
   cursor: pointer;
-  box-shadow: 0px 0px 10px 5px rgba(204, 204, 204, 0.463); 
+  overflow: visible;
+  box-shadow: 0px 0px 10px 5px rgba(155, 150, 120, 0.463); 
 }
 
 .carousel-card{
@@ -39,8 +40,6 @@
 .carousel.carousel-slider .control-arrow:before {
   margin: 0 5px;
   display: inline-block;
-  /* border-top: 8px solid transparent; */
-  /* border-bottom: 8px solid transparent; */
   content: "";
 }
 .carousel .control-disabled.control-arrow {
@@ -147,11 +146,9 @@
   margin: 0;
 }
 .carousel.carousel-slider .control-arrow {
-  /* top: 0; */
   color: #fff;
   font-size: 26px;
   bottom: 0;
-  /* margin-top: 0; */
   padding: 5px;
 }
 .carousel.carousel-slider .control-arrow:hover {
@@ -212,6 +209,8 @@
   max-width: 100%;
   position: relative;
   text-align: center;
+
+
 }
 .carousel .slide img {
   width: 100%;
@@ -223,31 +222,36 @@
   width: calc(100% - 80px);
   margin: 0 40px 40px;
   border: 0;
+  
 }
-.carousel .slide .legend {
-  -webkit-transition: all 0.5s ease-in-out;
+ .carousel .slide .legend {
+  width: 80%;
+  height: 50%;
+ -webkit-transition: all 0.5s ease-in-out;
   -moz-transition: all 0.5s ease-in-out;
   -ms-transition: all 0.5s ease-in-out;
   -o-transition: all 0.5s ease-in-out;
   transition: all 0.5s ease-in-out;
   position: absolute;
-  bottom: 40px;
+  bottom: 45px;
   left: 50%;
-  margin-left: -45%;
-  width: 90%;
+  margin-left: -40%;
   border-radius: 10px;
   background: #000;
   color: #fff;
   padding: 10px;
   font-size: 12px;
   text-align: center;
-  opacity: 0.25;
+  display: flex;
+  align-items: center;
+  opacity: 0.75;
   -webkit-transition: opacity 0.35s ease-in-out;
   -moz-transition: opacity 0.35s ease-in-out;
   -ms-transition: opacity 0.35s ease-in-out;
   -o-transition: opacity 0.35s ease-in-out;
   transition: opacity 0.35s ease-in-out;
 }
+
 .carousel .control-dots {
   position: absolute;
   bottom: 0;

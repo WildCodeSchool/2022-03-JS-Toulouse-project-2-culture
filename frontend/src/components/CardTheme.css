@@ -46,6 +46,11 @@
   margin-top: 75px;
   width: 95 vw;
   max-width: 320px;
+  background: rgba( 253, 253, 253, 0.1 );
+box-shadow: 0 8px 32px 0 rgba(135, 133, 31, 0.37);
+backdrop-filter: blur( 1px );
+-webkit-backdrop-filter: blur( 1px );
+border-radius: 10px;
 }
 .heartLogo {
   height: 50px;
