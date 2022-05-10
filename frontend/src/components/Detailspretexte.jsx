@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useParams, Link } from "react-router-dom";
-// eslint-disable-next-line camelcase
-import { atcb_action } from "add-to-calendar-button";
+import { atcb_action as atcbAction } from "add-to-calendar-button";
 import { GrTableAdd } from "react-icons/gr";
 import MapDetailEvent from "./MapDetailEvent";
 import "./Detailspretexte.css";
@@ -108,7 +107,7 @@ function Detailspretext() {
               id="addCalendarButton"
               type="submit"
               onClick={() => {
-                atcb_action({
+                atcbAction({
                   name: stringStyliser(eventDetail.fields.titre, 50),
                   startDate: eventDetail.fields.date_debut,
                   endDate: eventDetail.fields.date_fin,

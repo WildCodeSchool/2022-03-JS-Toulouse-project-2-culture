@@ -1,3 +1,12 @@
+/********************************************
+	BREAKPOINT WIDTHS
+********************************************/
+/********************************************
+	FONTS
+********************************************/
+/********************************************
+	COLOURS
+********************************************/
 .carousel .control-arrow,
 .carousel.carousel-slider .control-arrow {
   -webkit-transition: all 0.25s ease-in;
@@ -5,15 +14,20 @@
   -ms-transition: all 0.25s ease-in;
   -o-transition: all 0.25s ease-in;
   transition: all 0.25s ease-in;
-  opacity: 0.4;
+  opacity: 1;
   filter: alpha(opacity=40);
   position: absolute;
-  z-index: 2;
-  top: 20px;
+  z-index: 5;
+  top: 30%;
   background: none;
-  border: 0;
+  border-radius: 10rem;
   font-size: 32px;
   cursor: pointer;
+  overflow: visible;
+  box-shadow: 0px 0px 10px 5px rgba(155, 150, 120, 0.463);
+}
+.carousel-card {
+  box-sizing: inherit;
 }
 .carousel .control-arrow:focus,
 .carousel .control-arrow:hover {
@@ -24,31 +38,37 @@
 .carousel.carousel-slider .control-arrow:before {
   margin: 0 5px;
   display: inline-block;
-  border-top: 8px solid transparent;
-  border-bottom: 8px solid transparent;
   content: "";
 }
 .carousel .control-disabled.control-arrow {
-  opacity: 0;
+  opacity: 1;
   filter: alpha(opacity=0);
   cursor: inherit;
   display: none;
 }
 .carousel .control-prev.control-arrow {
-  left: 0;
+  background-color: rgba(51, 51, 51, 0.508);
+  left: 3px;
+  z-index: 200;
+  height: 40%;
 }
 .carousel .control-prev.control-arrow:before {
   border-right: 8px solid #fff;
 }
 .carousel .control-next.control-arrow {
-  right: 0;
+  right: 3px;
+  z-index: 200;
+  height: 40%;
+  background-color: rgba(51, 51, 51, 0.508);
 }
 .carousel .control-next.control-arrow:before {
   border-left: 8px solid #fff;
 }
+
 .carousel-root {
   outline: none;
 }
+
 .carousel {
   position: relative;
   width: 100%;
@@ -57,6 +77,7 @@
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
+  font-weight: normal;
 }
 .carousel img {
   width: 100%;
@@ -69,7 +90,7 @@
 .carousel .control-arrow {
   outline: 0;
   border: 0;
-  background: none;
+  background: blue;
   top: 50%;
   margin-top: -13px;
   font-size: 18px;
@@ -120,14 +141,11 @@
 .carousel.carousel-slider {
   position: relative;
   margin: 0;
-  overflow: hidden;
 }
 .carousel.carousel-slider .control-arrow {
-  top: 0;
   color: #fff;
   font-size: 26px;
   bottom: 0;
-  margin-top: 0;
   padding: 5px;
 }
 .carousel.carousel-slider .control-arrow:hover {
@@ -185,7 +203,7 @@
 }
 .carousel .slide {
   min-width: 100%;
-  margin: 0;
+  max-width: 100%;
   position: relative;
   text-align: center;
 }
@@ -201,29 +219,39 @@
   border: 0;
 }
 .carousel .slide .legend {
+  width: 70%;
+  height: 50%;
   -webkit-transition: all 0.5s ease-in-out;
   -moz-transition: all 0.5s ease-in-out;
   -ms-transition: all 0.5s ease-in-out;
   -o-transition: all 0.5s ease-in-out;
   transition: all 0.5s ease-in-out;
   position: absolute;
-  bottom: 40px;
+  bottom: 45px;
   left: 50%;
-  margin-left: -45%;
-  width: 90%;
+  margin-left: -35%;
   border-radius: 10px;
   background: #000;
   color: #fff;
   padding: 10px;
-  font-size: 12px;
+  font-size: 16px;
+  font-weight: normal;
   text-align: center;
-  opacity: 0.25;
+  display: flex;
+  align-items: center;
+  opacity: 0.85;
   -webkit-transition: opacity 0.35s ease-in-out;
   -moz-transition: opacity 0.35s ease-in-out;
   -ms-transition: opacity 0.35s ease-in-out;
   -o-transition: opacity 0.35s ease-in-out;
   transition: opacity 0.35s ease-in-out;
+  background: rgba(8, 8, 8, 0.95);
+  box-shadow: 0 8px 32px 0 rgba(135, 121, 31, 0.37);
+  backdrop-filter: blur(7.5px);
+  -webkit-backdrop-filter: blur(7.5px);
+  border-radius: 10px;
 }
+
 .carousel .control-dots {
   position: absolute;
   bottom: 0;

@@ -1,10 +1,10 @@
 /* eslint-disable no-nested-ternary */
 import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-
+import axios from "axios";
+import Ostr from "./components/Ostr";
 import "./Background.scss";
 import "./App.css";
-import axios from "axios";
 import Favoris from "./pages/Favoris";
 import Apropos from "./pages/Apropos";
 import Navbar from "./components/Navbar";
@@ -22,6 +22,7 @@ function App() {
 
   return (
     <div className="App">
+      <Ostr />
       <Navbar />
       <Router>
         <Routes>
