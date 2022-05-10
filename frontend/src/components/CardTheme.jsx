@@ -49,7 +49,6 @@ function CardTheme({ title, date, stylecard, recordid, refresh }) {
         <Link className="recordidlink" to={`/event/${recordid}`}>
           <div className="CardThemeTitle">
             <h3>{title}</h3>
-            Plus d&apos;informations
           </div>
         </Link>
       </div>

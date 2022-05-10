@@ -1,5 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from "react-responsive-carousel";
 import CardTheme from "./CardTheme";
@@ -46,6 +47,7 @@ function CardShowResults(props) {
             showStatus={false}
             showIndicators={false}
             autoPlay
+            infiniteLoop
           >
             {eventsCulture.length > 0 ? (
               eventsCulture.map((event) => (
@@ -56,9 +58,16 @@ function CardShowResults(props) {
                     stylecard="Culture"
                     recordid={event.recordid}
                   />
-                  <p className="legend">
-                    {stringStyliser(event.fields.titre, 45)}
-                  </p>
+                  <Link
+                    className="recordidlink"
+                    to={`/event/${event.recordid}`}
+                  >
+                    <div className="CardThemeTitle">
+                      <p className="legend">
+                        {stringStyliser(event.fields.titre, 45)}
+                      </p>
+                    </div>
+                  </Link>
                 </div>
               ))
             ) : (
@@ -73,6 +82,7 @@ function CardShowResults(props) {
             showStatus={false}
             showIndicators={false}
             autoPlay
+            infiniteLoop
           >
             {eventsEnvironnement.length > 0 ? (
               eventsEnvironnement.map((event) => (
@@ -84,9 +94,16 @@ function CardShowResults(props) {
                     stylecard="Environnement"
                     recordid={event.recordid}
                   />
-                  <p className="legend">
-                    {stringStyliser(event.fields.titre, 45)}
-                  </p>
+                  <Link
+                    className="recordidlink"
+                    to={`/event/${event.recordid}`}
+                  >
+                    <div className="CardThemeTitle">
+                      <p className="legend">
+                        {stringStyliser(event.fields.titre, 45)}
+                      </p>
+                    </div>
+                  </Link>
                 </div>
               ))
             ) : (
@@ -101,6 +118,7 @@ function CardShowResults(props) {
             showStatus={false}
             showIndicators={false}
             autoPlay
+            infiniteLoop
           >
             {eventsSport.length > 0 ? (
               eventsSport.map((event) => (
@@ -112,9 +130,16 @@ function CardShowResults(props) {
                     stylecard="Sport"
                     recordid={event.recordid}
                   />
-                  <p className="legend">
-                    {stringStyliser(event.fields.titre, 45)}
-                  </p>
+                  <Link
+                    className="recordidlink"
+                    to={`/event/${event.recordid}`}
+                  >
+                    <div className="CardThemeTitle">
+                      <p className="legend">
+                        {stringStyliser(event.fields.titre, 45)}
+                      </p>
+                    </div>
+                  </Link>
                 </div>
               ))
             ) : (
@@ -129,6 +154,7 @@ function CardShowResults(props) {
             showStatus={false}
             showIndicators={false}
             autoPlay
+            infiniteLoop
           >
             {eventsBrocantes.length > 0 ? (
               eventsBrocantes.map((event) => (
@@ -140,9 +166,16 @@ function CardShowResults(props) {
                     stylecard="Brocantes"
                     recordid={event.recordid}
                   />
-                  <p className="legend">
-                    {stringStyliser(event.fields.titre, 45)}
-                  </p>
+                  <Link
+                    className="recordidlink"
+                    to={`/event/${event.recordid}`}
+                  >
+                    <div className="CardThemeTitle">
+                      <p className="legend">
+                        {stringStyliser(event.fields.titre, 45)}
+                      </p>
+                    </div>
+                  </Link>
                 </div>
               ))
             ) : (
@@ -157,6 +190,7 @@ function CardShowResults(props) {
             showStatus={false}
             showIndicators={false}
             autoPlay
+            infiniteLoop
           >
             {eventsAutres.length > 0 ? (
               eventsAutres.map((event) => (
@@ -168,9 +202,16 @@ function CardShowResults(props) {
                     stylecard="Autres"
                     recordid={event.recordid}
                   />
-                  <p className="legend">
-                    {stringStyliser(event.fields.titre, 45)}
-                  </p>
+                  <Link
+                    className="recordidlink"
+                    to={`/event/${event.recordid}`}
+                  >
+                    <div className="CardThemeTitle">
+                      <p className="legend">
+                        {stringStyliser(event.fields.titre, 45)}
+                      </p>
+                    </div>
+                  </Link>
                 </div>
               ))
             ) : (

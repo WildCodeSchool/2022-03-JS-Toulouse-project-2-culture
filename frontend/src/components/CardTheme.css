@@ -52,6 +52,7 @@ border-radius: 10px;
 }
 .heartLogo {
   height: 50px;
+  border:none;
 
 }
 
@@ -111,7 +112,6 @@ h4 {
 .heartBtn {
   border: none;
   background: none;
-
 }
 
 .BtnShowMore a {
