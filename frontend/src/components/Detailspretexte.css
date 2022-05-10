@@ -1,42 +1,43 @@
 * {
   margin: 0;
   padding: 0;
+  font-family: var(--primary-font);
 }
 .boxcontainer {
   display: flex;
   flex-direction: column;
-  background-color: var(--third-color);
   box-shadow: 5px 10px 5px;
+  max-width:100vw;
 }
 .mapcontainer.leaflet-container {
   max-width: 85vw;
   max-height: 10rem;
 }
-
+#mapDetailEventContainer{
+  max-height:12rem;
+  margin-top: -3rem;
+}
 .box {
   width: auto;
   height: max-content;
-  margin: 2rem;
+  margin: 6rem 1rem 0rem 1rem;
 }
 
 #boxtext {
   display: flex;
   flex-direction: column;
-  background-color: var(--third-color);
-  border: var(--primary-color) solid 2px;
   border-radius: 1rem;
   justify-content: center;
 }
 
 #img {
-  height: 500px;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
 .leaflet-container {
-  border: black solid 2px;
+  border: rgba(0, 0, 0, 0.708) solid 2px;
 }
 
 .themeimgCulture {
@@ -95,16 +96,13 @@
 }
 
 h1 {
-  font-family: Arial, Helvetica, sans-serif;
   text-align: center;
   text-shadow: 0 0 3px var(--primary-color), 0 0 10px var(--secondary-color);
-  font-family: var(--secondary-font);
   text-transform: uppercase;
 }
 
 #textdate {
   font-style: italic;
-  font-family: Arial, Helvetica, sans-serif;
 }
 
 p {
@@ -113,18 +111,10 @@ p {
 
 .thematique {
   text-align: center;
-  font-family: Arial, Helvetica, sans-serif;
 }
 
 .textaligndescription {
   text-align: justify;
-  font-family: Arial, Helvetica, sans-serif;
-}
-
-.adress,
-.website,
-.websitelink {
-  font-family: Arial, Helvetica, sans-serif;
 }
 
 .website {

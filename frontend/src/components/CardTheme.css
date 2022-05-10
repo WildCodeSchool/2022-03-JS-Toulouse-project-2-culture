@@ -11,7 +11,7 @@
   min-height: 300px;
   max-height: 35vh;
   text-align: center;
-  font-family: var(--secondary-font);
+  font-family: var(--primary-font);
   overflow: hidden;
 }
 
@@ -34,15 +34,16 @@
 .Autres {
   background-image: url("../assets/img/autres.jpg");
 }
-
+.motion-div{
+  column-gap: 10rem;
+}
 .showcase {
   display: flex;
   flex-direction: column;
   text-align: center;
   color: var(--primary-color);
   margin-top: 75px;
-  width: 95 vw;
-  max-width: 320px;
+  width: 95vw;
   background: rgba( 253, 253, 253, 0.1 );
 box-shadow: 0 8px 32px 0 rgba(135, 133, 31, 0.37);
 backdrop-filter: blur( 1px );
@@ -71,7 +72,7 @@ h4 {
 }
 h3,
 h4 {
-  margin: 0;
+  margin-top: 1rem;
   align-self: center;
 }
 

@@ -33,7 +33,11 @@ function CardShowResults(props) {
   );
   return (
     <div className="showcase">
-      <motion.div initial={{ x: "100%" }} animate={{ x: "0" }}>
+      <motion.div
+        className="motion-div"
+        initial={{ x: "100%" }}
+        animate={{ x: "0" }}
+      >
         <h3>Vos pretextes</h3>
         <h4>Intello...</h4>
         <div className="carousel-container">

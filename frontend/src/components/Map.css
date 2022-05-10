@@ -18,9 +18,10 @@
 .legend {
   display: flex;
   justify-content: space-around;
+  max-width: 90vw;
 }
 .markerslgd {
-  width: 5.5rem;
+  width: 5rem;
   height: 4.5rem;
   margin-top: -5rem;
 }
