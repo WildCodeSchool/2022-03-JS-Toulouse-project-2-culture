@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useParams, Link } from "react-router-dom";
+// eslint-disable-next-line camelcase
+import { atcb_action } from "add-to-calendar-button";
 import { GrTableAdd } from "react-icons/gr";
 import MapDetailEvent from "./MapDetailEvent";
 import "./Detailspretexte.css";
@@ -47,6 +49,13 @@ function Detailspretext() {
 
   return (
     <div className="boxcontainer">
+      <div className="returnhomebtnbox">
+        <Link to="/">
+          <button className="returnhomebtn" type="submit">
+            <span>Retour à l&apos;accueil</span>
+          </button>
+        </Link>
+      </div>
       {eventDetail !== null ? (
         <div>
           <div className="box" id="boxtext">
@@ -95,20 +104,25 @@ function Detailspretext() {
           </div>
 
           <div className="box-agenda">
-            <div>
-              <GrTableAdd id="agenda" />
-            </div>
-            <button type="submit" id="btn-agenda">
-              Ajouter à mon agenda
+            <button
+              id="addCalendarButton"
+              type="submit"
+              onClick={() => {
+                atcb_action({
+                  name: stringStyliser(eventDetail.fields.titre, 50),
+                  startDate: eventDetail.fields.date_debut,
+                  endDate: eventDetail.fields.date_fin,
+                  description: eventDetail.fields.description,
+                  options: ["Apple", "Google", "Outlook.com"],
+                  trigger: "click",
+                  iCalFileName: "Reminder-Event",
+                });
+              }}
+            >
+              <GrTableAdd id="agendaicon" />
+              Ajouter à votre agenda
             </button>
-
-            <ul>
-              <Link to="/">
-                <button type="submit">
-                  <span>Retour à l&apos;accueil</span>
-                </button>
-              </Link>
-            </ul>
+            <div />
           </div>
           <p id="sharesociallink">Partager</p>
           <div className="box" id="sociallink">

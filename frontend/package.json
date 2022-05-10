@@ -10,6 +10,7 @@
     "fix": "prettier --write . && eslint --fix --ext .jsx ."
   },
   "dependencies": {
+    "add-to-calendar-button": "^1.8.6",
     "axios": "^0.26.1",
     "framer-motion": "^6.3.3",
     "install": "^0.13.0",
