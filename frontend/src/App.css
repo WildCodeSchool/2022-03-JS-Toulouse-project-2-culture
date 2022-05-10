@@ -69,7 +69,10 @@ h3,
 h4 {
   font-family: var(--primary-font);
 }
-
+.welcomeTitle {
+  font-family: falsepos;
+  font-size: 8rem;
+}
 .BtnContainer {
   display: flex;
   flex-direction: row;
