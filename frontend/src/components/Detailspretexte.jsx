@@ -1,7 +1,7 @@
 /* eslint-disable no-nested-ternary */
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import { useParams, Link } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { atcb_action as atcbAction } from "add-to-calendar-button";
 import { GrTableAdd } from "react-icons/gr";
 import MapDetailEvent from "./MapDetailEvent";
@@ -12,6 +12,7 @@ import { dateJJMMConverter, stringStyliser } from "./functions";
 import Facebooksharebutton from "./Facebooksharebutton";
 import Twittersharebutton from "./Twittersharebutton";
 import Linkedinsharebutton from "./Linkedinsharebutton";
+import AppearBtn from "./AppearBtn";
 
 function Detailspretext() {
   const [eventDetail, setEventDetail] = useState(null);
@@ -46,7 +47,6 @@ function Detailspretext() {
       window.localStorage.setItem(`favorite${window.localStorage.length}`, id);
     }
   };
-
   return (
     <div className="boxcontainer">
       {eventDetail !== null ? (
@@ -97,13 +97,8 @@ function Detailspretext() {
               />
             </div>
           </div>
-
+          <AppearBtn />
           <div className="box-agenda">
-            <Link to="/">
-              <button type="button" id="addCalendarButton">
-                Retour à l&apos;accueil
-              </button>
-            </Link>
             <button
               id="addCalendarButton"
               type="submit"
