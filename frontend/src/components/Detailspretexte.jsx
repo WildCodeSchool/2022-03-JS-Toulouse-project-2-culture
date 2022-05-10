@@ -110,11 +110,13 @@ function Detailspretext() {
               </Link>
             </ul>
           </div>
-          <p id="sharesociallink">Partager</p>
           <div className="box" id="sociallink">
-            <Facebooksharebutton recordid={id} />
-            <Twittersharebutton recordid={id} />
-            <Linkedinsharebutton recordid={id} />
+            <p id="sharesociallink">Partager</p>
+            <div id="linkdiv">
+              <Facebooksharebutton recordid={id} />
+              <Twittersharebutton recordid={id} />
+              <Linkedinsharebutton recordid={id} />
+            </div>
           </div>
         </div>
       ) : (
