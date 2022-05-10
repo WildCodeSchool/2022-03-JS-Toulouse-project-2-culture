@@ -1,3 +1,5 @@
+@import "./addCalendar.css";
+
 * {
   margin: 0;
   padding: 0;
@@ -17,6 +19,26 @@
   max-height:12rem;
   margin-top: -3rem;
 }
+
+.returnhomebtnbox {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-content: center;
+}
+.returnhomebtn {
+  margin-top: 140px;
+  text-decoration: none;
+  font-family: var(--primary-font);
+  font-weight: bold;
+  font-size: 1rem;
+  color: var(--secondary-color);
+  background-color: var(--primary-color);
+  border-radius: 2rem;
+  padding: 0.5rem 1rem;
+  box-shadow: 0px 0px 20px 2px rgb(243, 225, 29);
+}
+
 .box {
   width: auto;
   height: max-content;
@@ -133,35 +155,6 @@ p {
   border-radius: 1rem;
 }
 
-.box-agenda {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  margin-left: 2rem;
-  align-items: center;
-}
-
-#agenda {
-  font-size: xxx-large;
-  text-align: center;
-}
-
-#btn-agenda {
-  font-weight: bold;
-  color: var(--secondary-color);
-  background-color: var(--primary-color);
-  border-radius: 2rem;
-  padding: 0.5rem 1rem;
-}
-
-#btn-agenda:hover {
-  border: var(--primary-color) solid 5px;
-}
-
-#btn-agenda:hover {
-  border: var(--primary-color) solid 5px;
-}
-
 #sharesociallink {
   color: black;
   font-size: large;
@@ -178,9 +171,30 @@ p {
   margin-top: 0;
 }
 
-.facebookicon,
-.instagramicon,
-.twittericon,
-.linkedin {
-  font-size: xx-large;
+.box-agenda {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: 2rem;
+  align-items: center;
+}
+
+#addCalendarButton {
+  text-decoration: none;
+  font-family: var(--primary-font);
+  font-weight: bold;
+  font-size: 1rem;
+  color: var(--secondary-color);
+  background-color: var(--primary-color);
+  border-radius: 2rem;
+  padding: 0.5rem 1rem;
+  box-shadow: 0px 0px 20px 2px rgb(243, 225, 29);
+  padding: 0.5rem 1rem;
+  display: grid;
+  justify-items: center;
+}
+
+#agendaicon {
+  font-size: large;
+  background-color: var(--secondary-color);
 }
