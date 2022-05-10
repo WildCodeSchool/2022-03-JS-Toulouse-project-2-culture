@@ -40,7 +40,7 @@ function CardShowResults(props) {
         animate={{ x: "0" }}
       >
         <h3>Vos pretextes</h3>
-        <h4>Intello...</h4>
+        <h4 className="pretextCat">Intello...</h4>
         <div>
           <Carousel
             showThumbs={false}
@@ -75,7 +75,7 @@ function CardShowResults(props) {
             )}
           </Carousel>
         </div>
-        <h4>Ecolo...</h4>
+        <h4 className="pretextCat">Ecolo...</h4>
         <div>
           <Carousel
             showThumbs={false}
@@ -111,7 +111,7 @@ function CardShowResults(props) {
             )}
           </Carousel>
         </div>
-        <h4>Sportif...</h4>
+        <h4 className="pretextCat">Sportif...</h4>
         <div>
           <Carousel
             showThumbs={false}
@@ -147,7 +147,7 @@ function CardShowResults(props) {
             )}
           </Carousel>
         </div>
-        <h4>Flanneur...</h4>
+        <h4 className="pretextCat">Flanneur...</h4>
         <div>
           <Carousel
             showThumbs={false}
@@ -183,7 +183,7 @@ function CardShowResults(props) {
             )}
           </Carousel>
         </div>
-        <h4>Autres...</h4>
+        <h4 className="pretextCat">Autres...</h4>
         <div>
           <Carousel
             showThumbs={false}

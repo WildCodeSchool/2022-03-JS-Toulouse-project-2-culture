@@ -34,7 +34,7 @@
 .Autres {
   background-image: url("../assets/img/autres.jpg");
 }
-.motion-div{
+.motion-div {
   column-gap: 10rem;
 }
 .showcase {
@@ -44,22 +44,22 @@
   color: var(--primary-color);
   margin-top: 75px;
   width: 95vw;
-  background: rgba( 253, 253, 253, 0.1 );
-box-shadow: 0 8px 32px 0 rgba(135, 133, 31, 0.37);
-backdrop-filter: blur( 1px );
--webkit-backdrop-filter: blur( 1px );
-border-radius: 10px;
+  background: rgba(253, 253, 253, 0.1);
+  box-shadow: 0 8px 32px 0 rgba(135, 133, 31, 0.37);
+  backdrop-filter: blur(1px);
+  -webkit-backdrop-filter: blur(1px);
+  border-radius: 10px;
 }
 .heartLogo {
   height: 50px;
-  border:none;
-
+  border: none;
 }
 
 .CardThemeHeader {
   display: flex;
   justify-content: space-between;
   padding: 0px;
+  align-items: center;
 }
 h2 {
   font-size: 3rem;
@@ -73,8 +73,16 @@ h4 {
 }
 h3,
 h4 {
-  margin-top: 1rem;
   align-self: center;
+}
+
+.pretextCat {
+  margin: 1.5rem 0;
+}
+.headerDate {
+  align-self: center;
+  margin-top: 0;
+  font-family: caviar2;
 }
 
 .CardThemeHeaderDateCulture,

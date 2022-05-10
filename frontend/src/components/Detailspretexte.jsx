@@ -49,13 +49,6 @@ function Detailspretext() {
 
   return (
     <div className="boxcontainer">
-      <div className="returnhomebtnbox">
-        <Link to="/">
-          <button className="returnhomebtn" type="submit">
-            <span>Retour à l&apos;accueil</span>
-          </button>
-        </Link>
-      </div>
       {eventDetail !== null ? (
         <div>
           <div className="box" id="boxtext">
@@ -106,6 +99,11 @@ function Detailspretext() {
           </div>
 
           <div className="box-agenda">
+            <Link to="/">
+              <button type="button" id="addCalendarButton">
+                Retour à l&apos;accueil
+              </button>
+            </Link>
             <button
               id="addCalendarButton"
               type="submit"
