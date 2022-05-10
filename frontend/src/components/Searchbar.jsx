@@ -19,16 +19,19 @@ function Searchbar(props) {
   }
 
   return (
-    <form className="search-container" onSubmit={onSubmit}>
-      <input
-        className="searchbar"
-        placeholder="OÙ ?"
-        value={selectedPlace}
-        onChange={(e) => {
-          setSelectedPlace(e.target.value);
-        }}
-      />
-    </form>
+    <div>
+      <form className="search-container" onSubmit={onSubmit}>
+        <input
+          className="searchbar"
+          placeholder="Tapez votre recherche ici..."
+          value={selectedPlace}
+          onChange={(e) => {
+            setSelectedPlace(e.target.value);
+          }}
+        />
+      </form>
+      <p>Explorez à l&apos;aide de la carte</p>
+    </div>
   );
 }
 
