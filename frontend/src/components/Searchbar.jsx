@@ -22,7 +22,7 @@ function Searchbar(props) {
     <form className="search-container" onSubmit={onSubmit}>
       <input
         className="searchbar"
-        placeholder="OÙ ?"
+        placeholder="Tapez votre recherche ou naviguez sur la carte"
         value={selectedPlace}
         onChange={(e) => {
           setSelectedPlace(e.target.value);
