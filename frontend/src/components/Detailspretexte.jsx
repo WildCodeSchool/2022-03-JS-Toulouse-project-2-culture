@@ -65,8 +65,10 @@ function Detailspretext() {
               <div className="datedebutevent">
                 <h4
                   className={`datedebuteventthemecolor${
-                    eventDetail.fields.thematique ===
-                    "Vides Grenier / Brocantes / Foires et salons"
+                    eventDetail.fields.thematique.split(" ").includes("Emploi")
+                      ? "Autres"
+                      : eventDetail.fields.thematique ===
+                        "Vides Grenier / Brocantes / Foires et salons"
                       ? "Brocantes"
                       : eventDetail.fields.thematique
                   }`}
