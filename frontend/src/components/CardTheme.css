@@ -9,10 +9,10 @@
   margin: 0 1rem;
   border-radius: 1rem;
   min-height: 300px;
+  max-height: 35vh;
   text-align: center;
-  font-family: var(--secondary-font);
-  overflow: auto;
-  box-shadow: 0px 0px 5px 0px black;
+  font-family: var(--primary-font);
+  overflow: hidden;
 }
 
 .Culture {
@@ -34,24 +34,31 @@
 .Autres {
   background-image: url("../assets/img/autres.jpg");
 }
-
+.motion-div{
+  column-gap: 10rem;
+}
 .showcase {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
   text-align: center;
   color: var(--primary-color);
-  background-color: transparent;
-  width: 95 vw;
-  max-width: 320px;
+  margin-top: 75px;
+  width: 95vw;
+  background: rgba( 253, 253, 253, 0.1 );
+box-shadow: 0 8px 32px 0 rgba(135, 133, 31, 0.37);
+backdrop-filter: blur( 1px );
+-webkit-backdrop-filter: blur( 1px );
+border-radius: 10px;
 }
 .heartLogo {
   height: 50px;
+
 }
 
 .CardThemeHeader {
   display: flex;
   justify-content: space-between;
+  padding: 0px;
 }
 h2 {
   font-size: 3rem;
@@ -65,7 +72,7 @@ h4 {
 }
 h3,
 h4 {
-  margin: 0;
+  margin-top: 1rem;
   align-self: center;
 }
 
@@ -104,6 +111,7 @@ h4 {
 .heartBtn {
   border: none;
   background: none;
+
 }
 
 .BtnShowMore a {

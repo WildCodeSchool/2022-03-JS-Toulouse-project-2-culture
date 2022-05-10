@@ -1,6 +1,5 @@
 import React from "react";
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
-import "./MapDetailEvent.css";
 
 function MapDetailEvent(props) {
   const { coordinates, popupTitle } = props;
