@@ -144,8 +144,10 @@ abbr[title] {
   background-color: var(--secondary-color);
   border-radius: 3rem;
   padding: 0.5rem 0.7rem;
-  font-weight: bold;
+  font-weight: bolder;
+  -webkit-text-stroke: 1px rgb(17, 17, 17);
   border: solid 2px var(--third-color);
+  color:rgb(17, 17, 17);
 }
 
 .PretextData {

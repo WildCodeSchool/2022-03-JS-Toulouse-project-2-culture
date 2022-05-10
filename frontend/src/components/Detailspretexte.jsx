@@ -1,3 +1,4 @@
+/* eslint-disable no-nested-ternary */
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useParams, Link } from "react-router-dom";
@@ -52,8 +53,10 @@ function Detailspretext() {
           <div className="box" id="boxtext">
             <div
               className={`alignimgfav themeimg${
-                eventDetail.fields.thematique ===
-                "Vides Grenier / Brocantes / Foires et salons"
+                eventDetail.fields.thematique.split(" ").includes("Emploi")
+                  ? "Autres"
+                  : eventDetail.fields.thematique ===
+                    "Vides Grenier / Brocantes / Foires et salons"
                   ? "Brocantes"
                   : eventDetail.fields.thematique
               }`}
@@ -104,7 +107,7 @@ function Detailspretext() {
 
             <ul>
               <Link to="/">
-                <button type="submit">
+                <button type="submit" id="retouraccueil">
                   <span>Retour à l&apos;accueil</span>
                 </button>
               </Link>

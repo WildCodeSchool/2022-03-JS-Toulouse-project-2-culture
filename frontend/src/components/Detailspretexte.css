@@ -133,6 +133,7 @@ p {
   justify-content: center;
   align-items: center;
   font-style: italic;
+  text-align: center;
   height:3rem;
   text-shadow: 0px 0px 20px white, 0px 0px 20px white;
 }
@@ -200,4 +201,11 @@ p {
 .twittericon,
 .linkedin {
   font-size: xx-large;
+}
+#retouraccueil{
+  /* display: flex; */
+  border:red solid 2px;
+  margin: 1rem;
+  position: sticky;
+  left: 0;
 }

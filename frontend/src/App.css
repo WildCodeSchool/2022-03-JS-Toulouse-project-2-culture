@@ -11,6 +11,10 @@
   font-family: caviar;
   src: url("./assets/font/CaviarDreams.ttf");
 }
+@font-face {
+  font-family: caviar2;
+  src: url("./assets/font/CaviarDreams_Bold.ttf");
+}
 :root {
   /*Font*/
   --primary-font: caviar;
@@ -82,16 +86,53 @@ h4 {
   text-decoration: none;
   font-family: var(--primary-font);
   font-weight: bold;
-
   font-size: 1rem;
   color: var(--secondary-color);
   background-color: var(--primary-color);
   border-radius: 2rem;
   padding: 0.5rem 1rem;
-  box-shadow: 0px 0px 20px 2px rgb(243, 225, 29);
+  box-shadow: 0px 0px 20px 2px rgb(173, 169, 118);
   margin-bottom: 4rem;
+  transition: 0.2s;
 }
-
+@media screen and (min-width: 768px) {
+  .BtnNext:hover {
+    text-decoration: none;
+    font-family: var(--primary-font);
+    font-weight: bold;
+    font-size: 1rem;
+    color: var(--primary-color);
+    background-color: rgb(255, 230, 0);
+    border-radius: 2rem;
+    padding: 1rem 1.5rem;
+    box-shadow: 0px 0px 20px 20px rgb(245, 232, 89);
+    margin-bottom: 4rem;
+    transition: 0,2s;
+    display: flex;
+    vertical-align: middle;
+  }
+}
+@media screen and (max-width: 768px) {
+  .BtnNext:active {
+    text-decoration: none;
+    font-family: var(--primary-font);
+    font-weight: bold;
+    font-size: 1rem;
+    color: var(--primary-color);
+    background-color: rgb(255, 230, 0);
+    border-radius: 2rem;
+    padding: 0.5rem 1rem;
+    box-shadow: 0px 0px 20px 20px rgb(245, 232, 89);
+    margin-bottom: 4rem;
+    transition: 1s;
+  }
+}
+.BtnNex {
+  border: none;
+}
+.BtnNex:hover {
+  border: wheat solid 2px;
+}
 .navbar {
   box-shadow: 0px 0px 20px 10px #151515ff;
 }
