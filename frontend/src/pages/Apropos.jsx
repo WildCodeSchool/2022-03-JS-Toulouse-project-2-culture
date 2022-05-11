@@ -5,7 +5,7 @@ function Apropos() {
   return (
     <div className="fav-container">
       <h4>&quot;Ca te dit le concert de Kaaris ce week-end ?&quot;</h4>
-      <h1>Nope !</h1>
+      <h1 className="welcomeTitle">Nope !</h1>
       <img
         id="mainLogo"
         src="../src/assets/logo/NOPELOGO.png"

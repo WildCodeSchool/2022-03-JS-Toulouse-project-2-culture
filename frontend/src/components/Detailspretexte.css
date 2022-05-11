@@ -26,7 +26,7 @@
   flex-direction: column;
   justify-content: center;
   left: 0;
-  position:fixed;
+  position: fixed;
   z-index: 800;
 }
 .returnhomebtn {
@@ -123,7 +123,7 @@
 }
 
 .datedebuteventthemecolorAutres {
-  background-color: var(--autre-color);
+  background-color: var(--autres-color);
 }
 
 h1 {
@@ -152,7 +152,7 @@ p {
 .website {
   text-align: center;
 }
-.address{
+.address {
   border: red solid 2px;
   max-width: 50vw;
 }
@@ -166,7 +166,6 @@ p {
   height: 3rem;
   text-shadow: 0px 0px 20px white, 0px 0px 20px white;
   max-width: 80rem;
-  
 }
 
 .photomap {
@@ -220,9 +219,34 @@ p {
   display: grid;
   justify-items: center;
   margin: 1rem 2rem 1rem 0rem;
+  text-decoration: none;
 }
 
 #agendaicon {
   font-size: large;
   background-color: var(--secondary-color);
+}
+
+.actions {
+  position: fixed;
+  bottom: 0.1rem;
+  left: 5rem;
+  padding: 0.5rem;
+  border-radius: 2rem;
+  z-index: 101;
+  font-size: 1rem;
+}
+
+#backhome {
+  text-decoration: none;
+  font-family: var(--primary-font);
+  font-weight: bold;
+  font-size: 1rem;
+  color: var(--primary-color);
+  background-color: var(--secondary-color);
+  border-radius: 2rem;
+  padding: 0rem 0.5rem;
+  padding: 0.3rem 0.5rem;
+  text-decoration: none;
+  border: 1px solid transparent;
 }

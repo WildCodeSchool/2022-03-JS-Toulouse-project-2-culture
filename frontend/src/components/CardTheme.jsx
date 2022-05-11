@@ -39,7 +39,7 @@ function CardTheme({ title, date, stylecard, recordid, refresh }) {
       <div className={`CardTheme ${stylecard}`}>
         <div className="CardThemeHeader">
           <div className={`CardThemeHeaderDate${stylecard}`}>
-            <h4>{date}</h4>
+            <h4 className="headerDate">{date}</h4>
           </div>
           <CardThemeHeart
             isFavorite={isFavorite}

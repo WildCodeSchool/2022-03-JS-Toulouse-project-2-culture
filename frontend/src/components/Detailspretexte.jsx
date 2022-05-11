@@ -1,7 +1,7 @@
 /* eslint-disable no-nested-ternary */
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import { useParams, Link } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { atcb_action as atcbAction } from "add-to-calendar-button";
 import { GrTableAdd } from "react-icons/gr";
 import MapDetailEvent from "./MapDetailEvent";
@@ -12,6 +12,7 @@ import { dateJJMMConverter, stringStyliser } from "./functions";
 import Facebooksharebutton from "./Facebooksharebutton";
 import Twittersharebutton from "./Twittersharebutton";
 import Linkedinsharebutton from "./Linkedinsharebutton";
+import AppearBtn from "./AppearBtn";
 
 function Detailspretext() {
   const [eventDetail, setEventDetail] = useState(null);
@@ -46,16 +47,8 @@ function Detailspretext() {
       window.localStorage.setItem(`favorite${window.localStorage.length}`, id);
     }
   };
-
   return (
     <div className="boxcontainer">
-      <div className="returnhomebtnbox">
-        <Link to="/">
-          <button className="returnhomebtn" type="submit">
-            <span>Retour à l&apos;accueil</span>
-          </button>
-        </Link>
-      </div>
       {eventDetail !== null ? (
         <div>
           <div className="box" id="boxtext">
@@ -72,8 +65,10 @@ function Detailspretext() {
               <div className="datedebutevent">
                 <h4
                   className={`datedebuteventthemecolor${
-                    eventDetail.fields.thematique ===
-                    "Vides Grenier / Brocantes / Foires et salons"
+                    eventDetail.fields.thematique.split(" ").includes("Emploi")
+                      ? "Autres"
+                      : eventDetail.fields.thematique ===
+                        "Vides Grenier / Brocantes / Foires et salons"
                       ? "Brocantes"
                       : eventDetail.fields.thematique
                   }`}
@@ -104,7 +99,7 @@ function Detailspretext() {
               />
             </div>
           </div>
-
+          <AppearBtn />
           <div className="box-agenda">
             <button
               id="addCalendarButton"
