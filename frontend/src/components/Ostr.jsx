@@ -3,6 +3,7 @@ import Particles from "react-tsparticles";
 import { loadFull } from "tsparticles";
 import { tsParticles } from "tsparticles-engine";
 import { loadImageShape } from "tsparticles-shape-image";
+import logo from "../assets/logo/NOPELOGO.png";
 
 loadImageShape(tsParticles);
 
@@ -83,7 +84,7 @@ function Ostr() {
           shape: {
             type: "image",
             images: {
-              src: "/src/assets/logo/NOPELOGO.png",
+              src: logo,
             },
           },
           size: {
