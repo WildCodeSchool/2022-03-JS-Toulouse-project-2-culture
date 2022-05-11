@@ -1,27 +1,44 @@
-import Map from "./components/Map";
-import CardShowList from "./components/CardShowList";
+/* eslint-disable no-nested-ternary */
+import React, { useState, useEffect } from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import axios from "axios";
+import Ostr from "./components/Ostr";
+import "./Background.scss";
 import "./App.css";
-import listEvent from "./components/event";
-import CalendarEvent from "./components/CalendarEvent";
-import CardShowResults from "./components/CardShowResults";
+import Favoris from "./pages/Favoris";
+import Apropos from "./pages/Apropos";
 import Navbar from "./components/Navbar";
-import Events from "./components/Events";
+import Detailspretext from "./components/Detailspretexte";
+import UserPath from "./components/userpath";
 
 function App() {
+  const [eventArrayFromAPI, setEventArrayfromAPI] = useState([]);
+
+  useEffect(() => {
+    const url =
+      "https://data.laregion.fr/api/records/1.0/search/?dataset=agendas-participatif-des-sorties-en-occitanie&rows=400";
+    axios.get(url).then((res) => setEventArrayfromAPI(res.data.records));
+  }, []);
+
   return (
-    <>
+    <div className="App">
+      <Ostr />
       <Navbar />
-      <div className="App">
-        <CalendarEvent />
-        <h3>Ou ?</h3>
-        <CardShowResults />
-        <CardShowList events={listEvent.records} />
-        <Events event={listEvent.records[0]} />
-      </div>
-      <div className="Map-cont">
-        <Map />
-      </div>
-    </>
+      <Router>
+        <Routes>
+          <Route
+            path="/"
+            element={<UserPath eventArrayFromAPI={eventArrayFromAPI} />}
+          />
+          <Route
+            path="/favoris"
+            element={<Favoris eventArrayFromAPI={eventArrayFromAPI} />}
+          />
+          <Route path="/apropos" element={<Apropos />} />
+          <Route path="/event/:id" element={<Detailspretext />} />
+        </Routes>
+      </Router>
+    </div>
   );
 }
 

@@ -12,21 +12,31 @@ function Navbar() {
   return (
     <nav className={`navbar ${showLinks ? "show-nav" : "hide-nav"}`}>
       <div className="navbar_logo">
-        <Logo />
+        <a href="/">
+          <Logo />
+        </a>
       </div>
+      <div
+        className={`${showLinks ? "close_navbar" : ""}`}
+        onClick={handleShowLinks}
+        role="button"
+        onKeyPress={handleShowLinks}
+        tabIndex="0"
+        label="close navbar"
+      />
       <ul className="navbar_links">
-        <li className="navbar_item">
+        <li className="navbar_item slideInDown-1">
           <a href="/" className="navbar_link">
             Accueil
           </a>
         </li>
-        <li className="navbar_item">
-          <a href="/" className="navbar_link">
+        <li className="navbar_item slideInDown-2">
+          <a href="/favoris" className="navbar_link">
             Favoris
           </a>
         </li>
-        <li className="navbar_item">
-          <a href="/" className="navbar_link">
+        <li className="navbar_item slideInDown-3">
+          <a href="/apropos" className="navbar_link">
             A propos
           </a>
         </li>
