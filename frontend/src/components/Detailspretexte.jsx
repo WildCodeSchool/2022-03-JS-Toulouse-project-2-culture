@@ -124,9 +124,21 @@ function Detailspretext() {
           <div className="box" id="sociallink">
             <p id="sharesociallink">Partager</p>
             <div id="linkdiv">
-              <Facebooksharebutton recordid={id} />
-              <Twittersharebutton recordid={id} />
-              <Linkedinsharebutton recordid={id} />
+              <Facebooksharebutton
+                recordid={id}
+                titre={eventDetail.fields.titre}
+                description={eventDetail.fields.description}
+              />
+              <Twittersharebutton
+                recordid={id}
+                title={eventDetail.fields.titre}
+                description={eventDetail.fields.description}
+              />
+              <Linkedinsharebutton
+                recordid={id}
+                title={eventDetail.fields.titre}
+                description={eventDetail.fields.description}
+              />
             </div>
           </div>
         </div>
