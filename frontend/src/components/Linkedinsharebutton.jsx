@@ -7,8 +7,8 @@ function Linkedinsharebutton({ recordid, title, description }) {
     <div>
       <LinkedinShareButton
         url={url}
-        title={`titre${title}`}
-        description={`description ${description}`}
+        title={`${title}`}
+        description={`${description}`}
       >
         <LinkedinIcon size={40} round />
       </LinkedinShareButton>

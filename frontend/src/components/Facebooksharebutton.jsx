@@ -7,8 +7,8 @@ function Facebooksharebutton({ recordid, title, description }) {
     <div>
       <FacebookShareButton
         url={url}
-        title={`titre${title}`}
-        description={`description ${description}`}
+        title={`${title}`}
+        description={`${description}`}
       >
         <FacebookIcon size={40} round />
       </FacebookShareButton>

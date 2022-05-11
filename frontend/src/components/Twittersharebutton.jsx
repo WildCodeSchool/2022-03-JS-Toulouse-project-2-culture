@@ -7,8 +7,8 @@ function Twittersharebutton({ recordid, title, description }) {
     <div>
       <TwitterShareButton
         url={url}
-        title={`titre${title}`}
-        description={`description ${description}`}
+        title={`${title}`}
+        description={`${description}`}
       >
         <TwitterIcon size={40} round />
       </TwitterShareButton>
