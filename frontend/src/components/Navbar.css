@@ -82,10 +82,10 @@
 .navbar_burger:hover {
   cursor: pointer;
 }
-/*test */
+
 .navbar_item::after {
   content: "";
-  display: flex;
+  display: block;
   margin: 0 auto;
   width: 3vw;
   height: 1px;
