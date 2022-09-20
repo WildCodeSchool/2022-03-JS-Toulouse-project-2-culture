@@ -85,7 +85,7 @@
 /*test */
 .navbar_item::after {
   content: "";
-  display: block;
+  display: flex;
   margin: 0 auto;
   width: 3vw;
   height: 1px;
